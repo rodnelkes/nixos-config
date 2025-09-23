@@ -1,0 +1,5 @@
+$env.config.buffer_editor = "nvim"
+$env.config.show_banner = false
+
+# Fix Wezterm Windows scrolling on every key input: https://github.com/nushell/nushell/issues/5585
+$env.config.shell_integration.osc133 = false
