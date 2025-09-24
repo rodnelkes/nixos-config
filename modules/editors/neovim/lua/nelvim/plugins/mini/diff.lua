@@ -1,2 +1,8 @@
-require("mini.diff").setup()
+local diff = require("mini.diff")
+
+diff.setup({
+  view = {
+    style = 'sign',
+  },
+})
 
