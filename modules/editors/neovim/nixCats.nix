@@ -99,6 +99,7 @@ in
             oil-nvim
             undotree
             fzf-lua
+            mini-git
             mini-hipatterns
             mini-icons
             mini-indentscope
