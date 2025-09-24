@@ -99,13 +99,14 @@ in
             oil-nvim
             undotree
             fzf-lua
+            mini-diff
             mini-git
             mini-hipatterns
             mini-icons
             mini-indentscope
             conform-nvim
             indent-blankline-nvim
-	  ];
+          ];
 
           colorschemes = [
             {
