@@ -87,6 +87,14 @@
       };
     };
 
+    catppuccin = {
+      type = "github";
+      owner = "catppuccin";
+      repo = "nix";
+
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixCats = {
       type = "github";
       owner = "BirdeeHub";

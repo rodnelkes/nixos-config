@@ -14,6 +14,7 @@ let
     lix
     wsl
     home-manager
+    catppuccin
     nushell
   ];
 
@@ -21,6 +22,7 @@ let
     rodnelkes
     home-manager
     nh
+    catppuccin
     nushell
     starship
     git
