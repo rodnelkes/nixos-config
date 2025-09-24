@@ -87,18 +87,19 @@
       };
     };
 
-    nixCats = { 
+    nixCats = {
       type = "github";
       owner = "BirdeeHub";
       repo = "nixCats-nvim";
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-    inputs.import-tree [
-      ./hosts
-      ./modules
-    ]
-  );
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
+      inputs.import-tree [
+        ./hosts
+        ./modules
+      ]
+    );
 }
-

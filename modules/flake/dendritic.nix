@@ -7,4 +7,3 @@
     inputs.flake-file.flakeModules.dendritic
   ];
 }
-
