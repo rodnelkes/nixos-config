@@ -1,4 +1,5 @@
 local plugins = {
+    "git",
     "hipatterns",
 	"icons",
     "indentscope"
