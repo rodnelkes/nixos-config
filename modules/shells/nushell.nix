@@ -8,9 +8,11 @@ let
 in
 {
   flake.modules = {
-    nixos.nushell = { pkgs, ... }: {
-      users.users.rodnelkes.shell = pkgs.nushell;
-    };
+    nixos.nushell =
+      { pkgs, ... }:
+      {
+        users.users.rodnelkes.shell = pkgs.nushell;
+      };
 
     homeManager.nushell = {
       programs.nushell = {
