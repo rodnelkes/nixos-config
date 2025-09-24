@@ -15,6 +15,7 @@ let
     wsl
     home-manager
     nushell
+    ssh
   ];
 
   homeModules = with config.flake.modules.homeManager; [
