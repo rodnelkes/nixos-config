@@ -16,6 +16,7 @@ let
     home-manager
     catppuccin
     nushell
+    usbutils
   ];
 
   homeModules = with config.flake.modules.homeManager; [
