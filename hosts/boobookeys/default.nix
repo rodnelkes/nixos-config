@@ -27,6 +27,7 @@ let
     nushell
     starship
     git
+    jujutsu
     gpg
     ssh
     nixCats
