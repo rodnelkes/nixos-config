@@ -1,29 +1,33 @@
 {
   flake.modules.homeManager.ssh = {
-    programs.ssh = {
-      enable = true;
+    programs = {
+      ssh = {
+        enable = true;
 
-      # Deprecated, will be removed
-      enableDefaultConfig = false;
+        # Deprecated, will be removed
+        enableDefaultConfig = false;
 
-      matchBlocks = {
-        "*" = {
-          forwardAgent = false;
-          addKeysToAgent = "no";
-          compression = false;
-          serverAliveInterval = 0;
-          serverAliveCountMax = 3;
-          hashKnownHosts = false;
-          userKnownHostsFile = "~/.ssh/known_hosts";
-          controlMaster = "no";
-          controlPath = "~/.ssh/master-%r@%n:%p";
-          controlPersist = "no";
-        };
+        matchBlocks = {
+          "*" = {
+            forwardAgent = false;
+            addKeysToAgent = "no";
+            compression = false;
+            serverAliveInterval = 0;
+            serverAliveCountMax = 3;
+            hashKnownHosts = false;
+            userKnownHostsFile = "~/.ssh/known_hosts";
+            controlMaster = "no";
+            controlPath = "~/.ssh/master-%r@%n:%p";
+            controlPersist = "no";
+          };
 
-        "github.com" = {
-          identityFile = "~/.ssh/github";
+          "github.com" = {
+            identityFile = "~/.ssh/github";
+          };
         };
       };
+
+      nushell.extraConfig = builtins.readFile ./eval_ssh-agent.nu;
     };
 
     services.ssh-agent.enable = true;
