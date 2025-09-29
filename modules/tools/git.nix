@@ -1,4 +1,11 @@
 {
+  config,
+  ...
+}:
+let
+  homeConfig = config.flake.homeConfigurations.rodnelkes.config;
+in
+{
   flake.modules.homeManager.git = {
     programs.git = {
       enable = true;
@@ -9,7 +16,7 @@
       signing = {
         signByDefault = true;
         format = "ssh";
-        key = "~/.ssh/github.pub";
+        key = homeConfig.sops.secrets.github.path;
       };
     };
   };

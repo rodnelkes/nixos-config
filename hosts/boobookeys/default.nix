@@ -14,6 +14,7 @@ let
     lix
     wsl
     home-manager
+    sops-nix
     catppuccin
     nushell
     usbutils
@@ -22,6 +23,7 @@ let
   homeModules = with config.flake.modules.homeManager; [
     rodnelkes
     home-manager
+    sops-nix
     nh
     catppuccin
     nushell
@@ -39,10 +41,17 @@ in
 
     modules = {
       nixos = {
+        sops.secrets.rodnelkes_password.neededForUsers = true;
+
         ${username} = {
-          users.users.${username} = {
-            isNormalUser = true;
-            extraGroups = [ "wheel" ];
+          users = {
+            mutableUsers = false;
+
+            users.${username} = {
+              isNormalUser = true;
+              extraGroups = [ "wheel" ];
+              hashedPasswordFile = config.flake.nixosConfigurations.boobookeys.config.sops.secrets.rodnelkes_password.path;
+            };
           };
         };
 
