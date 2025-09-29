@@ -1,4 +1,11 @@
 {
+  config,
+  ...
+}:
+let
+  homeConfig = config.flake.homeConfigurations.rodnelkes.config;
+in
+{
   flake.modules.homeManager.ssh = {
     programs = {
       ssh = {
@@ -22,7 +29,7 @@
           };
 
           "github.com" = {
-            identityFile = "~/.ssh/github";
+            identityFile = homeConfig.sops.secrets.github.path;
           };
         };
       };

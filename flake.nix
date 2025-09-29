@@ -63,28 +63,17 @@
       repo = "nixos-facter-modules";
     };
 
-    agenix = {
-      type = "github";
-      owner = "ryantm";
-      repo = "agenix";
-
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-        darwin.follows = "";
-      };
+    sops-secrets = {
+      url = "git+ssh://git@gitlab.com:rodnelkes/nixos-secrets.git?ref=main&shallow=1";
+      flake = false;
     };
 
-    agenix-rekey = {
+    sops-nix = {
       type = "github";
-      owner = "oddlama";
-      repo = "agenix-rekey";
+      owner = "Mic92";
+      repo = "sops-nix";
 
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        treefmt-nix.follows = "treefmt-nix";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     catppuccin = {
