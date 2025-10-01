@@ -64,7 +64,7 @@
     };
 
     sops-secrets = {
-      url = "git+ssh://git@gitlab.com:rodnelkes/nixos-secrets.git?ref=main&shallow=1";
+      url = "git+ssh://git@gitlab.com/rodnelkes/nixos-secrets.git?ref=main&shallow=1";
       flake = false;
     };
 

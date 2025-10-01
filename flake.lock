@@ -255,6 +255,7 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix",
+        "sops-secrets": "sops-secrets",
         "treefmt-nix": "treefmt-nix"
       }
     },
@@ -276,6 +277,24 @@
         "owner": "Mic92",
         "repo": "sops-nix",
         "type": "github"
+      }
+    },
+    "sops-secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759352120,
+        "narHash": "sha256-qSqpIG4bMY494+TlksbH71qmVSLR6WSxhueDIuqnwjA=",
+        "ref": "main",
+        "rev": "e64ba3d72ec45c99303cc77888ab55d6686c4ce2",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@gitlab.com/rodnelkes/nixos-secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@gitlab.com/rodnelkes/nixos-secrets.git"
       }
     },
     "systems": {

@@ -28,7 +28,9 @@ in
             controlPersist = "no";
           };
 
-          "github.com" = {
+          "git" = {
+            host = "github.com gitlab.com";
+            identitiesOnly = true;
             identityFile = homeConfig.sops.secrets.github.path;
           };
         };
