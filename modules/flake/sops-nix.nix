@@ -2,9 +2,6 @@
   inputs,
   ...
 }:
-let
-  secretsPath = builtins.toString inputs.sops-secrets;
-in
 {
   flake.modules = {
     nixos.sops-nix = {
@@ -13,7 +10,7 @@ in
       ];
 
       sops = {
-        defaultSopsFile = "${secretsPath}/secrets.yaml";
+        defaultSopsFile = ../../secrets.yaml;
         
         age = {
           sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
@@ -33,7 +30,7 @@ in
       ];
 
       sops = {
-        defaultSopsFile = "${secretsPath}/secrets.yaml";
+        defaultSopsFile = ../../secrets.yaml;
 
         age.keyFile = "/home/rodnelkes/.config/sops/age/keys.txt";
 
