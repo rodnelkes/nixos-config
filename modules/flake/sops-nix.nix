@@ -11,7 +11,7 @@
 
       sops = {
         defaultSopsFile = ../../secrets.yaml;
-        
+
         age = {
           sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
           keyFile = "/var/lib/sops-nix/key.txt";
@@ -19,25 +19,31 @@
         };
 
         secrets = {
-          rodnelkes_password = {};
+          rodnelkes_password = { };
         };
       };
     };
 
-    homeManager.sops-nix = {
-      imports = [
-        inputs.sops-nix.homeManagerModules.sops
-      ];
+    homeManager.sops-nix =
+      { pkgs, ... }:
+      {
+        imports = [
+          inputs.sops-nix.homeManagerModules.sops
+        ];
 
-      sops = {
-        defaultSopsFile = ../../secrets.yaml;
+        home.packages = with pkgs; [
+          sops
+        ];
 
-        age.keyFile = "/home/rodnelkes/.config/sops/age/keys.txt";
+        sops = {
+          defaultSopsFile = ../../secrets.yaml;
 
-        secrets = {
-          github = {};
+          age.keyFile = "/home/rodnelkes/.config/sops/age/keys.txt";
+
+          secrets = {
+            github = { };
+          };
         };
       };
-    };
   };
 }
