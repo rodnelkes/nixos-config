@@ -123,7 +123,6 @@ in
 
           lsps = with pkgs.vimPlugins; [
             nvim-treesitter.withAllGrammars
-            nvim-lspconfig
           ];
         };
 
