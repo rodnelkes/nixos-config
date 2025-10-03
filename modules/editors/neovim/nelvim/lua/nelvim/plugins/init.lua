@@ -5,7 +5,7 @@ local plugins = {
 	"oil",
 	"undotree",
 	"fzf",
-	"lsps",
+    "lsps",
 	"blink",
 	"conform",
 	"mini",
