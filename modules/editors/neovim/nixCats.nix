@@ -64,6 +64,7 @@ in
               conform-nvim
               indent-blankline-nvim
               nvim-treesitter.withAllGrammars
+              blink-nerdfont-nvim
             ];
 
             colorschemes = [
