@@ -15,7 +15,6 @@ require("blink.cmp").setup({
 		},
 
 		menu = {
-			-- draw = { treesitter = { "lsp" } },
 			draw = {
 				components = {
 					kind_icon = {
@@ -35,6 +34,8 @@ require("blink.cmp").setup({
 						end,
 					},
 				},
+
+				treesitter = { "lsp" },
 			},
 			border = "rounded",
 			scrollbar = false,
