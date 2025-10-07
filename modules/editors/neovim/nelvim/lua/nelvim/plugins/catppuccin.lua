@@ -4,9 +4,9 @@ require("catppuccin").setup({
 	custom_highlights = function(colors)
 		return {
 			BlinkCmpMenu = { bg = colors.base },
-			BlinkCmpMenuBorder = { fg = colors.lavender },
+			BlinkCmpMenuBorder = { bg = colors.base, fg = colors.blue },
 			BlinkCmpDoc = { bg = colors.base },
-			BlinkCmpDocBorder = { fg = colors.lavender },
+			BlinkCmpDocBorder = { bg = colors.base, fg = colors.blue },
 			BlinkCmpDocSeparator = { bg = colors.base },
 		}
 	end,
