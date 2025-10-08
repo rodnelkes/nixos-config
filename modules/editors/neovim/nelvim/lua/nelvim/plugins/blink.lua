@@ -61,7 +61,7 @@ require("blink.cmp").setup({
 			"snippets",
 			"buffer",
 			"omni",
-            "nerdfont",
+			"nerdfont",
 		},
 		providers = {
 			nerdfont = {

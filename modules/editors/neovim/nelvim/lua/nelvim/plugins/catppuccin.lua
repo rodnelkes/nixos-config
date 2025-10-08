@@ -14,10 +14,10 @@ require("catppuccin").setup({
 	integrations = {
 		blink_cmp = true,
 		fzf = true,
-        mini = {
-            enabled = true,
-            indentscope_color = "rosewater",
-        },
+		mini = {
+			enabled = true,
+			indentscope_color = "rosewater",
+		},
 		native_lsp = {
 			enabled = true,
 
