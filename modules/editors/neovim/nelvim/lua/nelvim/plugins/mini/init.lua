@@ -1,9 +1,9 @@
 local plugins = {
-    "diff",
-    "git",
-    "hipatterns",
+	"diff",
+	"git",
+	"hipatterns",
 	"icons",
-    "indentscope"
+	"indentscope",
 }
 
 for _, plugin in ipairs(plugins) do

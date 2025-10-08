@@ -1,2 +1,1 @@
 require("mini.git").setup()
-
