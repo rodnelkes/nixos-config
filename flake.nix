@@ -79,6 +79,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    starship = {
+      type = "github";
+      owner = "starship";
+      repo = "starship";
+
+      flake = false;
+    };
+
     nixCats = {
       type = "github";
       owner = "BirdeeHub";
