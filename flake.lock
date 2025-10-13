@@ -255,6 +255,7 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix",
+        "starship": "starship",
         "treefmt-nix": "treefmt-nix"
       }
     },
@@ -275,6 +276,22 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "starship": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759167003,
+        "narHash": "sha256-rezlCokwNXzxdZsLRi9iVTGqKkERKiY3gRLGvY9s5JM=",
+        "owner": "starship",
+        "repo": "starship",
+        "rev": "f7d583821a01d2429cef1f243228aa04055f4760",
+        "type": "github"
+      },
+      "original": {
+        "owner": "starship",
+        "repo": "starship",
         "type": "github"
       }
     },
