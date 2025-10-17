@@ -18,6 +18,7 @@ let
     catppuccin
     nushell
     usbutils
+    ssh
   ];
 
   homeModules = with config.flake.modules.homeManager; [
@@ -31,7 +32,6 @@ let
     git
     jujutsu
     gpg
-    ssh
     nixCats
   ];
 in
