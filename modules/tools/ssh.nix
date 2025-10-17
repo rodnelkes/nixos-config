@@ -9,7 +9,19 @@ in
   flake.modules = {
     nixos.ssh = {
       programs.ssh.startAgent = true;
-      services.openssh.enable = true;
+
+      services.openssh = {
+        enable = true;
+        settings = {
+          PasswordAuthentication = false;
+          KbdInteractiveAuthentication = false;
+        };
+      };
+
+      users.users.rodnelkes.openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpTlwHpvrCyOBYGWYKpFM7Q0OYC8bP39gKU4jpK8AWp rodnelkes@boobookeys"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKurK9YCamIm7bit5PNj0DMVHs2R8oQXT0ZAaniI3jsz rodnelkes@bingle"
+      ];
     };
 
     homeManager.ssh = {
