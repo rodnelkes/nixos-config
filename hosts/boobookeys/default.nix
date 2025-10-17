@@ -18,6 +18,7 @@ let
     catppuccin
     nushell
     usbutils
+    distributed-builds
   ];
 
   homeModules = with config.flake.modules.homeManager; [
