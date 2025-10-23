@@ -2,15 +2,7 @@
 
 {
   nix = {
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-
-      flake-registry = "";
-    };
-
+    settings.flake-registry = "";
     nixPath = [ "nixpkgs=${sources.nixpkgs.outPath}" ];
   };
 
