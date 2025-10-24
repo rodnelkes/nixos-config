@@ -10,6 +10,4 @@
       hashedPasswordFile = config.age.secrets.user_password.path;
     };
   };
-
-  # wsl.wsl.defaultUser = bupkes.user.username;
 }
