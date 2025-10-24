@@ -119,6 +119,19 @@
       "url": "https://github.com/NixOS/nixpkgs/archive/01f116e4df6a15f4ccdffb1bcd41096869fb385c.tar.gz",
       "hash": "1vlmhgh1zdr00afxzsd7kfaynkc9zif0kwmbjmzvb1nqrwj05x3z"
     },
+    "npins": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "andir",
+        "repo": "npins"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "f4e3698681704e74196fa0f905c7dfdd43cf5c86",
+      "url": "https://github.com/andir/npins/archive/f4e3698681704e74196fa0f905c7dfdd43cf5c86.tar.gz",
+      "hash": "0xbniv9lnjgk2vpyjv525bachayxjshlw6ny8jjfj1b4rf524ngj"
+    },
     "starship": {
       "type": "Git",
       "repository": {
