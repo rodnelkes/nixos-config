@@ -1,4 +1,4 @@
-{ config, ... }:
+{ bupkes, config, ... }:
 
 {
   hm = {
@@ -7,8 +7,8 @@
 
       settings = {
         user = {
-          name = "Zayen Yusuf";
-          email = "rodnelkes@gmail.com";
+          name = bupkes.user.fullName;
+          email = bupkes.user.email;
         };
 
         signing = {
