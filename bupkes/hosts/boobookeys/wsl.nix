@@ -6,7 +6,7 @@
 }:
 
 {
-  imports = [ (import sources.NixOS-WSL).nixosModules.default ];
+  imports = [ (import "${sources.NixOS-WSL}/modules") ];
 
   environment.systemPackages = with pkgs; [ usbutils ];
 
