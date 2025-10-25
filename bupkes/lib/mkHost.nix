@@ -7,12 +7,11 @@ let
 
   configDirectory = "${bupkes.user.homeDirectory}/nixos-config";
   applyPath = localPath: (/. + "/${configDirectory}/${localPath}");
-  modules = [
+  modulePaths = map applyPath [
     "system"
     "programs"
     "hosts/${hostVars.hostname}"
   ];
-  modulePaths = map applyPath modules;
 in
 nixosSystem {
   inherit (hostVars) system;
