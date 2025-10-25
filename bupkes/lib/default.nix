@@ -7,9 +7,13 @@
 
 let
   inherit (pkgs) callPackage;
+  inherit (pkgs.lib) concatMapAttrs;
+
+  mkFunction = name: attrs: callPackage (./. + "/${name}.nix") attrs;
+  mkFunctions = concatMapAttrs (name: attrs: { ${name} = mkFunction name attrs; });
 in
-{
-  recursivelyImport = callPackage ./recursivelyImport.nix { };
-  mkHost = callPackage ./mkHost.nix { inherit sources bupkes; };
-  mkHosts = callPackage ./mkHosts.nix { inherit bupkes; };
+mkFunctions {
+  recursivelyImport = { };
+  mkHost = { inherit sources bupkes; };
+  mkHosts = { inherit bupkes; };
 }
