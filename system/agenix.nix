@@ -8,6 +8,7 @@
 
 let
   inherit (lib) foldl recursiveUpdate;
+  inherit (pkgs) callPackage;
 
   mkSecret = name: {
     ${name} = {
@@ -22,7 +23,7 @@ in
     (import "${sources.agenix}/modules/age.nix")
   ];
 
-  environment.systemPackages = [ (pkgs.callPackage "${sources.agenix}/pkgs/agenix.nix" { }) ];
+  hm.home.packages = [ (callPackage "${sources.agenix}/pkgs/agenix.nix" { }) ];
 
   age.secrets = foldl recursiveUpdate { } (
     map mkSecret [
