@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ sources, pkgs, ... }:
 
+let
+  inherit (pkgs) callPackage;
+in
 {
-  hm.home.packages = with pkgs; [ npins ];
+  hm.home.packages = [ (callPackage "${sources.npins}/npins.nix" { }) ];
 }
