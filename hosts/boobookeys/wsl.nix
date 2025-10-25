@@ -8,7 +8,7 @@
 {
   imports = [ (import "${sources.NixOS-WSL}/modules") ];
 
-  environment.systemPackages = with pkgs; [ usbutils ];
+  hm.home.packages = with pkgs; [ usbutils ];
 
   wsl = {
     enable = true;
