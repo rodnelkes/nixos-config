@@ -28,7 +28,7 @@ let
         ./system
         ./programs
 
-        ./bupkes/hosts/${hostVars.hostname}
+        ./hosts/${hostVars.hostname}
         {
           nixpkgs.hostPlatform.system = hostVars.system;
           system.stateVersion = hostVars.stateVersion;
