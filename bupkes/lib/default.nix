@@ -11,4 +11,5 @@ in
 {
   recursivelyImport = callPackage ./recursivelyImport.nix { };
   mkHost = callPackage ./mkHost.nix { inherit sources bupkes; };
+  mkHosts = callPackage ./mkHosts.nix { inherit bupkes; };
 }
