@@ -1,6 +1,5 @@
-{
-  lib,
-}:
+{ lib, ... }:
+
 let
   inherit (lib) concatMap hasSuffix;
   inherit (builtins) isPath filter readFileType;

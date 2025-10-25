@@ -1,40 +1,9 @@
 let
   sources = import ./bupkes/npins;
   pkgs = import sources.nixpkgs { };
+  bupkes = import ./bupkes { inherit sources pkgs bupkes; };
 
-  nixosSystem = import "${sources.nixpkgs}/nixos/lib/eval-config.nix";
-
-  bupkes = {
-    lib = import ./bupkes/lib { inherit pkgs; };
-    user = import ./bupkes/user.nix;
-  };
-
-  mkHost =
-    hostVars:
-    nixosSystem {
-      inherit (hostVars) system;
-
-      specialArgs = {
-        inherit sources;
-        bupkes =
-          bupkes
-          // hostVars
-          // {
-            configDirectory = "${bupkes.user.homeDirectory}/nixos-config";
-          };
-      };
-
-      modules = bupkes.lib.recursivelyImport [
-        ./system
-        ./programs
-
-        ./hosts/${hostVars.hostname}
-        {
-          nixpkgs.hostPlatform.system = hostVars.system;
-          system.stateVersion = hostVars.stateVersion;
-        }
-      ];
-    };
+  inherit (bupkes.lib) mkHost;
 in
 {
   boobookeys = mkHost {
