@@ -48,9 +48,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5c71d4a730bd3c972befff343bb074421e345937",
-      "url": "https://github.com/nix-community/home-manager/archive/5c71d4a730bd3c972befff343bb074421e345937.tar.gz",
-      "hash": "sha256-QxCyKWBmuzI+eMhYV1JmbZsiUnBNATRP1EW34OBt5Vg="
+      "revision": "c644cb018f9fdec55f5ac2afb4713a8c7beb757c",
+      "url": "https://github.com/nix-community/home-manager/archive/c644cb018f9fdec55f5ac2afb4713a8c7beb757c.tar.gz",
+      "hash": "sha256-6LNSptFYhiAd0M/maJoixJw7V0Kp5BSoMRtIahcfu3M="
     },
     "lix": {
       "type": "Git",
@@ -141,9 +141,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "3749d67025d7606788dcb4be54fae5697f6a3dc9",
-      "url": "https://github.com/starship/starship/archive/3749d67025d7606788dcb4be54fae5697f6a3dc9.tar.gz",
-      "hash": "sha256-LYW2cjzdYigAvMi5k0H2jwW//q3bIMABAUOcILKFsoI="
+      "revision": "699a005c0d1f28f2e65ca4541774200c55a977f0",
+      "url": "https://github.com/starship/starship/archive/699a005c0d1f28f2e65ca4541774200c55a977f0.tar.gz",
+      "hash": "sha256-pLfvHpcZhHWd5gQ0Layl5NUPchKvuL1jVfF6xR2Fimo="
     }
   },
   "version": 7
