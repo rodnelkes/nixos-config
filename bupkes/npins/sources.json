@@ -39,6 +39,19 @@
       "url": "https://github.com/catppuccin/nix/archive/f5b21876888265d2fee7fb0640d1b66a1c1c6503.tar.gz",
       "hash": "sha256-sOKx2YcHa+lWEvaEOIGqLN2WWk1Wf5z6KM02tdfhMtw="
     },
+    "disko": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "disko"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "3a9450b26e69dcb6f8de6e2b07b3fc1c288d85f5",
+      "url": "https://github.com/nix-community/disko/archive/3a9450b26e69dcb6f8de6e2b07b3fc1c288d85f5.tar.gz",
+      "hash": "sha256-y7UhnWlER8r776JsySqsbTUh2Txf7K30smfHlqdaIQw="
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
