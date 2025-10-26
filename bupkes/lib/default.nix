@@ -6,11 +6,11 @@
 }:
 
 let
+  inherit (builtins) mapAttrs;
   inherit (pkgs) callPackage;
-  inherit (pkgs.lib) concatMapAttrs;
 
   mkFunction = name: attrs: callPackage (./. + "/${name}.nix") attrs;
-  mkFunctions = concatMapAttrs (name: attrs: { ${name} = mkFunction name attrs; });
+  mkFunctions = mapAttrs (name: attrs: mkFunction name attrs);
 in
 mkFunctions {
   recursivelyImport = { };
