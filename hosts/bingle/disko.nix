@@ -19,6 +19,7 @@ let
       "root"
       "home"
       "nix"
+      "persistent"
     ]
   );
 in

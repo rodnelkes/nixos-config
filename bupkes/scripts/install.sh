@@ -12,8 +12,8 @@ trap cleanup EXIT
 function copy_installation_keys() {
     cd ~/nixos-config/bupkes/secrets/ || exit
 
-    install -d -m755 "${temp}/etc/ssh"
-    output_path=${temp}/etc/ssh/ssh_host_ed25519_key
+    install -d -m755 "${temp}/persistent/etc/ssh"
+    output_path=${temp}/persistent/etc/ssh/ssh_host_ed25519_key
 
     agenix -d installation_key.age >"${output_path}"
     chmod 600 "${output_path}"
