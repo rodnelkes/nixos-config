@@ -47,12 +47,17 @@ in
             root = {
               size = "100%";
               content = {
-                type = "btrfs";
-                extraArgs = [ "-f" ];
-                subvolumes = recursiveUpdate btrfsSubvolumes {
-                  "/swap" = {
-                    mountpoint = "/.swapvol";
-                    swap.swapfile.size = "6G";
+                type = "luks";
+                name = "crypted";
+                settings.allowDiscards = true;
+                content = {
+                  type = "btrfs";
+                  extraArgs = [ "-f" ];
+                  subvolumes = recursiveUpdate btrfsSubvolumes {
+                    "/swap" = {
+                      mountpoint = "/.swapvol";
+                      swap.swapfile.size = "6G";
+                    };
                   };
                 };
               };
