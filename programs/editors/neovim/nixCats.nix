@@ -41,6 +41,11 @@ in
         { pkgs, ... }:
         {
           lspsAndRuntimeDeps = {
+            bash = with pkgs; [
+              bash-language-server
+              shfmt
+            ];
+
             lua = with pkgs; [
               lua-language-server
               stylua
@@ -111,6 +116,7 @@ in
             categories = {
               general = true;
               colorschemes = true;
+              bash = true;
               lua = true;
               nix = true;
               cmp = true;
