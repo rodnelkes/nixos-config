@@ -10,15 +10,13 @@ function cleanup() {
 trap cleanup EXIT
 
 function copy_installation_keys() {
-    install -d -m755 "${temp}/etc/ssh"
     cd ~/nixos-config/bupkes/secrets/ || exit
 
-    for type in ed25519 rsa; do
-        output_path=${temp}/etc/ssh/ssh_host_${type}_key
+    install -d -m755 "${temp}/etc/ssh"
+    output_path=${temp}/etc/ssh/ssh_host_ed25519_key
 
-        agenix -d installation_key.age >"${output_path}"
-        chmod 600 "${output_path}"
-    done
+    agenix -d installation_key.age >"${output_path}"
+    chmod 600 "${output_path}"
 
     cd ../../
 }
