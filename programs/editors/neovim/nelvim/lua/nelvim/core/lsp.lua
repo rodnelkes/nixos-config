@@ -2,7 +2,7 @@ vim.lsp.config("*", {
 	root_markers = { ".git", ".jj" },
 })
 
-vim.lsp.enable({ "lua_ls", "nixd" })
+vim.lsp.enable({ "bashls", "lua_ls", "nixd" })
 
 vim.diagnostic.config({
 	virtual_lines = true,
