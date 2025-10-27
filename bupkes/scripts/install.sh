@@ -1,29 +1,46 @@
 #!/run/current-system/sw/bin/bash
 
-cd ~/nixos-config/ || exit
-
-ip=$2
 hostname=$1
-
+ip=$2
 temp=$(mktemp -d)
 
-cleanup() {
+function cleanup() {
     rm -rf "${temp}"
 }
 trap cleanup EXIT
 
-install -d -m755 "${temp}/etc/ssh"
-cd ./bupkes/secrets/ || exit
+function copy_installation_keys() {
+    install -d -m755 "${temp}/etc/ssh"
+    cd ~/nixos-config/bupkes/secrets/ || exit
 
-for type in ed25519 rsa; do
-    output_path=${temp}/etc/ssh/ssh_host_${type}_key
+    for type in ed25519 rsa; do
+        output_path=${temp}/etc/ssh/ssh_host_${type}_key
 
-    agenix -d installation_key.age >"${output_path}"
-    chmod 600 "${output_path}"
-done
+        agenix -d installation_key.age >"${output_path}"
+        chmod 600 "${output_path}"
+    done
 
-cd ../../
+    cd ../../
+}
 
-build_host=$(nom-build -A "${hostname}".config.system.build.diskoScript -A "${hostname}".config.system.build.toplevel --no-out-link)
-# shellcheck disable=SC2086
-nix run github:nix-community/nixos-anywhere -- --extra-files "${temp}" --store-paths ${build_host} root@"${ip}"
+function build_host() {
+    nom-build \
+        -A "${hostname}".config.system.build.diskoScript \
+        -A "${hostname}".config.system.build.toplevel \
+        --no-out-link
+}
+
+function nixos_anywhere() {
+    # shellcheck disable=SC2086
+    nix run github:nix-community/nixos-anywhere -- \
+        --extra-files "${temp}" \
+        --store-paths $1 \
+        root@"${ip}"
+}
+
+function create_host() {
+    copy_installation_keys
+    nixos_anywhere "$(build_host)"
+}
+
+create_host
