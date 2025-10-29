@@ -23,6 +23,8 @@ in
       hideMounts = true;
 
       directories = [
+        "/etc/NetworkManager/system-connections"
+
         "/run/agenix"
         "/run/agenix.d"
 
