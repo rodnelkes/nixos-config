@@ -11,7 +11,11 @@ in
 {
   imports = [ (import "${sources.impermanence}/nixos.nix") ];
 
-  age.identityPaths = [ "/persistent/etc/ssh/ssh_host_ed25519_key" ];
+  age = {
+    identityPaths = [ "/persistent/etc/ssh/ssh_host_ed25519_key" ];
+    secretsDir = "/persistent/run/agenix";
+    secretsMountPoint = "/persistent/run/agenix.d";
+  };
 
   environment.persistence = {
     "/persistent" = {
@@ -19,6 +23,9 @@ in
       hideMounts = true;
 
       directories = [
+        "/run/agenix"
+        "/run/agenix.d"
+
         "/var/log"
         "/var/lib/nixos"
         "/var/lib/systemd"
