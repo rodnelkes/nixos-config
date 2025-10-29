@@ -2,7 +2,6 @@
   sources,
   lib,
   bupkes,
-  config,
   ...
 }:
 
@@ -50,7 +49,7 @@ in
       # bash
       ''
         mkdir /btrfs_tmp
-        mount ${config.disko.devices.disk.main.content.partitions.root.device} /btrfs_tmp
+        mount /dev/mapper/crypted /btrfs_tmp
         if [[ -e /btrfs_tmp/root ]]; then
           mkdir -p /btrfs_tmp/old_roots
           timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
