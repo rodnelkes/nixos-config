@@ -14,9 +14,9 @@ delete_subvolume_recursively() {
     btrfs subvolume delete "$1"
 }
 
-for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
+while IFS= read -r -d '' i; do
     delete_subvolume_recursively "$i"
-done
+done < <(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30 -print0)
 
 btrfs subvolume create /btrfs_tmp/root
 umount /btrfs_tmp
