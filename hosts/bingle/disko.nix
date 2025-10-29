@@ -17,7 +17,6 @@ let
   btrfsSubvolumes = mergeAttrsList (
     map mkBtrfsSubvolume [
       "root"
-      "home"
       "nix"
       "persistent"
     ]
