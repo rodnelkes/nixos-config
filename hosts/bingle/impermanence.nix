@@ -46,7 +46,9 @@ in
           ".ssh"
           "nixos-config"
         ];
-        files = [ ];
+        files = [
+          ".config/nushell/history.txt"
+        ];
       };
     };
   };
