@@ -1,6 +1,10 @@
 { config, bupkes, ... }:
 
 {
+  security.sudo.extraConfig = ''
+    Defaults lecture = never
+  '';
+
   users = {
     mutableUsers = false;
 
