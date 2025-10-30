@@ -25,10 +25,14 @@ in
 
   hm.home.packages = [ (callPackage "${sources.agenix}/pkgs/agenix.nix" { }) ];
 
-  age.secrets = foldl recursiveUpdate { } (
-    map mkSecret [
-      "user_password"
-      "github"
-    ]
-  );
+  age = {
+    identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
+    secrets = foldl recursiveUpdate { } (
+      map mkSecret [
+        "user_password"
+        "github"
+      ]
+    );
+  };
 }
