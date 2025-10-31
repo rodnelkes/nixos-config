@@ -11,6 +11,13 @@ in
 {
   imports = [ (import "${sources.impermanence}/nixos.nix") ];
 
+  services.openssh.hostKeys = [
+    {
+      path = "/persistent/etc/ssh/ssh_host_ed25519_key";
+      type = "ed25519";
+    }
+  ];
+
   age = {
     identityPaths = [ "/persistent/etc/ssh/ssh_host_ed25519_key" ];
     secretsDir = "/persistent/run/agenix";
