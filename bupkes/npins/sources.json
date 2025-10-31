@@ -170,6 +170,19 @@
       "revision": "699a005c0d1f28f2e65ca4541774200c55a977f0",
       "url": "https://github.com/starship/starship/archive/699a005c0d1f28f2e65ca4541774200c55a977f0.tar.gz",
       "hash": "sha256-pLfvHpcZhHWd5gQ0Layl5NUPchKvuL1jVfF6xR2Fimo="
+    },
+    "zen-browser": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "26142b84460636c55bd612ae67225056c7faf134",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/26142b84460636c55bd612ae67225056c7faf134.tar.gz",
+      "hash": "sha256-5C2x+ZQQZAAy0LowYgacT1KG83nXxjcYKMzedx89Wtw="
     }
   },
   "version": 7
