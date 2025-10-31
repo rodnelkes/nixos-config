@@ -332,7 +332,6 @@ window-rule {
 window-rule {
     match app-id=r#"zen-twilight$"# title="^Picture-in-Picture$"
     open-floating true
-    open-maximized true
 }
 
 // Example: block out two password managers from screen capture.
