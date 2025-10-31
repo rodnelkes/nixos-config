@@ -7,25 +7,27 @@
 
 let
   inherit (lib) mkAfter readFile;
+
+  persistentDevice = "/persistent";
 in
 {
   imports = [ (import "${sources.impermanence}/nixos.nix") ];
 
   services.openssh.hostKeys = [
     {
-      path = "/persistent/etc/ssh/ssh_host_ed25519_key";
+      path = "${persistentDevice}/etc/ssh/ssh_host_ed25519_key";
       type = "ed25519";
     }
   ];
 
   age = {
-    identityPaths = [ "/persistent/etc/ssh/ssh_host_ed25519_key" ];
-    secretsDir = "/persistent/run/agenix";
-    secretsMountPoint = "/persistent/run/agenix.d";
+    identityPaths = [ "${persistentDevice}/etc/ssh/ssh_host_ed25519_key" ];
+    secretsDir = "${persistentDevice}/run/agenix";
+    secretsMountPoint = "${persistentDevice}/run/agenix.d";
   };
 
   environment.persistence = {
-    "/persistent" = {
+    ${persistentDevice} = {
       enable = true;
       hideMounts = true;
 
@@ -58,7 +60,7 @@ in
     };
   };
 
-  fileSystems."/persistent".neededForBoot = true;
+  fileSystems.${persistentDevice}.neededForBoot = true;
 
   boot.initrd.postResumeCommands = mkAfter (readFile ./btrfs-wipe.sh);
 }
