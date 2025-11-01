@@ -2,7 +2,8 @@
 
 let
   inherit (pkgs) callPackage;
+  npins = callPackage "${sources.npins}/npins.nix" { };
 in
 {
-  hm.home.packages = [ (callPackage "${sources.npins}/npins.nix" { }) ];
+  environment.systemPackages = [ npins ];
 }

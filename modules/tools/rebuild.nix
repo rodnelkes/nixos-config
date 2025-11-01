@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  hm.home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     nixos-rebuild-ng
     dix
     nix-output-monitor
