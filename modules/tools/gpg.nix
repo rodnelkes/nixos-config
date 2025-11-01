@@ -1,12 +1,10 @@
 { pkgs, ... }:
 
 {
+  environment.systemPackages = [ pkgs.pinentry-tty ];
+
   hm = {
     programs.gpg.enable = true;
-
-    home.packages = with pkgs; [
-      pinentry-tty
-    ];
 
     services.gpg-agent = {
       enable = true;

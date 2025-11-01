@@ -10,6 +10,8 @@ let
   inherit (lib) foldl recursiveUpdate;
   inherit (pkgs) callPackage;
 
+  agenix = callPackage "${sources.agenix}/pkgs/agenix.nix" { };
+
   mkSecret = name: {
     ${name} = {
       file = /. + "${bupkes.host.configDirectory}/bupkes/secrets/${name}.age";
@@ -23,7 +25,7 @@ in
     (import "${sources.agenix}/modules/age.nix")
   ];
 
-  hm.home.packages = [ (callPackage "${sources.agenix}/pkgs/agenix.nix" { }) ];
+  environment.systemPackages = [ agenix ];
 
   age = {
     identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
