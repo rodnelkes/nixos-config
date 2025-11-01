@@ -17,7 +17,11 @@ nixosSystem {
 
   specialArgs = {
     inherit sources;
-    bupkes = bupkes // hostVars // { inherit configDirectory; };
+    bupkes = bupkes // {
+      host = hostVars // {
+        inherit configDirectory;
+      };
+    };
   };
 
   modules = recursivelyImport modulePaths ++ [
