@@ -9,7 +9,7 @@ let
 
   utils = import "${sources.nixCats}/utils";
 
-  nelvim_path = "${bupkes.configDirectory}/modules/editors/neovim/nelvim";
+  nelvim_path = "${bupkes.host.configDirectory}/modules/editors/neovim/nelvim";
 in
 {
   hm = {

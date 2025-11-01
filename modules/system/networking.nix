@@ -2,6 +2,6 @@
 
 {
   networking = {
-    hostName = bupkes.hostname;
+    hostName = bupkes.host.hostname;
   };
 }

@@ -12,7 +12,7 @@ let
 
   mkSecret = name: {
     ${name} = {
-      file = /. + "${bupkes.configDirectory}/bupkes/secrets/${name}.age";
+      file = /. + "${bupkes.host.configDirectory}/bupkes/secrets/${name}.age";
       mode = "0400";
       owner = bupkes.user.username;
     };
