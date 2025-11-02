@@ -106,18 +106,18 @@
       "url": "https://git.lix.systems/lix-project/nixos-module/archive/7c31a18259b8358ac196cf803a26967c0fa1d3e4.tar.gz",
       "hash": "sha256-n5dRAIC3/78drQtFxmQRrBLd6TKfotUnX7GWu0mAcSg="
     },
-    "nixCats": {
+    "mnw": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "BirdeeHub",
-        "repo": "nixCats-nvim"
+        "owner": "Gerg-L",
+        "repo": "mnw"
       },
-      "branch": "main",
+      "branch": "master",
       "submodules": false,
-      "revision": "77dffad8235eb77684fcb7599487c8e9f23d5b8f",
-      "url": "https://github.com/BirdeeHub/nixCats-nvim/archive/77dffad8235eb77684fcb7599487c8e9f23d5b8f.tar.gz",
-      "hash": "sha256-boRlBQ/c4CaHsK/z04QL6+t81mcar37Io94HBX2GflY="
+      "revision": "cfbc7d1cc832e318d0863a5fc91d940a96034001",
+      "url": "https://github.com/Gerg-L/mnw/archive/cfbc7d1cc832e318d0863a5fc91d940a96034001.tar.gz",
+      "hash": "sha256-Y7IvY4F8vajZyp3WGf+KaiIVwondEkMFkt92Cr9NZmg="
     },
     "nixos-hardware": {
       "type": "Git",
