@@ -6,7 +6,7 @@
   hm = {
     programs.nushell = {
       enable = true;
-      extraConfig = builtins.readFile ./config.toml;
+      extraConfig = builtins.readFile ./config.nu;
     };
   };
 }
