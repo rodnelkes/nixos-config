@@ -13,8 +13,6 @@ let
   ];
 in
 nixosSystem {
-  inherit (hostVars) system;
-
   specialArgs = {
     inherit sources;
     bupkes = bupkes // {
