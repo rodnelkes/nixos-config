@@ -28,6 +28,7 @@ nixosSystem {
     {
       nixpkgs.hostPlatform.system = hostVars.system;
       system.stateVersion = hostVars.stateVersion;
+      nixpkgs.config.allowUnfree = true;
     }
   ];
 }
