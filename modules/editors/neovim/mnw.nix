@@ -29,7 +29,7 @@ let
 
       # nix
       nixd
-      nixfmt-rfc-style
+      nixfmt
     ];
 
     plugins = {
