@@ -13,6 +13,19 @@
       "url": "https://github.com/nix-community/NixOS-WSL/archive/38a5250e57f583662eac3b944830e4b9e169e965.tar.gz",
       "hash": "sha256-RY9kJDXD6+2Td/59LkZ0PFSereCXHdBX9wIkbYjRKCY="
     },
+    "adios": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "llakala",
+        "repo": "adios"
+      },
+      "branch": "providers-and-consumers",
+      "submodules": false,
+      "revision": "afc20fccb37766259908482bfd59139b2ad6828e",
+      "url": "https://github.com/llakala/adios/archive/afc20fccb37766259908482bfd59139b2ad6828e.tar.gz",
+      "hash": "sha256-rKcmnyW1Wd3MLpVg8+afu2m8SL+CnCiqNNYmZHgqsXo="
+    },
     "agenix": {
       "type": "Git",
       "repository": {

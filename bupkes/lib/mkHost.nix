@@ -1,4 +1,4 @@
-{ sources, bupkes, ... }:
+{ sources, pkgs, bupkes, ... }:
 
 hostVars:
 let
@@ -19,6 +19,7 @@ nixosSystem {
       host = hostVars // {
         inherit configDirectory;
       };
+      wrappers = import ../../wrappers { inherit sources pkgs bupkes; };
     };
   };
 
