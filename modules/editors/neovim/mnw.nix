@@ -46,8 +46,17 @@ let
         mini-indentscope
         conform-nvim
         indent-blankline-nvim
-        nvim-treesitter.withAllGrammars
         blink-nerdfont-nvim
+
+        # treesitter
+        (nvim-treesitter.withPlugins (
+          p: with p; [
+            bash
+            nu
+            lua
+            nix
+          ]
+        ))
 
         # colorschemes
         catppuccin-nvim
