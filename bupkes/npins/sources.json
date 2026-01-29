@@ -39,19 +39,6 @@
       "url": "https://github.com/ryantm/agenix/archive/fcdea223397448d35d9b31f798479227e80183f6.tar.gz",
       "hash": "sha256-wyT7Pl6tMFbFrs8Lk/TlEs81N6L+VSybPfiIgzU8lbQ="
     },
-    "catppuccin": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "catppuccin",
-        "repo": "nix"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "d7a8632c0d8d144478aac1a8c8d5083b770cbb03",
-      "url": "https://github.com/catppuccin/nix/archive/d7a8632c0d8d144478aac1a8c8d5083b770cbb03.tar.gz",
-      "hash": "sha256-q4arZjXnLiuMnLzO972lrXIGdzyGb4DGaIt69CcCYdE="
-    },
     "disko": {
       "type": "Git",
       "repository": {
