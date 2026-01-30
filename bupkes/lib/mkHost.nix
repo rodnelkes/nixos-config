@@ -1,4 +1,9 @@
-{ sources, pkgs, bupkes, ... }:
+{
+  sources,
+  pkgs,
+  bupkes,
+  ...
+}:
 
 hostVars:
 let
