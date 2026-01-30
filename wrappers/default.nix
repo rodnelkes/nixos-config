@@ -25,6 +25,9 @@ let
       "/bupkes" = {
         inherit (bupkes) lib user;
       };
+      "/catppuccin" = {
+        nushell = sources.catppuccin-nushell.outPath;
+      };
     };
   };
 in
