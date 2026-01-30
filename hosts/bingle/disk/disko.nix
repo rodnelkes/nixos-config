@@ -1,7 +1,6 @@
 { sources, lib, ... }:
 
 let
-  inherit (builtins) map;
   inherit (lib) mergeAttrsList recursiveUpdate;
 
   mkBtrfsSubvolume = name: {

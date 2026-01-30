@@ -1,12 +1,7 @@
 { sources, lib, ... }:
 
 let
-  inherit (builtins)
-    fromTOML
-    readFile
-    replaceStrings
-    map
-    ;
+  inherit (builtins) readFile replaceStrings;
   inherit (lib) foldl recursiveUpdate;
 
   jetpackConfig = fromTOML (readFile "${sources.starship}/docs/public/presets/toml/jetpack.toml");
