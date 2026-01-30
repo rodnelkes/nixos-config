@@ -10,7 +10,7 @@ require("oil").setup({
 	preview_win = {
 		update_on_cursor_moved = true,
 		preview_method = "fast_scratch",
-		disable_preview = function(filename)
+		disable_preview = function(_)
 			return false
 		end,
 		win_options = {},
