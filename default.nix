@@ -12,7 +12,7 @@ mkHosts {
   };
 
   bingle = {
-    stateVersion = "25.11";
+    stateVersion = "26.05";
     system = "x86_64-linux";
   };
 }
