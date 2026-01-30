@@ -39,6 +39,19 @@
       "url": "https://github.com/ryantm/agenix/archive/fcdea223397448d35d9b31f798479227e80183f6.tar.gz",
       "hash": "sha256-wyT7Pl6tMFbFrs8Lk/TlEs81N6L+VSybPfiIgzU8lbQ="
     },
+    "catppuccin-nushell": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "nushell"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "815dfc6ea61f2746ff27b54ef425cfeb7b51dda8",
+      "url": "https://github.com/catppuccin/nushell/archive/815dfc6ea61f2746ff27b54ef425cfeb7b51dda8.tar.gz",
+      "hash": "sha256-124T2pCmwirl8eLAy3h1fDOQZJf//3KJ7GwIP+u6YQ4="
+    },
     "disko": {
       "type": "Git",
       "repository": {

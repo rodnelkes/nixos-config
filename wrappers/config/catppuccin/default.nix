@@ -1,4 +1,4 @@
-_:
+{ types, ... }:
 
 {
   name = "catppuccin";
@@ -7,18 +7,18 @@ _:
     nixpkgs.path = "/nixpkgs";
   };
 
+  options = {
+    nushell = {
+      type = types.pathLike;
+    };
+  };
+
   mutations = {
     "/nushell".configPaths =
-      { inputs }:
+      { inputs, options }:
       let
-        inherit (inputs.nixpkgs.pkgs) fetchFromGitHub writeText;
-
-        catppuccinNushell = fetchFromGitHub {
-          owner = "catppuccin";
-          repo = "nushell";
-          rev = "815dfc6ea61f2746ff27b54ef425cfeb7b51dda8";
-          hash = "sha256-124T2pCmwirl8eLAy3h1fDOQZJf//3KJ7GwIP+u6YQ4=";
-        };
+        inherit (inputs.nixpkgs.pkgs) writeText;
+        catppuccinNushell = options.nushell;
 
         config =
           writeText "nushell-catppuccin-mocha"
