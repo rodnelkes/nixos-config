@@ -2,7 +2,12 @@
 
 let
   inherit (lib) hasSuffix;
-  inherit (builtins) concatMap isPath filter readFileType;
+  inherit (builtins)
+    concatMap
+    isPath
+    filter
+    readFileType
+    ;
 
   expandIfFolder =
     elem:

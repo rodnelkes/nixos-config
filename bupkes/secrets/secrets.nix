@@ -2,8 +2,10 @@ let
   inherit (builtins) attrValues;
 
   users = {
-    "rodnelkes@boobookeys" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpTlwHpvrCyOBYGWYKpFM7Q0OYC8bP39gKU4jpK8AWp rodnelkes@boobookeys";
-    "rodnelkes@bingle" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLJYTglmXdImiJAEzB3O5iLEGA/ckC+Jjta852RtQPj rodnelkes@bingle";
+    "rodnelkes@boobookeys" =
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpTlwHpvrCyOBYGWYKpFM7Q0OYC8bP39gKU4jpK8AWp rodnelkes@boobookeys";
+    "rodnelkes@bingle" =
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLJYTglmXdImiJAEzB3O5iLEGA/ckC+Jjta852RtQPj rodnelkes@bingle";
   };
   systems = {
     boobookeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKtDEDKhmXloobbC2FRZgfbfVREU94CJn75JFv8eJlMG root@boobookeys";
