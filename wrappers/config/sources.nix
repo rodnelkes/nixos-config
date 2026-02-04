@@ -6,5 +6,6 @@
   options = {
     catppuccin-nushell.type = types.attrs;
     catppuccin-fzf.type = types.attrs;
+    starship.type = types.attrs;
   };
 }

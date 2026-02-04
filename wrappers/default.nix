@@ -20,7 +20,7 @@ let
   tree = adios root {
     options = {
       "/sources" = {
-        inherit (sources) catppuccin-nushell catppuccin-fzf;
+        inherit (sources) catppuccin-nushell catppuccin-fzf starship;
       };
       "/nixpkgs" = {
         inherit pkgs lib;
