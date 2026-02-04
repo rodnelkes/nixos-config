@@ -136,14 +136,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "NixOS",
+        "owner": "8bitbuddhist",
         "repo": "nixos-hardware"
       },
-      "branch": "master",
+      "branch": "surface-kernel-6.18",
       "submodules": false,
-      "revision": "a351494b0e35fd7c0b7a1aae82f0afddf4907aa8",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/a351494b0e35fd7c0b7a1aae82f0afddf4907aa8.tar.gz",
-      "hash": "sha256-QEDtctEkOsbx8nlFh4yqPEOtr4tif6KTqWwJ37IM2ds="
+      "revision": "ac6458d3bcef09b40317be72e2b4f3795936732c",
+      "url": "https://github.com/8bitbuddhist/nixos-hardware/archive/ac6458d3bcef09b40317be72e2b4f3795936732c.tar.gz",
+      "hash": "sha256-aH00WqZJmnefVAXZSV2I46KwIm6b960oUeoQMRjROno="
     },
     "nixpkgs": {
       "type": "Git",
