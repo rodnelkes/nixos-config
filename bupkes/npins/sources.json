@@ -22,9 +22,9 @@
       },
       "branch": "providers-and-consumers",
       "submodules": false,
-      "revision": "afc20fccb37766259908482bfd59139b2ad6828e",
-      "url": "https://github.com/llakala/adios/archive/afc20fccb37766259908482bfd59139b2ad6828e.tar.gz",
-      "hash": "sha256-rKcmnyW1Wd3MLpVg8+afu2m8SL+CnCiqNNYmZHgqsXo="
+      "revision": "43b702d3e12ffdb83fac9595e8f5a2b75b72924c",
+      "url": "https://github.com/llakala/adios/archive/43b702d3e12ffdb83fac9595e8f5a2b75b72924c.tar.gz",
+      "hash": "sha256-y9DBNimoOvxQnKp0lyBClUHrl8HkjgDFkhnlrAUvXVE="
     },
     "agenix": {
       "type": "Git",
@@ -35,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fcdea223397448d35d9b31f798479227e80183f6",
-      "url": "https://github.com/ryantm/agenix/archive/fcdea223397448d35d9b31f798479227e80183f6.tar.gz",
-      "hash": "sha256-wyT7Pl6tMFbFrs8Lk/TlEs81N6L+VSybPfiIgzU8lbQ="
+      "revision": "b027ee29d959fda4b60b57566d64c98a202e0feb",
+      "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
+      "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
     "catppuccin-nushell": {
       "type": "Git",
@@ -74,9 +74,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "bd9f031efc634be4b80c5090b9171cc3a9f8e49c",
-      "url": "https://github.com/nix-community/home-manager/archive/bd9f031efc634be4b80c5090b9171cc3a9f8e49c.tar.gz",
-      "hash": "sha256-hGwdJ/+oo+IRo2TiWV/V8BWWptQihcdFV/olTONaHqg="
+      "revision": "4fda26500b4539e0a1e3afba9f0e1616bdad4f85",
+      "url": "https://github.com/nix-community/home-manager/archive/4fda26500b4539e0a1e3afba9f0e1616bdad4f85.tar.gz",
+      "hash": "sha256-mQgOAYWlVJyuyXjZN6yxqXWyODvQI5P/UZUCU7IOuYo="
     },
     "impermanence": {
       "type": "Git",
@@ -101,9 +101,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "56988d860593a5fd8153d02a0ca5469508378626",
-      "url": "https://git.lix.systems/lix-project/lix/archive/56988d860593a5fd8153d02a0ca5469508378626.tar.gz",
-      "hash": "sha256-5uTyRsiYsuYEjkPeHKXy/j+bO6asdP8o3hjPlwi27cs="
+      "revision": "8b73cbbb67621934ba065c2e4f581fe3988bd7e7",
+      "url": "https://git.lix.systems/lix-project/lix/archive/8b73cbbb67621934ba065c2e4f581fe3988bd7e7.tar.gz",
+      "hash": "sha256-3MZ9z9axqXek+FsAsUt7e/GNRYm49OYqli4d3UvI0sY="
     },
     "lix-nixos-module": {
       "type": "Git",
@@ -128,9 +128,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "ee5e11d0d7f6a6cda68559c1a34b5392c3b1b1eb",
-      "url": "https://github.com/Gerg-L/mnw/archive/ee5e11d0d7f6a6cda68559c1a34b5392c3b1b1eb.tar.gz",
-      "hash": "sha256-SgZOSmsbJN+oPDVZyavctrkjQYDCWtoJ3uhlzQChb6s="
+      "revision": "94d9574bed4b935513485fb05bcc1d7e21dc0a19",
+      "url": "https://github.com/Gerg-L/mnw/archive/94d9574bed4b935513485fb05bcc1d7e21dc0a19.tar.gz",
+      "hash": "sha256-SCH5h64q2LPe3y+sC8N+GVVHqm3X6qWh8j4SW+Ko5FA="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -154,9 +154,9 @@
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
-      "url": "https://github.com/NixOS/nixpkgs/archive/bfc1b8a4574108ceef22f02bafcf6611380c100d.tar.gz",
-      "hash": "sha256-msG8SU5WsBUfVVa/9RPLaymvi5bI8edTavbIq3vRlhI="
+      "revision": "e6eae2ee2110f3d31110d5c222cd395303343b08",
+      "url": "https://github.com/NixOS/nixpkgs/archive/e6eae2ee2110f3d31110d5c222cd395303343b08.tar.gz",
+      "hash": "sha256-KHFT9UWOF2yRPlAnSXQJh6uVcgNcWlFqqiAZ7OVlHNc="
     },
     "npins": {
       "type": "Git",
@@ -167,9 +167,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "22e72314632373452cbad9782bab97884a96cf53",
-      "url": "https://github.com/andir/npins/archive/22e72314632373452cbad9782bab97884a96cf53.tar.gz",
-      "hash": "sha256-xy29sL2rfD0Yq9oPcBdSknLtu4CjM8FZKHDlpPvmuGI="
+      "revision": "4d96187a4313005e62a0f653cbe9872ac6b93107",
+      "url": "https://github.com/andir/npins/archive/4d96187a4313005e62a0f653cbe9872ac6b93107.tar.gz",
+      "hash": "sha256-8llgPCXcSqqTbAtlw4zPAruOHTovHYogIJVojLYKlKk="
     },
     "starship": {
       "type": "Git",
@@ -180,9 +180,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "cf795a5b3db70cd98aa1585ca1212ac326163c69",
-      "url": "https://github.com/starship/starship/archive/cf795a5b3db70cd98aa1585ca1212ac326163c69.tar.gz",
-      "hash": "sha256-/FUoNmCPgclLbe3T8ry7/wQH9HX6rdNHSFfMgmmxfok="
+      "revision": "4f879b5aa42290557cc60a1c464a7526a7fbdab7",
+      "url": "https://github.com/starship/starship/archive/4f879b5aa42290557cc60a1c464a7526a7fbdab7.tar.gz",
+      "hash": "sha256-eX3QH33peHCP2DYz3zgt/3h0VV3ovbnG6bVQl+3e14Q="
     },
     "zen-browser": {
       "type": "Git",
@@ -193,9 +193,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e97c8e719c7e2567ccf86d279f73ade1dbf72373",
-      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/e97c8e719c7e2567ccf86d279f73ade1dbf72373.tar.gz",
-      "hash": "sha256-wD3QwqGZ1cqZDkDQanwy3HgoVL4Dooqlgta3jOu3Mng="
+      "revision": "615a27db86f3fddd0f096b5e9ea832795a4608d1",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/615a27db86f3fddd0f096b5e9ea832795a4608d1.tar.gz",
+      "hash": "sha256-FKRpvwWR96VDW4bdsxIrZgIAXvdXqsCTaV1HghCJBoQ="
     }
   },
   "version": 7
