@@ -5,6 +5,7 @@
     nixos-rebuild-ng
     dix
     nix-output-monitor
+    expect
   ];
 
   system.activationScripts.diff = # bash
