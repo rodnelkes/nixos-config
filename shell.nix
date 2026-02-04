@@ -8,6 +8,8 @@
 pkgs.mkShellNoCC {
   allowSubstitues = false; # Prevent a cache.nixos.org call every time
   packages = with wrappers; [
-    foo
+    git
+    jujutsu
+    nushell
   ];
 }
