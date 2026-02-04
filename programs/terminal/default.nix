@@ -3,6 +3,9 @@ let
   wrappers =
     with bupkes.wrappers;
     map (wrapper: wrapper.drv) [
+      # Prompts
+      starship
+
       # VCS
       git
       jujutsu
