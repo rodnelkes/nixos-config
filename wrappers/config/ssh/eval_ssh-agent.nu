@@ -1,7 +1,7 @@
-# https://github.com/nushell/nushell.github.io/blob/9aa4ac9041af1b52186e7689ae8c374bdadf139e/cookbook/ssh_agent.md?plain=1#L40
+# https://github.com/nushell/nushell.github.io/blob/c50965b75f2903f4e27fe1cc6e0efe050a163e85/cookbook/ssh_agent.md?plain=1#L28
 do --env {
     let ssh_agent_file = (
-        $nu.temp-path | path join $"ssh-agent-(whoami).nuon"
+        $nu.temp-dir | path join $"ssh-agent-(whoami).nuon"
     )
 
     if ($ssh_agent_file | path exists) {
