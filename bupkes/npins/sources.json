@@ -65,6 +65,19 @@
       "url": "https://github.com/catppuccin/nushell/archive/815dfc6ea61f2746ff27b54ef425cfeb7b51dda8.tar.gz",
       "hash": "sha256-124T2pCmwirl8eLAy3h1fDOQZJf//3KJ7GwIP+u6YQ4="
     },
+    "catppuccin-tty": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "tty"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "6dd8b99181f7347e6e3b381872897184ff231bc7",
+      "url": "https://github.com/catppuccin/tty/archive/6dd8b99181f7347e6e3b381872897184ff231bc7.tar.gz",
+      "hash": "sha256-bVrK6fdWFhYe4l9JZqR79GM2Lf2iaHeO+i3+QuUc0Pc="
+    },
     "disko": {
       "type": "Git",
       "repository": {
