@@ -39,6 +39,19 @@
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
+    "catppuccin-limine": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "limine"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "87a6320b8385c2745468eeff925c57a223200085",
+      "url": "https://github.com/catppuccin/limine/archive/87a6320b8385c2745468eeff925c57a223200085.tar.gz",
+      "hash": "sha256-CdL1fq7JKju5SOvt8pBynLzM1knlM26SRinqYD48b+c="
+    },
     "catppuccin-nushell": {
       "type": "Git",
       "repository": {
