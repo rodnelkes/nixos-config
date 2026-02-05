@@ -13,6 +13,7 @@ in
       enable = true;
       secureBoot.enable = false;
       extraConfig = theme;
+      style.wallpapers = [ ];
     };
     efi.canTouchEfiVariables = true;
   };
