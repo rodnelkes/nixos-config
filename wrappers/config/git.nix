@@ -12,8 +12,14 @@ _:
         inherit (inputs.bupkes) host user;
         inherit (inputs.nixpkgs) lib pkgs;
 
+        persist = string: "/persistent${string}";
+
         signingKeyPath = "/run/agenix/github";
-        signingKey = if host.hostname == "bingle" then "/persistent${signingKeyPath}" else signingKeyPath;
+        signingKey = if host.hostname == "bingle" then persist signingKeyPath else signingKeyPath;
+
+        allowedSignersPath = "/run/agenix/allowed-signers";
+        allowedSigners =
+          if host.hostname == "bingle" then persist allowedSignersPath else allowedSignersPath;
       in
       {
         user = {
@@ -27,7 +33,10 @@ _:
         tag.gpgSign = true;
         gpg = {
           format = "ssh";
-          "ssh".program = lib.getExe' pkgs.openssh "ssh-keygen";
+          "ssh" = {
+            allowedSignersFile = allowedSigners;
+            program = lib.getExe' pkgs.openssh "ssh-keygen";
+          };
         };
       };
   };
