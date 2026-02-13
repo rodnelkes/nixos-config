@@ -23,7 +23,7 @@ let
         inherit pkgs lib;
       };
       "/bupkes" = {
-        inherit (bupkes) lib user;
+        inherit (bupkes) host lib user;
       };
       "/catppuccin" = {
         nushell = sources.catppuccin-nushell.outPath;

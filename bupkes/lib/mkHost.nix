@@ -16,15 +16,24 @@ let
     "modules"
     "hosts/${hostVars.hostname}"
   ];
+
+  mkBupkes =
+    baseBupkes:
+    baseBupkes
+    // {
+      host = hostVars // {
+        inherit configDirectory;
+      };
+    };
 in
 nixosSystem {
   specialArgs = {
     inherit sources;
-    bupkes = bupkes // {
-      host = hostVars // {
-        inherit configDirectory;
+    bupkes = mkBupkes bupkes // {
+      wrappers = import ../../wrappers {
+        inherit sources pkgs;
+        bupkes = mkBupkes bupkes;
       };
-      wrappers = import ../../wrappers { inherit sources pkgs bupkes; };
     };
   };
 
