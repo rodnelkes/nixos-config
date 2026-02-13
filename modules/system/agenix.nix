@@ -34,6 +34,7 @@ in
       map mkSecret [
         "user_password"
         "github"
+        "allowed-signers"
       ]
     );
   };

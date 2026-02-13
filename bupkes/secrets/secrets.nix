@@ -21,4 +21,5 @@ in
   "user_password.age".publicKeys = allKeys;
   "github.age".publicKeys = allKeys;
   "installation_key.age".publicKeys = allKeys;
+  "allowed-signers.age".publicKeys = allKeys;
 }
