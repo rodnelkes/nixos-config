@@ -9,14 +9,18 @@ _:
     "/git".config =
       { inputs }:
       let
-        inherit (inputs.bupkes) user;
+        inherit (inputs.bupkes) host user;
         inherit (inputs.nixpkgs) lib pkgs;
+
+        signingKeyPath = "/run/agenix/github";
+        signingKey = if host.hostname == "bingle" then "/persistent${signingKeyPath}" else signingKeyPath;
       in
       {
         user = {
+          inherit signingKey;
+
           name = user.fullName;
           email = user.email;
-          signingKey = "/run/agenix/github";
         };
 
         commit.gpgSign = true;

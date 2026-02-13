@@ -9,7 +9,10 @@ _:
     "/jujutsu".config =
       { inputs }:
       let
-        inherit (inputs.bupkes) user;
+        inherit (inputs.bupkes) host user;
+
+        signingKeyPath = "/run/agenix/github";
+        signingKey = if host.hostname == "bingle" then "/persistent${signingKeyPath}" else signingKeyPath;
       in
       {
         user = {
@@ -20,7 +23,7 @@ _:
         signing = {
           behavior = "own";
           backend = "ssh";
-          key = "/run/agenix/github";
+          key = signingKey;
         };
         git.sign-on-push = true;
         ui.show-cryptographic-signatures = true;
