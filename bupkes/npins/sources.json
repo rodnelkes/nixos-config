@@ -162,14 +162,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "8bitbuddhist",
+        "owner": "mexisme",
         "repo": "nixos-hardware"
       },
-      "branch": "surface-kernel-6.18",
+      "branch": "microsoft-surface/update-kernel-6.18.10",
       "submodules": false,
-      "revision": "ac6458d3bcef09b40317be72e2b4f3795936732c",
-      "url": "https://github.com/8bitbuddhist/nixos-hardware/archive/ac6458d3bcef09b40317be72e2b4f3795936732c.tar.gz",
-      "hash": "sha256-aH00WqZJmnefVAXZSV2I46KwIm6b960oUeoQMRjROno="
+      "revision": "af71a898a1b541d87f883159a6abbc2a5fab277b",
+      "url": "https://github.com/mexisme/nixos-hardware/archive/af71a898a1b541d87f883159a6abbc2a5fab277b.tar.gz",
+      "hash": "sha256-LxHncW3Q44RjCk8ihR/bTdEFpUvcEk3kT0GNfz4cfs8="
     },
     "nixpkgs": {
       "type": "Git",
