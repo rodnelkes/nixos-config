@@ -46,8 +46,6 @@
           };
         };
       };
-
-      nushell.extraConfig = builtins.readFile ./eval_ssh-agent.nu;
     };
   };
 }
