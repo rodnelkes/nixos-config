@@ -11,6 +11,7 @@ pkgs.mkShellNoCC {
     git
     jujutsu
     noctalia-shell
+    niri
     nushell
     wezterm
   ];
