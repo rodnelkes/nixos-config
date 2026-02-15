@@ -14,7 +14,7 @@
 
   users.users.${bupkes.user.username}.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpTlwHpvrCyOBYGWYKpFM7Q0OYC8bP39gKU4jpK8AWp rodnelkes@boobookeys"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLJYTglmXdImiJAEzB3O5iLEGA/ckC+Jjta852RtQPj rodnelkes@bingle"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4ohdI7U/iUXzgbvUOHF79x8wld8/Vj2BY9a6bBl/5k rodnelkes@bingle"
   ];
 
   hm = {
