@@ -11,5 +11,6 @@ pkgs.mkShellNoCC {
     git
     jujutsu
     nushell
+    wezterm
   ];
 }
