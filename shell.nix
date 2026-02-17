@@ -10,6 +10,7 @@ pkgs.mkShellNoCC {
   packages = with wrappers; [
     git
     jujutsu
+    noctalia-shell
     nushell
     wezterm
   ];
