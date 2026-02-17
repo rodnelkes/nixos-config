@@ -5,8 +5,21 @@
   ...
 }:
 let
+  inherit (builtins) readFile;
+  inherit (pkgs.rustPlatform) buildRustPackage;
+
   nelvim_path = "${bupkes.host.configDirectory}/modules/editors/neovim/nelvim";
   mnw = import sources.mnw;
+
+  kdlSrc = sources.kdl-rs.outPath;
+  kdlLspCargoTOML = fromTOML (readFile "${kdlSrc}/tools/kdl-lsp/Cargo.toml");
+  kdl-lsp = buildRustPackage {
+    pname = kdlLspCargoTOML.package.name;
+    version = kdlLspCargoTOML.package.version;
+    cargoLock.lockFile = "${kdlSrc}/Cargo.lock";
+    src = kdlSrc;
+    cargoBuildFlags = [ "-p kdl-lsp" ];
+  };
 
   nelvim = mnw.lib.wrap pkgs {
     appName = "nelvim";
@@ -22,6 +35,10 @@ let
       # bash
       bash-language-server
       shfmt
+
+      # kdl
+      kdl-lsp
+      kdlfmt
 
       # lua
       lua-language-server
@@ -53,6 +70,7 @@ let
           p: with p; [
             bash
             nu
+            kdl
             lua
             nix
           ]

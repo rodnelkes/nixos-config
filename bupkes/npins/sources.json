@@ -117,6 +117,19 @@
       "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
       "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
     },
+    "kdl-rs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kdl-org",
+        "repo": "kdl-rs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "268f3a2d00d400877cc85530b85dbb145f0b2dfb",
+      "url": "https://github.com/kdl-org/kdl-rs/archive/268f3a2d00d400877cc85530b85dbb145f0b2dfb.tar.gz",
+      "hash": "sha256-EAwCRWpV2QXhbFoRsEW/om77G9/RHSFyNR4HIQmlUBs="
+    },
     "lix": {
       "type": "Git",
       "repository": {
