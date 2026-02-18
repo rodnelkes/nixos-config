@@ -4,5 +4,6 @@ require("conform").setup({
 		kdl = { "kdlfmt" },
 		lua = { "stylua" },
 		nix = { "nixfmt" },
+        nu = { "nufmt" },
 	},
 })
