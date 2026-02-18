@@ -47,6 +47,10 @@ let
       # nix
       nixd
       nixfmt
+
+      # nu
+      bupkes.wrappers.nushell.drv
+      nufmt
     ];
 
     plugins = {
