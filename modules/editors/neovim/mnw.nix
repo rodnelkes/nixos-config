@@ -51,6 +51,9 @@ let
       # nu
       bupkes.wrappers.nushell.drv
       nufmt
+
+      # qml
+      kdePackages.qtdeclarative
     ];
 
     plugins = {
@@ -77,6 +80,7 @@ let
             kdl
             lua
             nix
+            qmljs
           ]
         ))
 
