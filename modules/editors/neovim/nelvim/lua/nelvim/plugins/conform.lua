@@ -6,5 +6,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		nix = { "nixfmt" },
         nu = { "nufmt" },
+		qml = { "qmlformat" },
+		qmljs = { "qmlformat" },
 	},
 })
