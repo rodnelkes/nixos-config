@@ -6,7 +6,7 @@
 }:
 
 pkgs.mkShellNoCC {
-  allowSubstitues = false; # Prevent a cache.nixos.org call every time
+  allowSubstitutes = false; # Prevent a cache.nixos.org call every time
   packages = with wrappers; [
     git
     jujutsu
