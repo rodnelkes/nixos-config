@@ -13,7 +13,7 @@ _:
     "/jujutsu".config =
       { inputs }:
       let
-        inherit (inputs.bupkes.default) host user;
+        inherit (inputs.bupkes) host user;
         inherit (inputs.nixpkgs) lib pkgs;
 
         persist = string: "/persistent${string}";

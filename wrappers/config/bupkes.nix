@@ -3,5 +3,9 @@
 {
   name = "bupkes";
 
-  options.default.type = types.attrs;
+  options = {
+    host.type = types.attrs;
+    lib.type = types.attrs;
+    user.type = types.attrs;
+  };
 }

@@ -20,12 +20,13 @@ let
   tree = adios root {
     options = {
       "/sources" = {
-        default = sources;
+        inherit (sources) catppuccin-nushell;
       };
       "/nixpkgs" = {
         inherit pkgs lib;
       };
       "/bupkes" = {
+        inherit (bupkes) host user;
         default = bupkes;
       };
     };
