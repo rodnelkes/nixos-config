@@ -1,7 +1,7 @@
 { types, ... }:
 
 {
-  name = "bupkes";
+  name = "sources";
 
   options.default.type = types.attrs;
 }

@@ -1,24 +1,19 @@
-{ types, ... }:
+_:
 
 {
   name = "catppuccin";
 
   inputs = {
+    sources.path = "/sources";
     nixpkgs.path = "/nixpkgs";
-  };
-
-  options = {
-    nushell = {
-      type = types.pathLike;
-    };
   };
 
   mutations = {
     "/nushell".configPaths =
-      { inputs, options }:
+      { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText;
-        catppuccinNushell = options.nushell;
+        catppuccinNushell = inputs.sources.default.catppuccin-nushell.outPath;
 
         config =
           writeText "nushell-catppuccin-mocha"
