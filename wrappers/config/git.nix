@@ -1,6 +1,10 @@
 _:
 
 {
+  inputs = {
+    bupkes.path = "/bupkes";
+  };
+
   options = {
     config.mutators = [ "/git" ];
   };

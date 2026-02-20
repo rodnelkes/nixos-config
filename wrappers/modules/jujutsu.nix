@@ -5,7 +5,6 @@
 
   inputs = {
     nixpkgs.path = "/nixpkgs";
-    bupkes.path = "/bupkes";
   };
 
   options = {
