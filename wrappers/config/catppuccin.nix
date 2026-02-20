@@ -13,7 +13,7 @@ _:
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText;
-        catppuccinNushell = inputs.sources.default.catppuccin-nushell.outPath;
+        catppuccinNushell = inputs.sources.catppuccin-nushell.outPath;
 
         config =
           writeText "nushell-catppuccin-mocha"

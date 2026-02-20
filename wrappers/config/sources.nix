@@ -3,5 +3,7 @@
 {
   name = "sources";
 
-  options.default.type = types.attrs;
+  options = {
+    catppuccin-nushell.type = types.attrs;
+  };
 }
