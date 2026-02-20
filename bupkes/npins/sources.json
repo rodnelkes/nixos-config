@@ -182,7 +182,8 @@
       "submodules": false,
       "revision": "af71a898a1b541d87f883159a6abbc2a5fab277b",
       "url": "https://github.com/mexisme/nixos-hardware/archive/af71a898a1b541d87f883159a6abbc2a5fab277b.tar.gz",
-      "hash": "sha256-LxHncW3Q44RjCk8ihR/bTdEFpUvcEk3kT0GNfz4cfs8="
+      "hash": "sha256-LxHncW3Q44RjCk8ihR/bTdEFpUvcEk3kT0GNfz4cfs8=",
+      "frozen": true
     },
     "nixpkgs": {
       "type": "Git",
