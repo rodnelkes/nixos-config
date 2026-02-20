@@ -1,4 +1,4 @@
-_:
+{ types, ... }:
 
 {
   name = "noctalia-shell";
@@ -7,8 +7,14 @@ _:
     nixpkgs.path = "/nixpkgs";
   };
 
+  options = {
+    configPath = {
+      type = types.pathLike;
+    };
+  };
+
   impl =
-    { inputs }:
+    { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin noctalia-shell makeWrapper;
     in
@@ -17,7 +23,8 @@ _:
       paths = [ noctalia-shell ];
       buildInputs = [ makeWrapper ];
       postBuild = ''
-        wrapProgram $out/bin/noctalia-shell
+        wrapProgram $out/bin/noctalia-shell \
+        --set NOCTALIA_SETTINGS_FILE ${options.configPath}
       '';
       meta.mainProgram = "noctalia-shell";
     };
