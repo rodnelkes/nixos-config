@@ -31,10 +31,10 @@
         {
           "clockColor": "none",
           "customFont": "",
-          "formatHorizontal": "HH:mm ddd, MMM dd",
-          "formatVertical": "HH mm - dd MM",
+          "formatHorizontal": "h:mm:ss AP ddd, MMM dd",
+          "formatVertical": "h mm ss AP - dd MM",
           "id": "Clock",
-          "tooltipFormat": "HH:mm ddd, MMM dd",
+          "tooltipFormat": "h:mm:ss AP ddd, MMM dd",
           "useCustomFont": false
         },
         {
@@ -236,8 +236,8 @@
     "name": "Tokyo",
     "weatherEnabled": true,
     "weatherShowEffects": true,
-    "useFahrenheit": false,
-    "use12hourFormat": false,
+    "useFahrenheit": true,
+    "use12hourFormat": true,
     "showWeekNumberInCalendar": false,
     "showCalendarEvents": true,
     "showCalendarWeather": true,
@@ -264,7 +264,7 @@
   },
   "wallpaper": {
     "enabled": true,
-    "overviewEnabled": false,
+    "overviewEnabled": true,
     "directory": "/home/rodnelkes/Pictures/Wallpapers",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
