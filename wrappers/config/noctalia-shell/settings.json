@@ -265,7 +265,7 @@
   "wallpaper": {
     "enabled": true,
     "overviewEnabled": true,
-    "directory": "/home/rodnelkes/Pictures/Wallpapers",
+    "directory": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/Wallpapers",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,
@@ -298,7 +298,21 @@
     "wallhavenResolutionWidth": "",
     "wallhavenResolutionHeight": "",
     "sortOrder": "name",
-    "favorites": []
+    "favorites": [
+      {
+        "colorScheme": "Catppuccin",
+        "darkMode": true,
+        "generationMethod": "tonal-spot",
+        "paletteColors": [
+          "#cba6f7",
+          "#fab387",
+          "#94e2d5",
+          "#f38ba8"
+        ],
+        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/Wallpapers/BladeOfMiquella.png",
+        "useWallpaperColors": false
+      }
+    ]
   },
   "appLauncher": {
     "enableClipboardHistory": false,
