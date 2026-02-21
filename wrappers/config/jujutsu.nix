@@ -43,6 +43,8 @@ _:
         };
         git.sign-on-push = true;
         ui.show-cryptographic-signatures = true;
+
+        snapshot.max-new-file-size = 36149455;
       };
   };
 }
