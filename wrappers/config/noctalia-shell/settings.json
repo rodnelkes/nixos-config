@@ -309,7 +309,7 @@
           "#94e2d5",
           "#f38ba8"
         ],
-        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/Wallpapers/BladeOfMiquella-mocha-gaussian-sampling.png",
+        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/Wallpapers/BladeOfMiquella-mocha-nearest-neighbor.png",
         "useWallpaperColors": false
       }
     ]
