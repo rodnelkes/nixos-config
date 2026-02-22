@@ -27,7 +27,6 @@ let
       };
       "/bupkes" = {
         inherit (bupkes) host user;
-        default = bupkes;
       };
     };
   };
