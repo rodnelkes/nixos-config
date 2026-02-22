@@ -16,4 +16,6 @@
 
     defaultUser = bupkes.user.username;
   };
+
+  security.sudo.wheelNeedsPassword = true;
 }
