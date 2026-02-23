@@ -56,6 +56,7 @@ in
             mode = "0700";
           }
           "nixos-config"
+          ".cache/noctalia"
         ];
         files = [
           ".config/nushell/history.txt"
