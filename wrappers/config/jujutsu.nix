@@ -46,6 +46,7 @@ _:
 
         snapshot.max-new-file-size = 39489754;
 
+        ui.merge-editor = "diffconflicts";
         merge-tools.diffconflicts = {
           program = "nvim";
           merge-args = [
