@@ -117,6 +117,19 @@
       "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
       "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
     },
+    "jj-diffconflicts": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rafikdraoui",
+        "repo": "jj-diffconflicts"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "6d9eedadf1fab87bccb0a4a7ceda829da8023efb",
+      "url": "https://github.com/rafikdraoui/jj-diffconflicts/archive/6d9eedadf1fab87bccb0a4a7ceda829da8023efb.tar.gz",
+      "hash": "sha256-hvMXpslucywVYA9Sdxx6IcXQXYcYNWK8s9jr+KtStdI="
+    },
     "kdl-rs": {
       "type": "Git",
       "repository": {

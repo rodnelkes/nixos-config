@@ -7,6 +7,7 @@
 let
   inherit (builtins) readFile;
   inherit (pkgs.rustPlatform) buildRustPackage;
+  inherit (pkgs.vimUtils) buildVimPlugin;
 
   nelvim_path = "${bupkes.host.configDirectory}/modules/editors/neovim/nelvim";
   mnw = import sources.mnw;
@@ -19,6 +20,11 @@ let
     cargoLock.lockFile = "${kdlSrc}/Cargo.lock";
     src = kdlSrc;
     cargoBuildFlags = [ "-p kdl-lsp" ];
+  };
+
+  jj-diffconflicts = buildVimPlugin {
+    name = "jj-diffconflicts";
+    src = sources.jj-diffconflicts.outPath;
   };
 
   nelvim = mnw.lib.wrap pkgs {
@@ -72,6 +78,7 @@ let
         indent-blankline-nvim
         blink-nerdfont-nvim
         jj-nvim
+        jj-diffconflicts
 
         # treesitter
         (nvim-treesitter.withPlugins (
