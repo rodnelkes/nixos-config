@@ -71,6 +71,7 @@ let
         conform-nvim
         indent-blankline-nvim
         blink-nerdfont-nvim
+        jj-nvim
 
         # treesitter
         (nvim-treesitter.withPlugins (
