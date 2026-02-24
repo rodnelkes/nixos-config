@@ -8,6 +8,7 @@ local plugins = {
 	"blink",
 	"conform",
 	"mini",
+    "jj"
 }
 
 for _, plugin in ipairs(plugins) do
