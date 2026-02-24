@@ -45,6 +45,21 @@ _:
         ui.show-cryptographic-signatures = true;
 
         snapshot.max-new-file-size = 39489754;
+
+        merge-tools.diffconflicts = {
+          program = "nvim";
+          merge-args = [
+            "-c"
+            "let g:jj_diffconflicts_marker_length=$marker_length"
+            "-c"
+            "JJDiffConflicts!"
+            "$output"
+            "$base"
+            "$left"
+            "$right"
+          ];
+          merge-tool-edits-conflict-markers = true;
+        };
       };
   };
 }
