@@ -61,6 +61,8 @@ _:
           ];
           merge-tool-edits-conflict-markers = true;
         };
+
+        remotes.origin.auto-track-bookmarks = "*";
       };
   };
 }
