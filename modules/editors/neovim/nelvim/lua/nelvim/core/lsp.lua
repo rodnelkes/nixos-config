@@ -4,6 +4,7 @@ vim.lsp.config("*", {
 
 vim.lsp.enable({
 	"bashls",
+	"clangd",
 	"kdl-lsp",
 	"lua_ls",
 	"nixd",

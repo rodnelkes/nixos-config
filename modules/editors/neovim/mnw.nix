@@ -42,6 +42,9 @@ let
       bash-language-server
       shfmt
 
+      # c/c++
+      clang-tools
+
       # kdl
       kdl-lsp
       kdlfmt
@@ -88,6 +91,8 @@ let
         (nvim-treesitter.withPlugins (
           p: with p; [
             bash
+            c
+            cpp
             nu
             kdl
             lua
