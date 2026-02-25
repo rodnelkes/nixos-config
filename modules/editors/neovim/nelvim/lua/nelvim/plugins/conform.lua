@@ -5,8 +5,9 @@ require("conform").setup({
 		kdl = { "kdlfmt" },
 		lua = { "stylua" },
 		nix = { "nixfmt" },
-        nu = { "nufmt" },
+		nu = { "nufmt" },
 		qml = { "qmlformat" },
 		qmljs = { "qmlformat" },
+		yaml = { "yamlfmt" },
 	},
 })

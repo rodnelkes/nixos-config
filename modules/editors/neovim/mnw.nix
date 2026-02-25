@@ -60,6 +60,10 @@ let
 
       # qml
       kdePackages.qtdeclarative
+
+      # yaml
+      yaml-language-server
+      yamlfmt
     ];
 
     plugins = {
@@ -89,6 +93,7 @@ let
             lua
             nix
             qmljs
+            yaml
           ]
         ))
 

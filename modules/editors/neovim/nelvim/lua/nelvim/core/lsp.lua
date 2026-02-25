@@ -2,7 +2,15 @@ vim.lsp.config("*", {
 	root_markers = { ".git", ".jj" },
 })
 
-vim.lsp.enable({ "bashls", "kdl-lsp", "lua_ls", "nixd", "nu-lsp", "qmlls" })
+vim.lsp.enable({
+	"bashls",
+	"kdl-lsp",
+	"lua_ls",
+	"nixd",
+	"nu-lsp",
+	"qmlls",
+	"yamlls",
+})
 
 vim.diagnostic.config({
 	virtual_lines = true,
