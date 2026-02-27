@@ -6,7 +6,6 @@ _:
       "/catppuccin"
       "/starship"
       "/nushell"
-      "/direnv"
     ];
   };
 
