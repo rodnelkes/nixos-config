@@ -119,5 +119,11 @@ let
   };
 in
 {
-  environment.systemPackages = [ nelvim.devMode ];
+  environment = {
+    systemPackages = [ nelvim.devMode ];
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+  };
 }
