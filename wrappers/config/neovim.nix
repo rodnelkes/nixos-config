@@ -1,0 +1,25 @@
+_:
+
+{
+  name = "neovim";
+
+  mutations = {
+    "/jujutsu".config = _: {
+      ui.merge-editor = "diffconflicts";
+      merge-tools.diffconflicts = {
+        program = "nvim";
+        merge-args = [
+          "-c"
+          "let g:jj_diffconflicts_marker_length=$marker_length"
+          "-c"
+          "JJDiffConflicts!"
+          "$output"
+          "$base"
+          "$left"
+          "$right"
+        ];
+        merge-tool-edits-conflict-markers = true;
+      };
+    };
+  };
+}
