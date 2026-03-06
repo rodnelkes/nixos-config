@@ -36,7 +36,9 @@
       buildInputs = [ makeWrapper ];
       postBuild = ''
         mkdir -p $out/nushell
+
         ln -sf ${configFile} $out/nushell/config.nu
+
         wrapProgram $out/bin/nu \
         --add-flag "--config $out/nushell/config.nu"
       '';
