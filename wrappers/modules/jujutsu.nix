@@ -27,7 +27,9 @@
       buildInputs = [ makeWrapper ];
       postBuild = ''
         mkdir -p $out/jj
+
         ln -sf ${writeTOML "config.toml" options.config} $out/jj/config.toml
+
         wrapProgram $out/bin/jj \
         --set JJ_CONFIG $out/jj
       '';

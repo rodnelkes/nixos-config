@@ -32,7 +32,9 @@
       buildInputs = [ makeWrapper ];
       postBuild = ''
         mkdir -p $out/git
+
         ln -sf ${writeText "config" (toGitINI options.config)} $out/git/config
+
         wrapProgram $out/bin/git \
         --set XDG_CONFIG_HOME $out
       '';
