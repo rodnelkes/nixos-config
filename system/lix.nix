@@ -1,7 +1,7 @@
 { sources, ... }:
 
 let
-  inherit (builtins) fetchGit substring;
+  inherit (builtins) substring;
 
   # This is only needed because (import sources.lix).lastModifiedDate is "19700101000000"
   # Not sure why, maybe fault lies with npins?
