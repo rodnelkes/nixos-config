@@ -1,7 +1,5 @@
 { bupkes, ... }:
 
 {
-  networking = {
-    hostName = bupkes.host.hostname;
-  };
+  networking.hostName = bupkes.host.hostname;
 }
