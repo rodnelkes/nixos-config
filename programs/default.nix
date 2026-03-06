@@ -14,6 +14,7 @@ in
     [
       # CLI
       fzf
+      fastfetch
     ]
     ++ wrappers;
 }
