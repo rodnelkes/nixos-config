@@ -14,7 +14,7 @@
   hm = {
     home = {
       inherit (bupkes.user) username homeDirectory;
-      stateVersion = "25.11";
+      stateVersion = bupkes.host.stateVersion;
     };
 
     programs.home-manager.enable = true;
