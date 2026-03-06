@@ -13,6 +13,12 @@
       mutatorType = types.attrs;
       mergeFunc = adios.lib.merge.attrs.recursively;
     };
+
+    excludesFile = {
+      type = types.string;
+      mutatorType = types.string;
+      mergeFunc = adios.lib.merge.strings.concatLines;
+    };
   };
 
   impl =
@@ -34,6 +40,7 @@
         mkdir -p $out/git
 
         ln -sf ${writeText "config" (toGitINI options.config)} $out/git/config
+        ln -sf ${writeText "ignore" options.excludesFile} $out/git/ignore
 
         wrapProgram $out/bin/git \
         --set XDG_CONFIG_HOME $out

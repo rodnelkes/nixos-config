@@ -21,5 +21,11 @@ _:
         merge-tool-edits-conflict-markers = true;
       };
     };
+
+    "/git".excludesFile = _: ''
+      .cache/
+      .clangd
+      compile_commands.json
+    '';
   };
 }
