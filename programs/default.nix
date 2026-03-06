@@ -15,6 +15,11 @@ in
       # CLI
       fzf
       fastfetch
+
+      # Rebuild
+      nixos-rebuild-ng
+      nix-output-monitor
+      expect # Includes unbuffer to add extra color to dix
     ]
     ++ wrappers;
 }

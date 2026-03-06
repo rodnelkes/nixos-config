@@ -1,12 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    nixos-rebuild-ng
-    dix
-    nix-output-monitor
-    expect
-  ];
+  environment.systemPackages = [ pkgs.dix ];
 
   system.activationScripts.diff = # bash
     ''
