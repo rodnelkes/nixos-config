@@ -9,7 +9,7 @@ let
   inherit (pkgs.rustPlatform) buildRustPackage;
   inherit (pkgs.vimUtils) buildVimPlugin;
 
-  nelvim_path = "${bupkes.host.configDirectory}/modules/editors/neovim/nelvim";
+  nelvim_path = "${bupkes.host.configDirectory}/programs/neovim/nelvim";
   mnw = import sources.mnw;
 
   kdlSrc = sources.kdl-rs.outPath;

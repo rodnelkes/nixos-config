@@ -13,7 +13,8 @@ let
   configDirectory = "${bupkes.user.homeDirectory}/nixos-config";
   applyPath = localPath: (/. + "/${configDirectory}/${localPath}");
   modulePaths = map applyPath [
-    "modules"
+    "system"
+    "programs"
     "hosts/${hostVars.hostname}"
   ];
 
