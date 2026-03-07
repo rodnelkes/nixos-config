@@ -9,10 +9,17 @@ mkHosts {
   boobookeys = {
     stateVersion = "25.05";
     system = "x86_64-linux";
+    features = [
+      "terminal"
+    ];
   };
 
   bingle = {
     stateVersion = "26.05";
     system = "x86_64-linux";
+    features = [
+      "terminal"
+      "graphical"
+    ];
   };
 }

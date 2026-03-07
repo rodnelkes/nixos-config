@@ -12,11 +12,14 @@ let
 
   configDirectory = "${bupkes.user.homeDirectory}/nixos-config";
   applyPath = localPath: (/. + "/${configDirectory}/${localPath}");
-  modulePaths = map applyPath [
+
+  modules = [
     "system"
-    "programs"
     "hosts/${hostVars.hostname}"
-  ];
+  ]
+  ++ map (feature: "programs/${feature}") hostVars.features;
+
+  modulePaths = map applyPath modules;
 
   mkBupkes =
     baseBupkes:
