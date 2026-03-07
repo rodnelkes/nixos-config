@@ -7,9 +7,11 @@ let
     split
     ;
 
-  rawTheme = readFile "${sources.catppuccin-tty.outPath}/themes/mocha.txt";
-  noSpecialCharsTheme = replaceStrings [ "\n" ] [ "" ] rawTheme;
-  theme = filter (item: item != [ ]) (split " " noSpecialCharsTheme);
+  theme = filter (item: item != [ ]) (
+    split " " (
+      replaceStrings [ "\n" ] [ "" ] (readFile "${sources.catppuccin-tty.outPath}/themes/mocha.txt")
+    )
+  );
 in
 {
   boot.kernelParams = theme;
