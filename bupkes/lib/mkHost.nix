@@ -10,7 +10,8 @@ let
   inherit (bupkes.lib) recursivelyImport;
   nixosSystem = import "${sources.nixpkgs}/nixos/lib/eval-config.nix";
 
-  configDirectory = "${bupkes.user.homeDirectory}/nixos-config";
+  # Assume that it is placed in /home/user/nixos-config, otherwise it won't be persisted.
+  configDirectory = toString ./../..;
   applyPath = localPath: (/. + "/${configDirectory}/${localPath}");
 
   modules = [
