@@ -18,7 +18,6 @@ mkHosts {
     stateVersion = "26.05";
     system = "x86_64-linux";
     features = [
-      "bootable"
       "terminal"
       "graphical"
     ];
