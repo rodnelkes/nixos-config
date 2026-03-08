@@ -1,24 +1,47 @@
 #!/run/current-system/sw/bin/bash
 
-hostname=$1
-ip=$2
-temp=$(mktemp -d)
+hostname="${1}"
+ip="${2}"
+temp="$(mktemp -d)"
 
 function cleanup() {
     rm -rf "${temp}"
 }
 trap cleanup EXIT
 
-function copy_installation_keys() {
+function create_ssh_key() {
+    local user="${1}"
+    local key_path="${2}"
+    local dir_mode="${3}"
+
+    install -d -m"${dir_mode}" "$(dirname "${key_path}")"
+
+    ssh-keygen -t ed25519 -a 100 -N "" -C "${user}@${hostname}" -f "${key_path}"
+
+    chmod 600 "${key_path}"
+    chmod 644 "${key_path}.pub"
+}
+
+function update_keys_repository() {
+    local ssh_host_key_path="${temp}"/persistent/etc/ssh/ssh_host_ed25519_key
+    local ssh_user_key_path="${temp}"/persistent/home/rodnelkes/.ssh/id_ed25519
+
+    create_ssh_key "root" "${ssh_host_key_path}" "755"
+    create_ssh_key "rodnelkes" "${ssh_user_key_path}" "700"
+
+    sed -i \
+        "s|${hostname} = \".*\";|${hostname} = \"$(cat "${ssh_host_key_path}.pub")\";|" \
+        ~/nixos-config/bupkes/secrets/secrets.nix
+    sed -i \
+        "/\"rodnelkes@${hostname}\" =/ {
+            n;
+            s|.*|      \"$(cat "${ssh_user_key_path}.pub")\";|
+        }" \
+        ~/nixos-config/bupkes/secrets/secrets.nix
+
     cd ~/nixos-config/bupkes/secrets/ || exit
-
-    install -d -m755 "${temp}/persistent/etc/ssh"
-    output_path=${temp}/persistent/etc/ssh/ssh_host_ed25519_key
-
-    agenix -d installation_key.age >"${output_path}"
-    chmod 600 "${output_path}"
-
-    cd ../../
+    agenix --rekey
+    cd ~/nixos-config/ || exit
 }
 
 function build_host() {
@@ -37,7 +60,7 @@ function nixos_anywhere() {
 }
 
 function create_host() {
-    copy_installation_keys
+    update_keys_repository
     nixos_anywhere "$(build_host)"
 }
 
