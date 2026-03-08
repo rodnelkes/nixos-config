@@ -6,6 +6,15 @@ let
   inherit (bupkes.lib) mkHosts;
 in
 mkHosts {
+  amende = {
+    stateVersion = "26.05";
+    system = "x86_64-linux";
+    features = [
+      "terminal"
+      "graphical"
+    ];
+  };
+
   boobookeys = {
     stateVersion = "25.05";
     system = "x86_64-linux";

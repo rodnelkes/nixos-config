@@ -8,6 +8,7 @@ let
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOnFR3Mogjp+bnWYmCD/KujxtqghlXiKBXI1qsLx+Q8 rodnelkes@bingle";
   };
   systems = {
+    amende = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIgCl9cvv/zVVZk5LDB6gIAmsudW66Xb/FQWQC5HOFc9 root@amende";
     boobookeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKtDEDKhmXloobbC2FRZgfbfVREU94CJn75JFv8eJlMG root@boobookeys";
     bingle = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINWDQ+59qh8Y8imkqj3pWdel5miFlVJUhrnccnl9tj70 root@bingle";
   };
