@@ -19,11 +19,11 @@ _:
         persist = string: "/persistent${string}";
 
         signingKeyPath = "/run/agenix/github";
-        signingKey = if host.hostname == "bingle" then persist signingKeyPath else signingKeyPath;
+        signingKey = if host.hostname == "boobookeys" then signingKeyPath else persist signingKeyPath;
 
         allowedSignersPath = "/run/agenix/allowed-signers";
         allowedSigners =
-          if host.hostname == "bingle" then persist allowedSignersPath else allowedSignersPath;
+          if host.hostname == "boobookeys" then allowedSignersPath else persist allowedSignersPath;
       in
       {
         user = {
