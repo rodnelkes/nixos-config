@@ -5,7 +5,7 @@ let
     "rodnelkes@boobookeys" =
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpTlwHpvrCyOBYGWYKpFM7Q0OYC8bP39gKU4jpK8AWp rodnelkes@boobookeys";
     "rodnelkes@bingle" =
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC4ohdI7U/iUXzgbvUOHF79x8wld8/Vj2BY9a6bBl/5k rodnelkes@bingle";
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOnFR3Mogjp+bnWYmCD/KujxtqghlXiKBXI1qsLx+Q8 rodnelkes@bingle";
   };
   systems = {
     boobookeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKtDEDKhmXloobbC2FRZgfbfVREU94CJn75JFv8eJlMG root@boobookeys";
