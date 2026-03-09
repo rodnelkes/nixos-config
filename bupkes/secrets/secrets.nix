@@ -9,7 +9,7 @@ let
   };
   systems = {
     boobookeys = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKtDEDKhmXloobbC2FRZgfbfVREU94CJn75JFv8eJlMG root@boobookeys";
-    bingle = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLBDTQt5H8xj8ReSk/pwWmBQrYLIpRxjQszQcQLN1hC root@bingle";
+    bingle = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINWDQ+59qh8Y8imkqj3pWdel5miFlVJUhrnccnl9tj70 root@bingle";
   };
   installationKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICqDOSRs002nj3Bhe5vWdi//sEBUyF6J4XiQB2Hk5K2u installation";
 
