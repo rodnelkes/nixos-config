@@ -28,8 +28,6 @@ in
   environment.systemPackages = [ agenix ];
 
   age = {
-    identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-
     secrets = foldl recursiveUpdate { } (
       map mkSecret [
         "user_password"
