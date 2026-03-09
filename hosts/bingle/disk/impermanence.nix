@@ -40,6 +40,7 @@ in
         "/var/log"
         "/var/lib/nixos"
         "/var/lib/systemd"
+        "/var/lib/bluetooth"
         # "/var/lib/secureboot"
       ];
       files = [
