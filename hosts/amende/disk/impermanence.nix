@@ -41,6 +41,7 @@ in
         "/var/lib/nixos"
         "/var/lib/systemd"
         "/var/lib/bluetooth"
+        "/var/lib/nvidia"
         # "/var/lib/secureboot"
       ];
       files = [
