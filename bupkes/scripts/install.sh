@@ -1,6 +1,6 @@
 #!/run/current-system/sw/bin/bash
 
-username="${1}"
+builder="${1}"
 hostname="${2}"
 ip="${3}"
 temp="$(mktemp -d)"
@@ -54,6 +54,8 @@ function nixos_anywhere() {
 
 function create_host() {
     update_keys_repository
+    sudo true
+    sudo unbuffer nixos-rebuild switch -A "${builder}" --log-format internal-json --show-trace |& nom --json
     nixos_anywhere "$(build_host)"
 }
 
