@@ -3,7 +3,7 @@ let
 
   users = {
     "rodnelkes@amende" =
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDHX2OQzpHS4iywBtE9IjuxqL/dF5sxbPtj/L5kKFVuK rodnelkes@amende";
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDaLWsbY4PoUI6xKJlmuzFCCC2hpj6eIPAMiFeaH1bsa rodnelkes@amende";
     "rodnelkes@boobookeys" =
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHpTlwHpvrCyOBYGWYKpFM7Q0OYC8bP39gKU4jpK8AWp rodnelkes@boobookeys";
     "rodnelkes@bingle" =
