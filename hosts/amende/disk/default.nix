@@ -38,21 +38,5 @@
       ];
       neededForBoot = true;
     };
-
-    "/swap" = {
-      device = "/dev/mapper/crypted";
-      fsType = "btrfs";
-      options = [
-        "subvol=swap"
-        "noatime"
-      ];
-    };
   };
-
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-      size = 38 * 1024;
-    }
-  ];
 }
