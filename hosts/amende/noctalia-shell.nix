@@ -4,7 +4,7 @@ let
 in
 {
   services = mkForce {
-    tuned.enable = true;
-    upower.enable = true;
+    tuned.enable = false;
+    upower.enable = false;
   };
 }
