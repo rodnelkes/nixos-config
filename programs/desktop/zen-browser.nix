@@ -9,11 +9,30 @@
 let
   inherit (lib) mkIf;
 
-  zen-browser = (import sources.zen-browser) { inherit pkgs; };
+  zen-browser = ((import sources.zen-browser) { inherit pkgs; }).twilight.override {
+    policies = {
+      AutofillAddressEnabled = true;
+      AutofillCreditCardEnabled = false;
+      DisableAppUpdate = true;
+      DisableFeedbackCommands = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+    };
+  };
 in
 {
   environment = {
-    systemPackages = [ zen-browser.twilight ];
+    systemPackages = [ zen-browser ];
     persistence."/persistent".users.${bupkes.user.username}.directories =
       mkIf bupkes.host.features.impermanence
         [
