@@ -59,6 +59,8 @@ in
           }
           "nixos-config"
           ".cache/noctalia"
+          ".cache/zen"
+          ".config/zen"
         ];
         files = [
           ".config/nushell/history.txt"
