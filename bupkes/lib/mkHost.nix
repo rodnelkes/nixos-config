@@ -18,7 +18,7 @@ let
     "system"
     "hosts/${hostVars.hostname}"
   ]
-  ++ map (feature: "programs/${feature}") hostVars.features;
+  ++ map (feature: "programs/${feature}") hostVars.features.modules;
 
   modulePaths = map applyPath modules;
 
