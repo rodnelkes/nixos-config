@@ -1,5 +1,6 @@
 {
-  boot.initrd.luks.devices."crypted".device = "/dev/disk/by-uuid/fbc7469b-5c7b-488b-aeec-6869c679f72c";
+  boot.initrd.luks.devices."crypted".device =
+    "/dev/disk/by-uuid/fbc7469b-5c7b-488b-aeec-6869c679f72c";
 
   fileSystems = {
     "/boot" = {
@@ -37,6 +38,17 @@
         "noatime"
       ];
       neededForBoot = true;
+    };
+
+    "/mnt/sda1" = {
+      device = "/dev/disk/by-partuuid/cacb858d-7a60-4390-90dc-8c9b73071eaf";
+      fsType = "ntfs3";
+      options = [
+        "uid=1000"
+        "gid=100"
+        "umask=0000"
+        "nofail"
+      ];
     };
   };
 }
