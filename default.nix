@@ -9,26 +9,32 @@ mkHosts {
   amende = {
     stateVersion = "26.05";
     system = "x86_64-linux";
-    features = [
-      "terminal"
-      "graphical"
-    ];
+    features = {
+      modules = [
+        "terminal"
+        "graphical"
+      ];
+    };
   };
 
   boobookeys = {
     stateVersion = "25.05";
     system = "x86_64-linux";
-    features = [
-      "terminal"
-    ];
+    features = {
+      modules = [
+        "terminal"
+      ];
+    };
   };
 
   bingle = {
     stateVersion = "26.05";
     system = "x86_64-linux";
-    features = [
-      "terminal"
-      "graphical"
-    ];
+    features = {
+      modules = [
+        "terminal"
+        "graphical"
+      ];
+    };
   };
 }
