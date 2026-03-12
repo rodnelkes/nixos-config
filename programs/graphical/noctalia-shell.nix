@@ -8,10 +8,5 @@
 
   hardware.bluetooth.enable = true;
 
-  services = {
-    tuned.enable = true;
-    upower.enable = true;
-  };
-
   qt.enable = true;
 }
