@@ -54,5 +54,16 @@ in
         "nofail"
       ];
     };
+
+    "/mnt/windows" = {
+      device = "/dev/disk/by-partuuid/defd86e4-299d-4244-bdd2-86c24aaf3556";
+      fsType = "ntfs3";
+      options = [
+        "uid=1000"
+        "gid=100"
+        "umask=0022"
+        "nofail"
+      ];
+    };
   };
 }
