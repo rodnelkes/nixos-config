@@ -6,7 +6,5 @@
     pkgs.xwayland-satellite
   ];
 
-  hardware.bluetooth.enable = true;
-
   qt.enable = true;
 }

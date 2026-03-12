@@ -44,7 +44,7 @@ nixosSystem {
 
   modules = recursivelyImport modulePaths ++ [
     {
-      networking.hostName = bupkes.host.hostname;
+      networking.hostName = hostVars.hostname;
       nixpkgs.hostPlatform.system = hostVars.system;
       system.stateVersion = hostVars.stateVersion;
       nixpkgs.config.allowUnfree = true;
