@@ -12,8 +12,8 @@ mkHosts {
     features = {
       impermanence = true;
       modules = [
-        "terminal"
-        "graphical"
+        "tty"
+        "desktop"
       ];
     };
   };
@@ -24,7 +24,7 @@ mkHosts {
     features = {
       impermanence = false;
       modules = [
-        "terminal"
+        "tty"
       ];
     };
   };
@@ -35,8 +35,8 @@ mkHosts {
     features = {
       impermanence = true;
       modules = [
-        "terminal"
-        "graphical"
+        "tty"
+        "desktop"
       ];
     };
   };
