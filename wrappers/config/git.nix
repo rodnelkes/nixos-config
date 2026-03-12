@@ -16,14 +16,9 @@ _:
         inherit (inputs.bupkes) host user;
         inherit (inputs.nixpkgs) lib pkgs;
 
-        persist = string: "/persistent${string}";
-
-        signingKeyPath = "/run/agenix/github";
-        signingKey = if host.hostname == "boobookeys" then signingKeyPath else persist signingKeyPath;
-
-        allowedSignersPath = "/run/agenix/allowed-signers";
-        allowedSigners =
-          if host.hostname == "boobookeys" then allowedSignersPath else persist allowedSignersPath;
+        persistPath = string: if host.features.impermanence then "/persistent${string}" else string;
+        signingKey = persistPath "/run/agenix/github";
+        allowedSigners = persistPath "/run/agenix/allowed-signers";
       in
       {
         user = {
