@@ -7,7 +7,7 @@
 }:
 
 let
-  inherit (lib) foldl recursiveUpdate;
+  inherit (lib) foldl recursiveUpdate mkIf;
   inherit (pkgs) callPackage;
 
   agenix = callPackage "${sources.agenix}/pkgs/agenix.nix" { };
@@ -19,6 +19,8 @@ let
       owner = bupkes.user.username;
     };
   };
+
+  persistentDevice = "/persistent";
 in
 {
   imports = [
@@ -35,5 +37,16 @@ in
         "allowed-signers"
       ]
     );
+
+    identityPaths = mkIf bupkes.host.features.impermanence [
+      "${persistentDevice}/etc/ssh/ssh_host_ed25519_key"
+    ];
+    secretsDir = mkIf bupkes.host.features.impermanence "${persistentDevice}/run/agenix";
+    secretsMountPoint = mkIf bupkes.host.features.impermanence "${persistentDevice}/run/agenix.d";
   };
+
+  environment.persistence."/persistent".directories = mkIf bupkes.host.features.impermanence [
+    "/run/agenix"
+    "/run/agenix.d"
+  ];
 }
