@@ -117,7 +117,9 @@
           "drawerEnabled": true,
           "hidePassive": false,
           "id": "Tray",
-          "pinned": []
+          "pinned": [
+            "Vesktop"
+          ]
         },
         {
           "hideWhenZero": false,
