@@ -41,7 +41,6 @@ in
         "compress=zstd"
         "noatime"
       ];
-      neededForBoot = true;
     };
 
     "/mnt/sda1" = {
