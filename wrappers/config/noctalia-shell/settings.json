@@ -584,14 +584,14 @@
     "manualSunset": "18:30"
   },
   "hooks": {
-    "enabled": false,
+    "enabled": true,
     "wallpaperChange": "",
     "darkModeChange": "",
     "screenLock": "",
     "screenUnlock": "",
     "performanceModeEnabled": "",
     "performanceModeDisabled": "",
-    "startup": "",
+    "startup": "vesktop --start-minimized",
     "session": ""
   },
   "plugins": {
