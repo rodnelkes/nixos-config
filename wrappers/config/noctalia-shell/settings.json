@@ -593,7 +593,7 @@
     "screenUnlock": "",
     "performanceModeEnabled": "",
     "performanceModeDisabled": "",
-    "startup": "vesktop --start-minimized",
+    "startup": "vesktop --start-minimized & ckb-next --background",
     "session": ""
   },
   "plugins": {
