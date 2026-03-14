@@ -515,7 +515,7 @@
         "command": "",
         "countdownEnabled": true,
         "enabled": true,
-        "keybind": ""
+        "keybind": "7"
       }
     ]
   },
