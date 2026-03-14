@@ -2,7 +2,7 @@
   services.pipewire.wireplumber.extraConfig = {
     "10-volume"."wireplumber.settings" = {
       "device.routes.default-sink-volume" = 1.0;
-      "device.routes.default-source-volume" = 0.4;
+      "device.routes.default-source-volume" = 0.4 * 0.4 * 0.4;
     };
 
     "20-disable-elgato-wave-3-sink"."monitor.alsa.rules" = [
