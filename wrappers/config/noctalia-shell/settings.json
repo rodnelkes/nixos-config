@@ -225,10 +225,10 @@
     "reverseScroll": false
   },
   "ui": {
-    "fontDefault": "Sans Serif",
-    "fontFixed": "monospace",
-    "fontDefaultScale": 1,
-    "fontFixedScale": 1,
+    "fontDefault": "JetBrainsMonoNL NFP",
+    "fontFixed": "JetBrainsMonoNL NFM",
+    "fontDefaultScale": 1.09,
+    "fontFixedScale": 1.09,
     "tooltipsEnabled": true,
     "panelBackgroundOpacity": 0.93,
     "panelsAttachedToBar": true,
