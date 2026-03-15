@@ -104,6 +104,20 @@
       "url": "https://github.com/nix-community/disko/archive/5af7af10f14706e4095bd6bc0d9373eb097283c6.tar.gz",
       "hash": "sha256-naZz40TUFMa0E0CutvwWsSPhgD5JldyTUDEgP9ADpfU="
     },
+    "flake-compat": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.lix.systems/",
+        "owner": "lix-project",
+        "repo": "flake-compat"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "549f2762aebeff29a2e5ece7a7dc0f955281a1d1",
+      "url": "https://git.lix.systems/lix-project/flake-compat/archive/549f2762aebeff29a2e5ece7a7dc0f955281a1d1.tar.gz",
+      "hash": "sha256-NKw96t+BgHIYzHUjkTK95FqYRVKB8DHpVhefWSz/kTw="
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
@@ -223,6 +237,19 @@
       "revision": "cf59864ef8aa2e178cccedbe2c178185b0365705",
       "url": "https://github.com/NixOS/nixpkgs/archive/cf59864ef8aa2e178cccedbe2c178185b0365705.tar.gz",
       "hash": "sha256-izhTDFKsg6KeVBxJS9EblGeQ8y+O8eCa6RcW874vxEc="
+    },
+    "noctalia-qs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-qs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "8aa9d8ce86ef018fb442c585ad7fbb2a15a4f822",
+      "url": "https://github.com/noctalia-dev/noctalia-qs/archive/8aa9d8ce86ef018fb442c585ad7fbb2a15a4f822.tar.gz",
+      "hash": "sha256-XNmLf4HqUM6/he/eJiHT+Mvxmt7QuwgGU14jB4Ha+pM="
     },
     "npins": {
       "type": "Git",
