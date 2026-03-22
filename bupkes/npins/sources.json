@@ -277,6 +277,22 @@
       "url": "https://github.com/starship/starship/archive/c372aca8803a82bdba7234993218c0e302b5177c.tar.gz",
       "hash": "sha256-gHAD+6Hv8LzOgXTLhO8iIYPXr1GGLidOQ3DQUXw9KmM="
     },
+    "tuigreet": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NotAShelf",
+        "repo": "tuigreet"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.10.2",
+      "revision": "a4643be9543ff813621da8d37dfae6673dfe0562",
+      "url": "https://api.github.com/repos/NotAShelf/tuigreet/tarball/refs/tags/0.10.2",
+      "hash": "sha256-jeelrp9r/V8540qKoCofD8wz/w/qBcubs72HkremhME="
+    },
     "zen-browser": {
       "type": "Git",
       "repository": {
