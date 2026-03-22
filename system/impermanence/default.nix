@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (lib) mkIf mkAfter readFile;
+  inherit (lib) mkIf readFile;
 
   persistentDevice = "/persistent";
 in
@@ -33,6 +33,21 @@ in
 
     fileSystems.${persistentDevice}.neededForBoot = true;
 
-    boot.initrd.postResumeCommands = mkAfter (readFile ./btrfs-wipe.sh);
+    boot.initrd.systemd = {
+      enable = true;
+
+      services.btrfs-wipe = {
+        description = "Wipes BTRFS root subvolume";
+
+        after = [ "systemd-cryptsetup@crypted.service" ];
+        before = [ "sysroot.mount" ];
+        wantedBy = [ "initrd.target" ];
+
+        unitConfig.DefaultDependencies = "no";
+        serviceConfig.Type = "oneshot";
+
+        script = readFile ./btrfs-wipe.sh;
+      };
+    };
   };
 }
