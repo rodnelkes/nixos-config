@@ -40,7 +40,7 @@
         ln -sf ${configFile} $out/nushell/config.nu
 
         wrapProgram $out/bin/nu \
-        --add-flag "--config $out/nushell/config.nu"
+        --add-flags "--config $out/nushell/config.nu"
       '';
       meta.mainProgram = "nu";
     };
