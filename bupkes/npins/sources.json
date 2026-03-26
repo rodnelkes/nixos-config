@@ -238,19 +238,6 @@
       "url": "https://github.com/NixOS/nixpkgs/archive/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9.tar.gz",
       "hash": "sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc="
     },
-    "noctalia-qs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "noctalia-dev",
-        "repo": "noctalia-qs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "066835ebd5daeabc86df1e62fb5fe82a51407cc0",
-      "url": "https://github.com/noctalia-dev/noctalia-qs/archive/066835ebd5daeabc86df1e62fb5fe82a51407cc0.tar.gz",
-      "hash": "sha256-N131zILQ06ZNEvtgtjjFZ0N5qEI70rKKhCZsBcZoDH8="
-    },
     "npins": {
       "type": "Git",
       "repository": {
