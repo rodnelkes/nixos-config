@@ -1,8 +1,6 @@
 _:
 
 {
-  name = "starship";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };

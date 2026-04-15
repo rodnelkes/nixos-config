@@ -1,8 +1,6 @@
 _:
 
 {
-  name = "catppuccin";
-
   inputs = {
     sources.path = "/sources";
     nixpkgs.path = "/nixpkgs";

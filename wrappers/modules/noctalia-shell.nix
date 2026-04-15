@@ -1,8 +1,6 @@
 { types, ... }:
 
 {
-  name = "noctalia-shell";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };

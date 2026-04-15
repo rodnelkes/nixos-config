@@ -1,8 +1,6 @@
 _:
 
 {
-  name = "neovim";
-
   mutations = {
     "/jujutsu".config = _: {
       ui.merge-editor = "diffconflicts";

@@ -1,8 +1,6 @@
 { types, ... }@adios:
 
 {
-  name = "jujutsu";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };
