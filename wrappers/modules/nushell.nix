@@ -1,8 +1,6 @@
 { types, ... }@adios:
 
 {
-  name = "nushell";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };

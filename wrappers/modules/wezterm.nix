@@ -1,8 +1,6 @@
 { types, ... }:
 
 {
-  name = "wezterm";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };

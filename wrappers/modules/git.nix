@@ -1,8 +1,6 @@
 { types, ... }@adios:
 
 {
-  name = "git";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };

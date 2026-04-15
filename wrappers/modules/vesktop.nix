@@ -1,8 +1,6 @@
 _:
 
 {
-  name = "vesktop";
-
   inputs = {
     nixpkgs.path = "/nixpkgs";
   };
