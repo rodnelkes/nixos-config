@@ -11,7 +11,10 @@ in
   environment = {
     systemPackages = with pkgs; [
       protonup-rs
+      mangohud
       lutris
+      heroic
+      bottles
     ];
 
     persistence."/persistent".users.${bupkes.user.username}.directories =
