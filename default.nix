@@ -14,6 +14,7 @@ mkHosts {
       modules = [
         "tty"
         "desktop"
+        "gaming"
       ];
     };
   };
