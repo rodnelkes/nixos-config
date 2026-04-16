@@ -10,10 +10,7 @@ in
 {
   environment.systemPackages = [ pkgs.protonup-rs ];
 
-  programs.steam = {
-    enable = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
-  };
+  programs.steam.enable = true;
 
   environment.persistence."/persistent".users.${bupkes.user.username} =
     mkIf bupkes.host.features.impermanence
