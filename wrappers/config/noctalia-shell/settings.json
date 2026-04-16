@@ -663,7 +663,7 @@
     "screenUnlock": "",
     "performanceModeEnabled": "",
     "performanceModeDisabled": "",
-    "startup": "vesktop --start-minimized & ckb-next --background",
+    "startup": "vesktop --start-minimized & ckb-next --background & steam -silent",
     "session": "",
     "colorGeneration": ""
   },
