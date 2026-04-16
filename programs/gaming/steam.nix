@@ -8,6 +8,8 @@ let
   inherit (lib) mkIf;
 in
 {
+  environment.systemPackages = [ pkgs.protonup-rs ];
+
   programs.steam = {
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
