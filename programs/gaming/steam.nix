@@ -1,14 +1,16 @@
-{
-  pkgs,
-  lib,
-  bupkes,
-  ...
-}:
+{ lib, bupkes, ... }:
 let
   inherit (lib) mkIf;
 in
 {
-  programs.steam.enable = true;
+  programs = {
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+
+    gamemode.enable = true;
+  };
 
   environment.persistence."/persistent".users.${bupkes.user.username} =
     mkIf bupkes.host.features.impermanence
