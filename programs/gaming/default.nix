@@ -1,11 +1,22 @@
-{ lib, bupkes, ... }:
+{
+  pkgs,
+  lib,
+  bupkes,
+  ...
+}:
 let
   inherit (lib) mkIf;
 in
 {
-  environment.persistence."/persistent".users.${bupkes.user.username}.directories =
-    mkIf bupkes.host.features.impermanence
-      [
-        "Games"
-      ];
+  environment = {
+    systemPackages = with pkgs; [
+      protonup-rs
+    ];
+
+    persistence."/persistent".users.${bupkes.user.username}.directories =
+      mkIf bupkes.host.features.impermanence
+        [
+          "Games"
+        ];
+  };
 }

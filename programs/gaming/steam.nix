@@ -8,8 +8,6 @@ let
   inherit (lib) mkIf;
 in
 {
-  environment.systemPackages = [ pkgs.protonup-rs ];
-
   programs.steam.enable = true;
 
   environment.persistence."/persistent".users.${bupkes.user.username} =
