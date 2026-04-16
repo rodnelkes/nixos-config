@@ -11,6 +11,7 @@ in
   environment = {
     systemPackages = with pkgs; [
       protonup-rs
+      lutris
     ];
 
     persistence."/persistent".users.${bupkes.user.username}.directories =
