@@ -17,6 +17,7 @@ in
       {
         directories = [
           ".local/share/Steam"
+          ".local/share/applications"
           ".steam"
         ];
 
