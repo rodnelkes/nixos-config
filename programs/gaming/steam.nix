@@ -1,9 +1,19 @@
-{ lib, bupkes, ... }:
+{
+  pkgs,
+  lib,
+  bupkes,
+  ...
+}:
 let
   inherit (lib) mkIf;
 in
 {
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = with pkgs; [
+      proton-ge-bin
+    ];
+  };
 
   environment.persistence."/persistent".users.${bupkes.user.username} =
     mkIf bupkes.host.features.impermanence
