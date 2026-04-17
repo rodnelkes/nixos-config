@@ -15,6 +15,8 @@ in
       lutris
       heroic
       bottles
+
+      gale
     ];
 
     persistence."/persistent".users.${bupkes.user.username}.directories =
