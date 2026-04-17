@@ -127,9 +127,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "3c7524c68348ef79ce48308e0978611a050089b2",
-      "url": "https://github.com/nix-community/home-manager/archive/3c7524c68348ef79ce48308e0978611a050089b2.tar.gz",
-      "hash": "sha256-No6QGBmIv5ChiwKCcbkxjdEQ/RO2ZS1gD7SFy6EZ7rc="
+      "revision": "d401492e2acd4fea42f7705a3c266cea739c9c36",
+      "url": "https://github.com/nix-community/home-manager/archive/d401492e2acd4fea42f7705a3c266cea739c9c36.tar.gz",
+      "hash": "sha256-iAJIzHngGZeLIkjzuuWI6VBsYJ1n89a/Esq0m8R1vjs="
     },
     "impermanence": {
       "type": "Git",
@@ -180,9 +180,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "526bcac44a365648acf5302c147772e40cff6b89",
-      "url": "https://git.lix.systems/lix-project/lix/archive/526bcac44a365648acf5302c147772e40cff6b89.tar.gz",
-      "hash": "sha256-ByK+/+KrmSVOC0RPMvQbyhGxl3CfOMD95RJG0Blo430="
+      "revision": "c1f75860d6ed402a17ca9c57b770ed952a42e3bb",
+      "url": "https://git.lix.systems/lix-project/lix/archive/c1f75860d6ed402a17ca9c57b770ed952a42e3bb.tar.gz",
+      "hash": "sha256-7NrQBrkP+ylvhR2O+az9ueo8qI564npQ1KlNgCk0MIg="
     },
     "lix-nixos-module": {
       "type": "Git",
@@ -260,9 +260,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d96e49c24f938c8cd034950e6fee3bc86bef5e2e",
-      "url": "https://github.com/starship/starship/archive/d96e49c24f938c8cd034950e6fee3bc86bef5e2e.tar.gz",
-      "hash": "sha256-pzqkq0ujDZsCaQuARhy/IwZjhQ/kYDh8WHg+5QoHkrY="
+      "revision": "c8391a93e9d2364872a98a3f2b79bfce15fb748d",
+      "url": "https://github.com/starship/starship/archive/c8391a93e9d2364872a98a3f2b79bfce15fb748d.tar.gz",
+      "hash": "sha256-8JEut3QsrqgqXj8M/IeCZg6NPUvLbdMG3ErYFCC3eAo="
     },
     "tuigreet": {
       "type": "GitRelease",
@@ -289,9 +289,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "727de8a44c85e90f899c540cf3ffa0d5d3344f9c",
-      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/727de8a44c85e90f899c540cf3ffa0d5d3344f9c.tar.gz",
-      "hash": "sha256-eX3u6wJ34+qu7ZR1qWOaToGWmudYQSOEStZZm6goP+8="
+      "revision": "0a7be59e988bb2cb452080f59aaabae70bc415ae",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/0a7be59e988bb2cb452080f59aaabae70bc415ae.tar.gz",
+      "hash": "sha256-JP1XVRabZquf7pnXvRUjp7DV+EBrB6Qmp3+vG3HMy/k="
     }
   },
   "version": 7
