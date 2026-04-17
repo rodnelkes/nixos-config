@@ -24,7 +24,5 @@ in
     };
   };
 
-  environment.persistence."/persistent".directories = mkIf bupkes.host.features.impermanence [
-    "/var/cache/tuigreet"
-  ];
+  persist.system.directories = mkIf bupkes.host.features.impermanence [ "/var/cache/tuigreet" ];
 }

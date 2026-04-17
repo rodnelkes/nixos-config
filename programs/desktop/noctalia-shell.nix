@@ -16,9 +16,7 @@ in
 
   qt.enable = true;
 
-  environment.persistence."/persistent".users.${bupkes.user.username}.directories =
-    mkIf bupkes.host.features.impermanence
-      [
-        ".cache/noctalia"
-      ];
+  persist.user.directories = mkIf bupkes.host.features.impermanence [
+    ".cache/noctalia"
+  ];
 }

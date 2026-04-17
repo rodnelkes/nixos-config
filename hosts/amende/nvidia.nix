@@ -15,7 +15,7 @@ in
   };
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  environment.persistence."/persistent".directories = mkIf bupkes.host.features.impermanence [
+  persist.system.directories = mkIf bupkes.host.features.impermanence [
     "/var/lib/nvidia"
   ];
 }

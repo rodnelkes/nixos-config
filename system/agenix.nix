@@ -45,7 +45,7 @@ in
     secretsMountPoint = mkIf bupkes.host.features.impermanence "${persistentDevice}/run/agenix.d";
   };
 
-  environment.persistence."/persistent".directories = mkIf bupkes.host.features.impermanence [
+  persist.system.directories = mkIf bupkes.host.features.impermanence [
     "/run/agenix"
     "/run/agenix.d"
   ];

@@ -12,18 +12,16 @@ in
     gamemode.enable = true;
   };
 
-  environment.persistence."/persistent".users.${bupkes.user.username} =
-    mkIf bupkes.host.features.impermanence
-      {
-        directories = [
-          ".local/share/Steam"
-          ".local/share/applications"
-          ".steam"
-        ];
+  persist.user = mkIf bupkes.host.features.impermanence {
+    directories = [
+      ".local/share/Steam"
+      ".local/share/applications"
+      ".steam"
+    ];
 
-        files = [
-          ".steampath"
-          ".steampid"
-        ];
-      };
+    files = [
+      ".steampath"
+      ".steampid"
+    ];
+  };
 }
