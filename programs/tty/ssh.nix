@@ -62,19 +62,17 @@ in
     };
   };
 
-  environment.persistence."/persistent" = mkIf bupkes.host.features.impermanence {
-    files = [
+  persist = mkIf bupkes.host.features.impermanence {
+    system.files = [
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/ssh/ssh_host_ed25519_key.pub"
     ];
 
-    users.${bupkes.user.username} = {
-      directories = [
-        {
-          directory = ".ssh";
-          mode = "0700";
-        }
-      ];
-    };
+    user.directories = [
+      {
+        directory = ".ssh";
+        mode = "0700";
+      }
+    ];
   };
 }

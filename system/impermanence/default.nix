@@ -6,28 +6,25 @@
 }:
 
 let
-  inherit (lib) mkIf readFile;
+  inherit (lib) mkAliasOptionModule mkIf readFile;
 
   persistentDevice = "/persistent";
 in
 {
-  imports = [ (import "${sources.impermanence}/nixos.nix") ];
+  imports = [
+    (import "${sources.impermanence}/nixos.nix")
+    (mkAliasOptionModule [ "persist" "system" ] [ "environment" "persistence" persistentDevice ])
+    (mkAliasOptionModule
+      [ "persist" "user" ]
+      [ "environment" "persistence" persistentDevice "users" bupkes.user.username ]
+    )
+  ];
 
   config = mkIf bupkes.host.features.impermanence {
     environment.persistence = {
       ${persistentDevice} = {
         enable = true;
         hideMounts = true;
-
-        directories = [
-          "/var/log"
-          "/var/lib/nixos"
-          "/var/lib/systemd"
-          # "/var/lib/secureboot"
-        ];
-        files = [ "/etc/machine-id" ];
-
-        users.${bupkes.user.username}.directories = [ "nixos-config" ];
       };
     };
 
@@ -48,6 +45,20 @@ in
 
         script = readFile ./btrfs-wipe.sh;
       };
+    };
+
+    persist = {
+      system = {
+        directories = [
+          "/var/log"
+          "/var/lib/nixos"
+          "/var/lib/systemd"
+          # "/var/lib/secureboot"
+        ];
+        files = [ "/etc/machine-id" ];
+      };
+
+      user.directories = [ "nixos-config" ];
     };
   };
 }

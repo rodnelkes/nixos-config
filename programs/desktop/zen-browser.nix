@@ -12,13 +12,10 @@ let
   zen-browser = (import sources.zen-browser) { inherit pkgs; };
 in
 {
-  environment = {
-    systemPackages = [ zen-browser.twilight ];
-    persistence."/persistent".users.${bupkes.user.username}.directories =
-      mkIf bupkes.host.features.impermanence
-        [
-          ".cache/zen"
-          ".config/zen"
-        ];
-  };
+  environment.systemPackages = [ zen-browser.twilight ];
+
+  persist.user.directories = mkIf bupkes.host.features.impermanence [
+    ".cache/zen"
+    ".config/zen"
+  ];
 }

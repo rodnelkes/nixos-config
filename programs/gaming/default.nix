@@ -8,21 +8,15 @@ let
   inherit (lib) mkIf;
 in
 {
-  environment = {
-    systemPackages = with pkgs; [
-      protonup-rs
-      mangohud
-      lutris
-      heroic
-      bottles
+  environment.systemPackages = with pkgs; [
+    protonup-rs
+    mangohud
+    lutris
+    heroic
+    bottles
 
-      gale
-    ];
+    gale
+  ];
 
-    persistence."/persistent".users.${bupkes.user.username}.directories =
-      mkIf bupkes.host.features.impermanence
-        [
-          "Games"
-        ];
-  };
+  persist.user.directories = mkIf bupkes.host.features.impermanence [ "Games" ];
 }
