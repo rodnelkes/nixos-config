@@ -10,6 +10,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     protonup-rs
+    protontricks
     mangohud
     lutris
     heroic
