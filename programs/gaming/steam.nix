@@ -18,10 +18,5 @@ in
       ".local/share/applications"
       ".steam"
     ];
-
-    files = [
-      ".steampath"
-      ".steampid"
-    ];
   };
 }
