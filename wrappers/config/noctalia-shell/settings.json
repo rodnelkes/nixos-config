@@ -367,7 +367,7 @@
     "position": "center",
     "pinnedApps": [],
     "sortByMostUsed": true,
-    "terminalCommand": "alacritty -e",
+    "terminalCommand": "wezterm start --",
     "customLaunchPrefixEnabled": false,
     "customLaunchPrefix": "",
     "viewMode": "list",
