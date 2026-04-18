@@ -52,6 +52,19 @@
       "url": "https://github.com/catppuccin/fzf/archive/7c2e05606f2e75840b1ba367b1f997cd919809b3.tar.gz",
       "hash": "sha256-fs3bOs1vfrtuono0yg1xjTSpzoS5m8ZRMD+CjAp+sDU="
     },
+    "catppuccin-kvantum": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "kvantum"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "71105d224fef95dd023691303477ce3eea487457",
+      "url": "https://github.com/catppuccin/kvantum/archive/71105d224fef95dd023691303477ce3eea487457.tar.gz",
+      "hash": "sha256-gcvCVZjVbj5fRZWaM+mZTwH/g158MH36JmMuMgCBuqQ="
+    },
     "catppuccin-limine": {
       "type": "Git",
       "repository": {
