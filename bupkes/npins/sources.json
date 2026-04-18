@@ -118,6 +118,19 @@
       "url": "https://git.lix.systems/lix-project/flake-compat/archive/549f2762aebeff29a2e5ece7a7dc0f955281a1d1.tar.gz",
       "hash": "sha256-NKw96t+BgHIYzHUjkTK95FqYRVKB8DHpVhefWSz/kTw="
     },
+    "hjem": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "feel-co",
+        "repo": "hjem"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3828faa3b6c14d4e557866db01d06137f33ad9f8",
+      "url": "https://github.com/feel-co/hjem/archive/3828faa3b6c14d4e557866db01d06137f33ad9f8.tar.gz",
+      "hash": "sha256-xjJpa+PGjB2lZi1saUU+ubWw5+FpAud/T0/jC1gLL1A="
+    },
     "home-manager": {
       "type": "Git",
       "repository": {
