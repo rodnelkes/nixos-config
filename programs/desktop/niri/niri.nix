@@ -6,5 +6,5 @@
     ssh.startAgent = lib.mkForce false;
   };
 
-  hm.xdg.configFile."niri/config.kdl".source = ./config.kdl;
+  hj.files.".config/niri/config.kdl".source = ./config.kdl;
 }
