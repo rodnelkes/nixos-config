@@ -55,7 +55,7 @@ in
       };
 
       "git" = {
-        host = "github.com gitlab.com";
+        host = "github.com gitlab.com codeberg.org";
         identitiesOnly = true;
         identityFile = config.age.secrets.github.path;
       };
