@@ -104,6 +104,19 @@
       "url": "https://github.com/catppuccin/tty/archive/6dd8b99181f7347e6e3b381872897184ff231bc7.tar.gz",
       "hash": "sha256-bVrK6fdWFhYe4l9JZqR79GM2Lf2iaHeO+i3+QuUc0Pc="
     },
+    "catppuccin-zen-browser": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "zen-browser"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c855685442c6040c4dda9c8d3ddc7b708de1cbaa",
+      "url": "https://github.com/catppuccin/zen-browser/archive/c855685442c6040c4dda9c8d3ddc7b708de1cbaa.tar.gz",
+      "hash": "sha256-5A57Lyctq497SSph7B+ucuEyF1gGVTsuI3zuBItGfg4="
+    },
     "disko": {
       "type": "Git",
       "repository": {
