@@ -2,6 +2,7 @@
   sources,
   pkgs,
   lib,
+  bupkes,
   ...
 }:
 
@@ -83,7 +84,10 @@ let
   );
 in
 {
-  environment.systemPackages = [ pkgs.starship ];
+  environment = {
+    systemPackages = [ pkgs.starship ];
+    sessionVariables.STARSHIP_CONFIG = "${bupkes.user.homeDirectory}/.config/starship.toml";
+  };
 
   hj.files.".config/starship.toml".source = writeTOML "starship" starshipConfig;
 }
