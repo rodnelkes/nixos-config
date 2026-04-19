@@ -1,8 +1,14 @@
-{ sources, lib, ... }:
+{
+  sources,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   inherit (builtins) readFile replaceStrings;
   inherit (lib) foldl recursiveUpdate;
+  inherit (pkgs.writers) writeTOML;
 
   jetpackConfig = fromTOML (readFile "${sources.starship}/docs/public/presets/toml/jetpack.toml");
 
@@ -67,19 +73,17 @@ let
   starshipFormatModule = foldl renameFormats {
     inherit (jetpackConfig) format right_format;
   } gitModules;
+
+  starshipConfig = foldl recursiveUpdate jetpackConfig (
+    [
+      starshipJJModule
+      starshipFormatModule
+    ]
+    ++ map starshipGitModule gitModules
+  );
 in
 {
-  hm = {
-    programs.starship = {
-      enable = true;
+  environment.systemPackages = [ pkgs.starship ];
 
-      settings = foldl recursiveUpdate jetpackConfig (
-        [
-          starshipJJModule
-          starshipFormatModule
-        ]
-        ++ map starshipGitModule gitModules
-      );
-    };
-  };
+  hj.files.".config/starship.toml".source = writeTOML "starship" starshipConfig;
 }
