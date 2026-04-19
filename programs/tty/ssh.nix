@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   bupkes,
   config,
@@ -10,6 +11,8 @@ let
   persistPath = string: if bupkes.host.features.impermanence then "/persistent${string}" else string;
 in
 {
+  environment.systemPackages = [ pkgs.openssh ];
+
   programs.ssh.startAgent = true;
 
   services.openssh = {
@@ -34,33 +37,23 @@ in
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOnFR3Mogjp+bnWYmCD/KujxtqghlXiKBXI1qsLx+Q8 rodnelkes@bingle"
   ];
 
-  hm.programs.ssh = {
-    enable = true;
+  hj.files.".ssh/config".text = ''
+    Host github.com gitlab.com codeberg.org
+      IdentitiesOnly yes
+      IdentityFile ${config.age.secrets.github.path}
 
-    # Deprecated, will be removed
-    enableDefaultConfig = false;
-
-    matchBlocks = {
-      "*" = {
-        forwardAgent = false;
-        addKeysToAgent = "yes";
-        compression = false;
-        serverAliveInterval = 0;
-        serverAliveCountMax = 3;
-        hashKnownHosts = false;
-        userKnownHostsFile = "~/.ssh/known_hosts";
-        controlMaster = "no";
-        controlPath = "~/.ssh/master-%r@%n:%p";
-        controlPersist = "no";
-      };
-
-      "git" = {
-        host = "github.com gitlab.com codeberg.org";
-        identitiesOnly = true;
-        identityFile = config.age.secrets.github.path;
-      };
-    };
-  };
+    Host *
+      ForwardAgent no
+      ServerAliveInterval 0
+      ServerAliveCountMax 3
+      Compression no
+      AddKeysToAgent yes
+      HashKnownHosts no
+      UserKnownHostsFile ~/.ssh/known_hosts
+      ControlMaster no
+      ControlPath ~/.ssh/master-%r@%n:%p
+      ControlPersist no
+  '';
 
   persist = mkIf bupkes.host.features.impermanence {
     system.files = [
