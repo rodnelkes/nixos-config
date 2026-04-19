@@ -144,19 +144,6 @@
       "url": "https://github.com/feel-co/hjem/archive/3828faa3b6c14d4e557866db01d06137f33ad9f8.tar.gz",
       "hash": "sha256-xjJpa+PGjB2lZi1saUU+ubWw5+FpAud/T0/jC1gLL1A="
     },
-    "home-manager": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nix-community",
-        "repo": "home-manager"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "d401492e2acd4fea42f7705a3c266cea739c9c36",
-      "url": "https://github.com/nix-community/home-manager/archive/d401492e2acd4fea42f7705a3c266cea739c9c36.tar.gz",
-      "hash": "sha256-iAJIzHngGZeLIkjzuuWI6VBsYJ1n89a/Esq0m8R1vjs="
-    },
     "impermanence": {
       "type": "Git",
       "repository": {
