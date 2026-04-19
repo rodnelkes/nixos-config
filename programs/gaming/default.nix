@@ -15,8 +15,6 @@ in
     lutris
     heroic
     bottles
-
-    gale
   ];
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [ "Games" ];
