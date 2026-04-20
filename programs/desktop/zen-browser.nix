@@ -17,5 +17,7 @@ in
   persist.user.directories = mkIf bupkes.host.features.impermanence [
     ".cache/zen"
     ".config/zen"
+
+    "Downloads"
   ];
 }
