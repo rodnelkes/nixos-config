@@ -17,5 +17,8 @@ in
     bottles
   ];
 
-  persist.user.directories = mkIf bupkes.host.features.impermanence [ "Games" ];
+  persist.user.directories = mkIf bupkes.host.features.impermanence [
+    "Games"
+    "Modding"
+  ];
 }
