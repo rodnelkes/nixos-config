@@ -5,7 +5,7 @@
     catppuccin-cursors.mochaDark
   ];
 
-  hj.files.".icons/default/index.theme".text = ''
+  hj.files.".local/share/icons/default/index.theme".text = ''
     [Icon Theme]
     Inherits=catppuccin-mocha-dark-cursors
   '';
