@@ -78,6 +78,8 @@ animations {
 
 window-rule {
     open-maximized true
+    geometry-corner-radius 20
+    clip-to-geometry true
 }
 
 window-rule {
@@ -87,18 +89,8 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-window-rule {
     match app-id=r#"zen-twilight$"# title="^Picture-in-Picture$"
     open-floating true
-}
-
-window-rule {
-    geometry-corner-radius 20
-
-    clip-to-geometry true
 }
 
 debug {
