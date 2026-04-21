@@ -25,4 +25,5 @@ in
   "github.age".publicKeys = allKeys;
   "installation_key.age".publicKeys = allKeys;
   "allowed-signers.age".publicKeys = allKeys;
+  "wifi.age".publicKeys = allKeys;
 }

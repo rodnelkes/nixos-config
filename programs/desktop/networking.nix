@@ -1,13 +1,16 @@
-{ lib, bupkes, ... }:
-let
-  inherit (lib) mkIf;
-in
-{
-  networking.networkmanager.enable = true;
-  hardware.bluetooth.enable = true;
+{ config, ... }:
 
-  persist.system.directories = mkIf bupkes.host.features.impermanence [
-    "/etc/NetworkManager/system-connections"
-    "/var/lib/bluetooth"
-  ];
+{
+  networking = {
+    networkmanager.enable = false;
+    useDHCP = false;
+
+    wireless = {
+      enable = true;
+      secretsFile = config.age.secrets.wifi.path;
+      networks."SpectrumSetup-A278".pskRaw = "ext:home";
+    };
+  };
+
+  systemd.network.enable = true;
 }
