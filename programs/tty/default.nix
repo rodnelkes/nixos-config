@@ -6,6 +6,9 @@ let
       # VCS
       git
       jujutsu
+
+      # CLI
+      gh
     ];
 in
 {
