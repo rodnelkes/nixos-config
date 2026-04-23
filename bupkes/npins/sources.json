@@ -241,15 +241,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "mexisme",
+        "owner": "NixOS",
         "repo": "nixos-hardware"
       },
-      "branch": "microsoft-surface/update-kernel-6.18.13",
+      "branch": "master",
       "submodules": false,
-      "revision": "f218bcd25a84b3141a6fc522eb4c2c8b2d32bb3e",
-      "url": "https://github.com/mexisme/nixos-hardware/archive/f218bcd25a84b3141a6fc522eb4c2c8b2d32bb3e.tar.gz",
-      "hash": "sha256-pwQyIMrVCfr53t3aNtkX0WuZekG3I8jNP2gNRQ3SOFA=",
-      "frozen": true
+      "revision": "72674a6b5599e844c045ae7449ba91f803d44ebc",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/72674a6b5599e844c045ae7449ba91f803d44ebc.tar.gz",
+      "hash": "sha256-PAfvLwuHc1VOvsLcpk6+HDKgMEibvZjCNvbM1BJOA7o="
     },
     "nixpkgs": {
       "type": "Git",
