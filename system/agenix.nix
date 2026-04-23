@@ -12,11 +12,10 @@ let
 
   agenix = callPackage "${sources.agenix}/pkgs/agenix.nix" { };
 
-  mkSecret = name: owner: {
+  mkSecret = name: mode: owner: {
     ${name} = {
-      inherit owner;
+      inherit mode owner;
       file = /. + "${bupkes.host.configDirectory}/bupkes/secrets/${name}.age";
-      mode = "0400";
     };
   };
 
@@ -31,12 +30,12 @@ in
 
   age = {
     secrets = foldl recursiveUpdate { } [
-      (mkSecret "user_password" bupkes.user.username)
+      (mkSecret "user_password" "0400" bupkes.user.username)
 
-      (mkSecret "github" bupkes.user.username)
-      (mkSecret "allowed-signers" bupkes.user.username)
+      (mkSecret "github" "0400" bupkes.user.username)
+      (mkSecret "allowed-signers" "0400" bupkes.user.username)
 
-      (mkSecret "wifi" "wpa_supplicant")
+      (mkSecret "wifi" "0400" "wpa_supplicant")
     ];
 
     identityPaths = mkIf bupkes.host.features.impermanence [
