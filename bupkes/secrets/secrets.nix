@@ -19,11 +19,19 @@ let
   userKeys = attrValues users;
   hostKeys = attrValues hosts;
   allKeys = userKeys ++ hostKeys ++ [ installationKey ];
+
+  getSystemKeys = system: [
+    users."rodnelkes@${system}"
+    hosts.${system}
+  ];
 in
 {
-  "user_password.age".publicKeys = allKeys;
-  "github.age".publicKeys = allKeys;
   "installation_key.age".publicKeys = allKeys;
+
+  "user_password.age".publicKeys = allKeys;
+
+  "github.age".publicKeys = allKeys;
   "allowed-signers.age".publicKeys = allKeys;
+
   "wifi.age".publicKeys = allKeys;
 }
