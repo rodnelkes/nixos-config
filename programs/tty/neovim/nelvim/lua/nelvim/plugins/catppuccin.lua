@@ -1,5 +1,6 @@
 require("catppuccin").setup({
 	flavour = "mocha",
+	transparent_background = true,
 
 	custom_highlights = function(colors)
 		return {
