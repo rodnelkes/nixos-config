@@ -241,14 +241,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "niri-wm",
+        "owner": "beckend",
         "repo": "niri"
       },
-      "branch": "main",
+      "branch": "border_colors",
       "submodules": false,
-      "revision": "9438f59e2b9d8deb6fcec5922f8aca18162b673c",
-      "url": "https://github.com/niri-wm/niri/archive/9438f59e2b9d8deb6fcec5922f8aca18162b673c.tar.gz",
-      "hash": "sha256-EeAwmrvONsovL2qPwKGXF2xGhbo7MySesY3fW2pNLpM="
+      "revision": "cacd5e56e567b0be05c8318543681a842ba01f23",
+      "url": "https://github.com/beckend/niri/archive/cacd5e56e567b0be05c8318543681a842ba01f23.tar.gz",
+      "hash": "sha256-WA65wfKl+JRFinxW1pD9aSneLfLjcn1U3fcZftdmPE0="
     },
     "nixos-hardware": {
       "type": "Git",
