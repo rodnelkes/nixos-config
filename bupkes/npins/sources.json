@@ -237,6 +237,19 @@
       "url": "https://github.com/Gerg-L/mnw/archive/54f7ad6e34f4e44e0260a5140af7726a4792dece.tar.gz",
       "hash": "sha256-AHM3wNuC5zzGaygnovHqFUI0YJR1Jj7ZgK9D9m7cgMQ="
     },
+    "niri": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "niri-wm",
+        "repo": "niri"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9438f59e2b9d8deb6fcec5922f8aca18162b673c",
+      "url": "https://github.com/niri-wm/niri/archive/9438f59e2b9d8deb6fcec5922f8aca18162b673c.tar.gz",
+      "hash": "sha256-EeAwmrvONsovL2qPwKGXF2xGhbo7MySesY3fW2pNLpM="
+    },
     "nixos-hardware": {
       "type": "Git",
       "repository": {

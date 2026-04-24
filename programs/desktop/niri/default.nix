@@ -1,8 +1,14 @@
-{ lib, ... }:
-
+{ sources, lib, ... }:
+let
+  flake-compat = import sources.flake-compat.outPath;
+  niri = flake-compat { src = sources.niri.outPath; };
+in
 {
   programs = {
-    niri.enable = true;
+    niri = {
+      enable = true;
+      package = niri.defaultNix.default;
+    };
     ssh.startAgent = lib.mkForce false;
   };
 
