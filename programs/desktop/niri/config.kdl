@@ -45,9 +45,9 @@ layout {
     border {
         width 4
 
-        active-gradient from="#fab387" to="#f9e2af" angle=45 relative-to="workspace-view"
-        inactive-gradient from="#585b70" to="#9399b2" angle=45 relative-to="workspace-view"
-        urgent-gradient from="#f38ba8" to="#eba0ac" angle=45 relative-to="workspace-view"
+        active-gradient from="#fab387" to="#f9e2af" relative-to="workspace-view"
+        inactive-gradient from="#585b70" to="#9399b2" relative-to="workspace-view"
+        urgent-gradient from="#f38ba8" to="#eba0ac" relative-to="workspace-view"
     }
 
     shadow {
@@ -75,6 +75,15 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
+    border-fade {
+        duration-ms 200
+        curve "ease-out-cubic"
+    }
+
+    border-angle {
+        duration-ms 2000
+        curve "linear"
+    }
 }
 
 window-rule {
