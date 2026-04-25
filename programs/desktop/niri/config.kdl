@@ -46,7 +46,7 @@ layout {
         width 4
 
         active-gradient from="#fab387" to="#f9e2af" relative-to="workspace-view"
-        inactive-gradient from="#585b70" to="#9399b2" relative-to="workspace-view"
+        inactive-color "#b4befe" 
         urgent-gradient from="#f38ba8" to="#eba0ac" relative-to="workspace-view"
     }
 
