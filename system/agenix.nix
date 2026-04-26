@@ -34,6 +34,8 @@ in
 
       (mkSecret "github" "0400" bupkes.user.username)
       (mkSecret "allowed-signers" "0400" bupkes.user.username)
+
+      (mkSecret "wg-US-NY-637" "0400" bupkes.user.username)
     ];
 
     identityPaths = mkIf bupkes.host.features.impermanence [
