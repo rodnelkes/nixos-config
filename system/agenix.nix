@@ -34,8 +34,6 @@ in
 
       (mkSecret "github" "0400" bupkes.user.username)
       (mkSecret "allowed-signers" "0400" bupkes.user.username)
-
-      (mkSecret "wifi" "0400" "wpa_supplicant")
     ];
 
     identityPaths = mkIf bupkes.host.features.impermanence [
