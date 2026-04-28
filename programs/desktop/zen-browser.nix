@@ -16,6 +16,16 @@ let
 
   zen-browser = (import sources.zen-browser) { inherit pkgs; };
   zen-twilight = zen-browser.twilight;
+
+  shellScript = (
+    writeShellScriptBin "zen" ''
+      if [[ $(${ip} netns identify) == ${ns} ]]; then
+          exec zen-twilight-${ns} "$@"
+      else
+          exec zen-twilight -P "Default Profile" "$@"
+      fi
+    ''
+  );
 in
 {
   programs.firejail.wrappedBinaries = mkIf config.programs.firejail.enable {
@@ -32,14 +42,8 @@ in
 
   environment.systemPackages = [
     zen-twilight
-    (writeShellScriptBin "zen" ''
-      if [[ $(${ip} netns identify) == ${ns} ]]; then
-          exec zen-twilight-${ns} "$@"
-      else
-          exec zen-twilight -P "Default Profile" "$@"
-      fi
-    '')
-  ];
+  ]
+  ++ (if config.programs.firejail.enable then [ shellScript ] else [ ]);
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
     ".cache/zen"
