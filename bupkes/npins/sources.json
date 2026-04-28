@@ -130,6 +130,22 @@
       "url": "https://github.com/nix-community/disko/archive/5ad85c82cc52264f4beddc934ba57f3789f28347.tar.gz",
       "hash": "sha256-PAqwnsBSI9SVC2QugvQ3xeYCB0otOwCacB1ueQj2tgw="
     },
+    "firejail": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "netblue30",
+        "repo": "firejail"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.9.80",
+      "revision": "b2687ae4f0d64f450b94c0133b01577591ef1e00",
+      "url": "https://api.github.com/repos/netblue30/firejail/tarball/refs/tags/0.9.80",
+      "hash": "sha256-rw1hNX8QFy5UFDx4vaYiiWV+hy7ji6XY6eEPvieGQoM="
+    },
     "flake-compat": {
       "type": "Git",
       "repository": {
