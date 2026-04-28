@@ -42,6 +42,19 @@ in
 
       listenPort = 51820;
       interfaceNamespace = ns;
+
+      postSetup = ''
+        ${ip} link add vpn-veth0 type veth peer name vpn-veth1
+        ${ip} link set vpn-veth1 netns ${ns}
+        ${ip} addr add 192.168.99.1/24 dev vpn-veth0
+        ${ip} link set vpn-veth0 up
+        ${ip} netns exec ${ns} ip addr add 192.168.99.2/24 dev vpn-veth1
+        ${ip} netns exec ${ns} ip link set vpn-veth1 up
+        # ${ip} -n ${ns} route add default dev wg0
+      '';
+      preShutdown = ''
+        ${ip} link del dev vpn-veth0
+      '';
     };
   };
 
