@@ -33,5 +33,5 @@ in
   "github.age".publicKeys = allKeys;
   "allowed-signers.age".publicKeys = allKeys;
 
-  "wg-US-NY-637.age".publicKeys = getSystemKeys "amende";
+  "wg-US-NY-637.age".publicKeys = allKeys;
 }

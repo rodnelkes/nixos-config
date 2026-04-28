@@ -1,8 +1,6 @@
 { sources, ... }:
 
 {
-  programs.firejail.enable = true;
-
   nixpkgs.overlays = [
     (final: prev: {
       firejail = prev.firejail.overrideAttrs (
