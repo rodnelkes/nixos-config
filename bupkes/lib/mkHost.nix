@@ -6,7 +6,6 @@ let
   nixosSystem = import "${sources.nixpkgs}/nixos/lib/eval-config.nix";
 
   modulePaths = mkModules hostVars;
-
 in
 nixosSystem {
   specialArgs = {

@@ -1,4 +1,9 @@
-{ pkgs, lib, bupkes, ... }:
+{
+  pkgs,
+  lib,
+  bupkes,
+  ...
+}:
 let
   inherit (lib) mkIf;
 in
