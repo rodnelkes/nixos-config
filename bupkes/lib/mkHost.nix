@@ -10,23 +10,13 @@ let
   inherit (bupkes.lib) recursivelyImport mkModules;
   nixosSystem = import "${sources.nixpkgs}/nixos/lib/eval-config.nix";
 
-  configDirectory =
-    let
-      dir = toString ./../..;
-    in
-    # Assume that the config directory is placed in /home/[USER]/nixos-config, otherwise it won't be persisted.
-    assert ("${bupkes.user.homeDirectory}/nixos-config" == dir);
-    dir;
-
-  modulePaths = mkModules configDirectory hostVars;
+  modulePaths = mkModules hostVars;
 
   mkBupkes =
     baseBupkes:
     baseBupkes
     // {
-      host = hostVars // {
-        inherit configDirectory;
-      };
+      host = bupkes.host // hostVars;
     };
 in
 nixosSystem {

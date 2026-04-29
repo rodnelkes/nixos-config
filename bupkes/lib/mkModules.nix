@@ -1,6 +1,8 @@
-configDirectory: hostVars:
+{ bupkes }:
+
+hostVars:
 let
-  applyPath = localPath: (/. + "/${configDirectory}/${localPath}");
+  applyPath = localPath: (/. + "/${bupkes.host.configDirectory}/${localPath}");
 
   modules = [
     "system"
