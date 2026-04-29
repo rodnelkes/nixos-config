@@ -14,7 +14,8 @@ let
 in
 mkFunctions {
   recursivelyImport = { };
-  mkHost = { inherit sources pkgs bupkes; };
+  mkHost = { inherit sources bupkes; };
   mkHosts = { inherit bupkes; };
   mkModules = { inherit bupkes; };
+  mkFinalBupkes = { inherit sources pkgs bupkes; };
 }
