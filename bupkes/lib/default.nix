@@ -16,4 +16,5 @@ mkFunctions {
   recursivelyImport = { };
   mkHost = { inherit sources pkgs bupkes; };
   mkHosts = { inherit bupkes; };
+  mkModules = { };
 }

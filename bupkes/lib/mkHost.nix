@@ -7,7 +7,7 @@
 
 hostVars:
 let
-  inherit (bupkes.lib) recursivelyImport;
+  inherit (bupkes.lib) recursivelyImport mkModules;
   nixosSystem = import "${sources.nixpkgs}/nixos/lib/eval-config.nix";
 
   configDirectory =
@@ -18,15 +18,7 @@ let
     assert ("${bupkes.user.homeDirectory}/nixos-config" == dir);
     dir;
 
-  applyPath = localPath: (/. + "/${configDirectory}/${localPath}");
-
-  modules = [
-    "system"
-    "hosts/${hostVars.hostname}"
-  ]
-  ++ map (feature: "programs/${feature}") hostVars.features.modules;
-
-  modulePaths = map applyPath modules;
+  modulePaths = mkModules configDirectory hostVars;
 
   mkBupkes =
     baseBupkes:
