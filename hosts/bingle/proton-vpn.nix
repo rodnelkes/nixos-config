@@ -2,7 +2,6 @@
 
 {
   networking = {
-    networkmanager.dns = "none";
     firewall.allowedUDPPorts = [ 51821 ];
 
     wg-quick.interfaces.wg0 = {
