@@ -3,6 +3,7 @@
 {
   networking = {
     networkmanager.dns = "none";
+    firewall.allowedUDPPorts = [ 51821 ];
 
     wg-quick.interfaces.wg0 = {
       privateKeyFile = config.age.secrets.wg-US-NY-489.path;
@@ -27,6 +28,8 @@
           persistentKeepalive = 25;
         }
       ];
+
+      listenPort = 51821;
     };
   };
 }
