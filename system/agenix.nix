@@ -9,15 +9,9 @@
 let
   inherit (lib) foldl recursiveUpdate mkIf;
   inherit (pkgs) callPackage;
+  inherit (bupkes.lib) mkSecret;
 
   agenix = callPackage "${sources.agenix}/pkgs/agenix.nix" { };
-
-  mkSecret = name: mode: owner: {
-    ${name} = {
-      inherit mode owner;
-      file = /. + "${bupkes.host.configDirectory}/bupkes/secrets/${name}.age";
-    };
-  };
 
   persistentDevice = "/persistent";
 in
@@ -34,9 +28,6 @@ in
 
       (mkSecret "github" "0400" bupkes.user.username)
       (mkSecret "allowed-signers" "0400" bupkes.user.username)
-
-      (mkSecret "wg-US-NY-637" "0400" bupkes.user.username)
-      (mkSecret "wg-US-NY-489" "0400" bupkes.user.username)
     ];
 
     identityPaths = mkIf bupkes.host.features.impermanence [

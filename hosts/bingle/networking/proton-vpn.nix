@@ -1,11 +1,16 @@
-{ config, ... }:
+{ bupkes, config, ... }:
+let
+  inherit (bupkes.lib) mkSecret;
 
+  wgProfile = "wg-US-NY-489";
+in
 {
+  age.secrets = mkSecret wgProfile "0400" bupkes.user.username;
   networking = {
     firewall.allowedUDPPorts = [ 51821 ];
 
     wg-quick.interfaces.wg0 = {
-      privateKeyFile = config.age.secrets.wg-US-NY-489.path;
+      privateKeyFile = config.age.secrets.${wgProfile}.path;
       address = [
         "10.2.0.2/32"
         "2a07:b944::2:2/128"

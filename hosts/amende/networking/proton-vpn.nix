@@ -1,23 +1,28 @@
 {
   pkgs,
   lib,
+  bupkes,
   config,
   ...
 }:
 let
   inherit (pkgs) iproute2;
   inherit (lib) getExe';
+  inherit (bupkes.lib) mkSecret;
 
   ip = getExe' iproute2 "ip";
 
+  wgProfile = "wg-US-NY-637";
   ns = "protonvpn";
 in
 {
+  age.secrets = mkSecret wgProfile "0400" bupkes.user.username;
+
   networking = {
     firewall.allowedUDPPorts = [ 51820 ];
 
     wireguard.interfaces.wg0 = {
-      privateKeyFile = config.age.secrets.wg-US-NY-637.path;
+      privateKeyFile = config.age.secrets.${wgProfile}.path;
       ips = [
         "10.2.0.2/32"
         "2a07:b944::2:2/128"

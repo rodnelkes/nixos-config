@@ -18,4 +18,5 @@ mkFunctions {
   mkHosts = { inherit bupkes; };
   mkModules = { inherit bupkes; };
   mkFinalBupkes = { inherit sources pkgs bupkes; };
+  mkSecret = { inherit bupkes; };
 }
