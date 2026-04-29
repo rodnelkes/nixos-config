@@ -42,8 +42,8 @@ in
 
   environment.systemPackages = [
     zen-twilight
-  ]
-  ++ (if config.programs.firejail.enable then [ shellScript ] else [ ]);
+    shellScript
+  ];
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
     ".cache/zen"
