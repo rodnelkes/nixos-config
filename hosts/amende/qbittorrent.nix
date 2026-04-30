@@ -2,8 +2,12 @@ let
   ns = "protonvpn";
 in
 {
-  services.qbittorrent = {
-    enable = true;
+  services = {
+    qbittorrent = {
+      enable = true;
+    };
+
+    nginx.virtualHosts."rod.nelk.es".locations."/qbittorrent/".proxyPass = "http://192.168.99.2:8080/";
   };
 
   systemd.services.qbittorrent = {
