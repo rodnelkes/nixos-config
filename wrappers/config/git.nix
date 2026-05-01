@@ -7,6 +7,7 @@ _:
 
   options = {
     config.mutators = [ "/git" ];
+    excludes.mutators = [ "/direnv" ];
   };
 
   mutations = {
