@@ -1,5 +1,12 @@
-{ pkgs, bupkes, ... }:
+{
+  pkgs,
+  lib,
+  bupkes,
+  ...
+}:
 let
+  inherit (lib) mkIf;
+
   wrappers =
     with bupkes.wrappers;
     map (wrapper: wrapper.drv) [
@@ -25,4 +32,6 @@ in
       expect # Includes unbuffer to add extra color to dix
     ]
     ++ wrappers;
+
+  persist.user.directories = mkIf bupkes.host.features.impermanence [ "Projects" ];
 }
