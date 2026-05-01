@@ -11,6 +11,12 @@
       mutatorType = types.attrs;
       mergeFunc = adios.lib.merge.attrs.recursively;
     };
+
+    excludes = {
+      type = types.string;
+      mutatorType = types.string;
+      mergeFunc = adios.lib.merge.strings.concatLines;
+    };
   };
 
   impl =
@@ -23,6 +29,11 @@
         writeText
         ;
       inherit (inputs.nixpkgs.lib.generators) toGitINI;
+
+      excludesFile = writeText "exclude" options.excludes;
+      config = options.config // {
+        core = { inherit excludesFile; };
+      };
     in
     symlinkJoin {
       name = "git-wrapped";
@@ -31,7 +42,7 @@
       postBuild = ''
         mkdir -p $out/git
 
-        ln -sf ${writeText "config" (toGitINI options.config)} $out/git/config
+        ln -sf ${writeText "config" (toGitINI config)} $out/git/config
 
         wrapProgram $out/bin/git \
         --set XDG_CONFIG_HOME $out
