@@ -184,7 +184,7 @@
     "screenOverrides": []
   },
   "general": {
-    "avatarImage": "/home/rodnelkes/.face",
+    "avatarImage": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/face.png",
     "dimmerOpacity": 0.2,
     "showScreenCorners": false,
     "forceBlackScreenCorners": false,
@@ -350,7 +350,7 @@
           "#94e2d5",
           "#f38ba8"
         ],
-        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/Wallpapers/BladeOfMiquella-mocha-nearest-neighbor.png",
+        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/BladeOfMiquella-mocha-nearest-neighbor.png",
         "useWallpaperColors": false
       }
     ]
