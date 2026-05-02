@@ -3,8 +3,10 @@ let
   inherit (lib) mkIf;
 in
 {
-  boot.initrd.luks.devices."crypted".device =
-    "/dev/disk/by-uuid/fbc7469b-5c7b-488b-aeec-6869c679f72c";
+  boot.initrd.luks.devices."crypted" = {
+    crypttabExtraOpts = [ "fido2-device=auto" ];
+    device = "/dev/disk/by-uuid/fbc7469b-5c7b-488b-aeec-6869c679f72c";
+  };
 
   fileSystems = {
     "/boot" = {
