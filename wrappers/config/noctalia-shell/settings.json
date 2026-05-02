@@ -296,7 +296,7 @@
   "wallpaper": {
     "enabled": true,
     "overviewEnabled": true,
-    "directory": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/Wallpapers",
+    "directory": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,
