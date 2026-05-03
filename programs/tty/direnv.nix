@@ -1,10 +1,17 @@
-{ lib, bupkes, ... }:
+{
+  pkgs,
+  lib,
+  bupkes,
+  ...
+}:
 let
+  inherit (pkgs.lixPackageSets.git) nix-direnv;
   inherit (lib) mkIf;
 in
 {
   programs.direnv = {
     enable = true;
+    package = nix-direnv;
     silent = true;
   };
 
