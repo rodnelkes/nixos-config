@@ -6,7 +6,7 @@
   ...
 }:
 let
-  inherit (pkgs) iproute2;
+  inherit (pkgs) iproute2 libnatpmp systemd;
   inherit (lib) getExe';
   inherit (bupkes.lib) mkSecret;
 
@@ -14,6 +14,7 @@ let
 
   wgProfile = "wg-US-NY-637";
   ns = "protonvpn";
+  natProfile = "wireguard-wg0-natpmp";
 in
 {
   age.secrets = mkSecret wgProfile "0400" bupkes.user.username;
@@ -48,9 +49,11 @@ in
         ${ip} link set vpn-veth1 netns ${ns}
         ${ip} addr add 192.168.99.1/24 dev vpn-veth0
         ${ip} link set vpn-veth0 up
-        ${ip} netns exec ${ns} ip addr add 192.168.99.2/24 dev vpn-veth1
-        ${ip} netns exec ${ns} ip link set vpn-veth1 up
-        # ${ip} -n ${ns} route add default dev wg0
+        ${ip} -n ${ns} addr add 192.168.99.2/24 dev vpn-veth1
+        ${ip} -n ${ns} link set vpn-veth1 up
+
+        ${ip} -n ${ns} link set wg0 up
+        ${ip} -n ${ns} route add default dev wg0
       '';
       preShutdown = ''
         ${ip} link del dev vpn-veth0
@@ -65,24 +68,93 @@ in
     '';
   };
 
-  systemd.services."netns-${ns}" = {
-    description = "${ns} network namespace";
-    before = [ "wireguard-wg0.service" ];
-    wantedBy = [ "wireguard-wg0.service" ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      ExecStart =
-        # bash
-        ''
-          ${ip} netns add ${ns}
-          ${ip} -n ${ns} link set lo up
-        '';
-      ExecStop =
-        # bash
-        ''
-          ${ip} netns del ${ns}
-        '';
+  systemd.services = {
+    "netns-${ns}" = {
+      description = "${ns} network namespace";
+      before = [ "wireguard-wg0.service" ];
+      wantedBy = [ "wireguard-wg0.service" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+        ExecStart =
+          # bash
+          ''
+            ${ip} netns add ${ns}
+            ${ip} -n ${ns} link set lo up
+          '';
+        ExecStop =
+          # bash
+          ''
+            ${ip} netns del ${ns}
+          '';
+      };
+    };
+
+    ${natProfile} = {
+      enable = true;
+      description = "natpmp";
+
+      bindsTo = [
+        "netns-${ns}.service"
+        "wireguard-wg0.service"
+      ];
+      after = [
+        "netns-${ns}.service"
+        "wireguard-wg0.service"
+      ];
+
+      path = [
+        libnatpmp
+        systemd
+      ];
+
+      script = ''
+        until natpmpc -a 1 0 udp 60 -g 10.2.0.1 > /dev/null 2>&1; do
+          echo "wg0 not up yet, retrying..."
+          sleep 1
+        done
+
+        udpNat=$(natpmpc -a 1 0 udp 60 -g 10.2.0.1)
+        udpStatus=$?
+        tcpNat=$(natpmpc -a 1 0 tcp 60 -g 10.2.0.1)
+        tcpStatus=$?
+
+        if [[ $udpStatus -eq 0 && $tcpStatus -eq 0 ]]; then
+            udpPort=$(echo "$udpNat" | grep -Po "Mapped public port \\K\\d+")
+            tcpPort=$(echo "$tcpNat" | grep -Po "Mapped public port \\K\\d+")
+
+            if [[ $udpPort -eq $tcpPort ]]; then
+                port=$udpPort
+                echo "Port: $port"
+
+                echo "NAT_PORT=$port" > /var/run/${natProfile}/port
+
+                systemd-notify --ready
+                while true; do
+                    date
+                    natpmpc -a 1 0 udp 60 -g 10.2.0.1 && natpmpc -a 1 0 tcp 60 -g 10.2.0.1 || {
+                        echo -e "ERROR with natpmpc command \\a"
+                        break
+                    }
+                    sleep 45
+                done
+            else
+                echo -e "ERROR udp and tcp ports are different \\a"
+            fi
+        else
+            echo -e "ERROR with natpmpc command \\a"
+        fi
+
+        exit 1
+      '';
+
+      serviceConfig = {
+        Type = "notify";
+        Restart = "always";
+        RestartSec = 45;
+        RuntimeDirectory = natProfile;
+        NetworkNamespacePath = "/var/run/netns/${ns}";
+      };
     };
   };
 }

@@ -1,5 +1,14 @@
-{ bupkes, ... }:
+{
+  pkgs,
+  lib,
+  bupkes,
+  ...
+}:
 let
+  inherit (pkgs) qbittorrent-nox;
+  inherit (lib) getExe mkForce;
+
+  oldExecStart = "\"${getExe qbittorrent-nox}\" \"--profile=/var/lib/qBittorrent/\" \"--webui-port=8080\"";
   ns = "protonvpn";
 in
 {
@@ -33,8 +42,19 @@ in
   };
 
   systemd.services.qbittorrent = {
-    bindsTo = [ "netns-${ns}.service" ];
-    after = [ "netns-${ns}.service" ];
-    serviceConfig.NetworkNamespacePath = "/var/run/netns/${ns}";
+    bindsTo = [
+      "netns-${ns}.service"
+      "wireguard-wg0-natpmp.service"
+    ];
+    after = [
+      "netns-${ns}.service"
+      "wireguard-wg0-natpmp.service"
+    ];
+
+    serviceConfig = {
+      ExecStart = mkForce "${oldExecStart} \"--torrenting-port=\${NAT_PORT}\"";
+      EnvironmentFile = "/var/run/wireguard-wg0-natpmp/port";
+      NetworkNamespacePath = "/var/run/netns/${ns}";
+    };
   };
 }
