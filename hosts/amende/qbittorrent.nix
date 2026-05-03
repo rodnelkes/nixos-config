@@ -54,7 +54,9 @@ in
     serviceConfig = {
       ExecStart = mkForce "${oldExecStart} \"--torrenting-port=\${NAT_PORT}\"";
       EnvironmentFile = "/var/run/wireguard-wg0-natpmp/port";
+
       NetworkNamespacePath = "/var/run/netns/${ns}";
+      InaccessiblePaths = [ "/run/nscd" ];
     };
   };
 }

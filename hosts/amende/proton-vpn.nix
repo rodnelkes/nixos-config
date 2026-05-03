@@ -66,6 +66,24 @@ in
       nameserver 10.2.0.1
       nameserver 2a07:b944::2:1
     '';
+
+    "netns/${ns}/nsswitch.conf".text = ''
+      passwd:    files systemd
+      group:     files [success=merge] systemd
+      shadow:    files systemd
+      sudoers:   files
+
+      hosts:     mymachines files myhostname dns
+      networks:  files
+
+      ethers:    files
+      services:  files
+      protocols: files
+      rpc:       files
+
+      subuid:    files
+      subgid:    files
+    '';
   };
 
   systemd.services = {
@@ -153,7 +171,9 @@ in
         Restart = "always";
         RestartSec = 45;
         RuntimeDirectory = natProfile;
+
         NetworkNamespacePath = "/var/run/netns/${ns}";
+        InaccessiblePaths = [ "/run/nscd" ];
       };
     };
   };
