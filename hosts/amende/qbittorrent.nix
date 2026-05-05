@@ -7,6 +7,7 @@ in
     qbittorrent = {
       enable = true;
 
+      extraArgs = [ "--confirm-legal-notice" ];
       serverConfig = {
         BitTorrent.Session = {
           DefaultSavePath = "/mnt/sda1/qBittorrent";
