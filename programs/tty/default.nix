@@ -5,7 +5,8 @@
   ...
 }:
 let
-  inherit (lib) mkIf;
+  inherit (lib) foldl recursiveUpdate mkIf;
+  inherit (bupkes.lib) mkSecret;
 
   wrappers =
     with bupkes.wrappers;
@@ -19,6 +20,11 @@ let
     ];
 in
 {
+  age.secrets = foldl recursiveUpdate { } [
+    (mkSecret "github" "0400" bupkes.user.username)
+    (mkSecret "allowed-signers" "0400" bupkes.user.username)
+  ];
+
   environment.systemPackages =
     with pkgs;
     [

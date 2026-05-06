@@ -7,9 +7,8 @@
 }:
 
 let
-  inherit (lib) foldl recursiveUpdate mkIf;
+  inherit (lib) mkIf;
   inherit (pkgs) callPackage;
-  inherit (bupkes.lib) mkSecret;
 
   agenix = callPackage "${sources.agenix}/pkgs/agenix.nix" { };
 
@@ -23,13 +22,6 @@ in
   environment.systemPackages = [ agenix ];
 
   age = {
-    secrets = foldl recursiveUpdate { } [
-      (mkSecret "user_password" "0400" bupkes.user.username)
-
-      (mkSecret "github" "0400" bupkes.user.username)
-      (mkSecret "allowed-signers" "0400" bupkes.user.username)
-    ];
-
     identityPaths = mkIf bupkes.host.features.impermanence [
       "${persistentDevice}/etc/ssh/ssh_host_ed25519_key"
     ];

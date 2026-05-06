@@ -1,6 +1,10 @@
 { config, bupkes, ... }:
-
+let
+  inherit (bupkes.lib) mkSecret;
+in
 {
+  age.secrets = mkSecret "user_password" "0400" bupkes.user.username;
+
   security.sudo.extraConfig = ''
     Defaults lecture = never
   '';
