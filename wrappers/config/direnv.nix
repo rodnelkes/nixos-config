@@ -10,7 +10,7 @@ _:
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText direnv;
-        inherit (inputs.nixpkgs.lib) getExe;
+        inherit (inputs.nixpkgs.lib) getExe';
 
         config =
           writeText "direnv-nushell-config"
@@ -28,7 +28,7 @@ _:
                   return
                 }
 
-                ${getExe direnv} export json | from json | default {} | load-env
+                ${getExe' direnv "direnv"} export json | from json | default {} | load-env
                 # If direnv changes the PATH, it will become a string and we need to re-convert it to a list
                 $env.PATH = do (env-conversions).path.from_string $env.PATH
               }]
