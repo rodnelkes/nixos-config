@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (pkgs) qbittorrent-nox;
+  inherit (pkgs) qbittorrent-nox vuetorrent;
   inherit (lib) getExe mkForce;
 
   oldExecStart = "\"${getExe qbittorrent-nox}\" \"--profile=/var/lib/qBittorrent/\" \"--webui-port=8080\"";
@@ -31,6 +31,8 @@ in
           WebUI = {
             Username = bupkes.user.username;
             Password_PBKDF2 = "\"@ByteArray(gtAY42yCLgWcy08T26d4ew==:QaOfneMfe1OYW5WGz6QQBAdN/ulVYnLtDcFX+BzzFUUXKs6YKdZ6NADxJ4uQUAXuAXbBqyxHkQCSqKiMC1+Zrg==)\"";
+            AlternativeUIEnabled = true;
+            RootFolder = "${vuetorrent}/share/vuetorrent";
           };
           Advanced.RecheckOnCompletion = true;
         };
