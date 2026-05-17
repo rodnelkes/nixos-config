@@ -5,11 +5,8 @@
   ...
 }:
 let
-  inherit (pkgs) writeShellScriptBin firejail;
+  inherit (pkgs) writeShellScriptBin firejail zen-twilight;
   inherit (lib) getExe;
-
-  zen-browser = (import sources.zen-browser) { inherit pkgs; };
-  zen-twilight = zen-browser.twilight;
 
   ns = "protonvpn";
   vpn = writeShellScriptBin "vpn" ''

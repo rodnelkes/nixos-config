@@ -7,12 +7,16 @@
 }:
 
 let
+  inherit (pkgs) zen-twilight;
   inherit (lib) mkIf;
-
-  zen-browser = (import sources.zen-browser) { inherit pkgs; };
-  zen-twilight = zen-browser.twilight;
 in
 {
+  nixpkgs.overlays = [
+    (_: prev: {
+      zen-twilight = ((import sources.zen-browser) { pkgs = prev; }).twilight;
+    })
+  ];
+
   environment.systemPackages = [ zen-twilight ];
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
