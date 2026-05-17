@@ -1,30 +1,12 @@
 {
   sources,
   pkgs,
-  lib,
   ...
 }:
 let
-  inherit (pkgs) writeShellScriptBin firejail zen-twilight;
-  inherit (lib) getExe;
+  inherit (pkgs) writeShellApplication zen-twilight vpn;
 
   ns = "protonvpn";
-  vpn = writeShellScriptBin "vpn" ''
-    profile="--noprofile"
-    run="''${@}"
-
-    if [[ "''${1}" == "zen-twilight" ]]; then
-        shift
-
-        profile="--profile="${firejail}/etc/firejail/zen-browser.profile""
-        run="${getExe zen-twilight} -P ${ns} "''${@}""
-    fi
-    exec firejail "''${profile}" \
-          --netns=${ns} \
-          --dns=10.2.0.1 \
-          --dns=2a07:b944::2:1 \
-          ''${run}
-  '';
 in
 {
   programs.firejail.enable = true;
@@ -32,7 +14,7 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       firejail = prev.firejail.overrideAttrs (
-        finalAttrs: prevAttrs: {
+        _: _: {
           version = "0.9.80";
           src = sources.firejail.outPath;
 
@@ -42,6 +24,33 @@ in
           ];
         }
       );
+
+      vpn = writeShellApplication {
+        name = "vpn";
+
+        runtimeInputs = [
+          zen-twilight
+        ];
+
+        checkPhase = "";
+
+        text = ''
+          profile="--noprofile"
+          run="''${@}"
+
+          if [[ "''${1}" == "zen-twilight" ]]; then
+              shift
+
+              profile="--profile="${final.firejail}/etc/firejail/zen-browser.profile""
+              run="zen-twilight -P ${ns} "''${@}""
+          fi
+          exec firejail "''${profile}" \
+                --netns=${ns} \
+                --dns=10.2.0.1 \
+                --dns=2a07:b944::2:1 \
+                ''${run}
+        '';
+      };
     })
   ];
 
