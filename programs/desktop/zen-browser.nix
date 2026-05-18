@@ -1,5 +1,4 @@
 {
-  sources,
   pkgs,
   lib,
   bupkes,
@@ -11,11 +10,6 @@ let
   inherit (lib) mkIf;
 in
 {
-  nixpkgs.overlays = [
-    (_: prev: {
-      zen-twilight = ((import sources.zen-browser) { pkgs = prev; }).twilight;
-    })
-  ];
 
   environment.systemPackages = [ zen-twilight ];
 
