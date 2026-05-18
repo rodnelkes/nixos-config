@@ -4,17 +4,15 @@
   ...
 }:
 let
-  inherit (pkgs) writeShellApplication zen-twilight vpn;
+  inherit (pkgs) writeShellApplication zen-twilight;
 
   ns = "protonvpn";
 in
 {
-  programs.firejail.enable = true;
-
   nixpkgs.overlays = [
     (final: prev: {
       firejail = prev.firejail.overrideAttrs (
-        _: _: {
+        _finalAttrs: _prevAttrs: {
           version = "0.9.80";
           src = sources.firejail.outPath;
 
@@ -53,6 +51,4 @@ in
       };
     })
   ];
-
-  environment.systemPackages = [ vpn ];
 }
