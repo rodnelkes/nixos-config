@@ -1,5 +1,18 @@
 {
   "pins": {
+    "Byparr": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ThePhaseless",
+        "repo": "Byparr"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "557152ccdcf32025b77438ab51c93f58eb284980",
+      "url": "https://github.com/ThePhaseless/Byparr/archive/557152ccdcf32025b77438ab51c93f58eb284980.tar.gz",
+      "hash": "sha256-d75pqM1yO5EgyiVLNae9yNlclGJDNy7FgnOhHexVcxs="
+    },
     "NixOS-WSL": {
       "type": "Git",
       "repository": {
@@ -38,6 +51,19 @@
       "revision": "b027ee29d959fda4b60b57566d64c98a202e0feb",
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
+    },
+    "build-system-pkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pyproject-nix",
+        "repo": "build-system-pkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "ffaa2161dd5d63e0e94591f86b54fc239660fb2e",
+      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/ffaa2161dd5d63e0e94591f86b54fc239660fb2e.tar.gz",
+      "hash": "sha256-qapCOQmR++yZSY43dzrp3wCrkOTLpod+ONtJWBk6iKU="
     },
     "catppuccin-fzf": {
       "type": "Git",
@@ -277,6 +303,19 @@
       "url": "https://github.com/andir/npins/archive/82fafbf30db54d8690489fa7ed0eb31619e73411.tar.gz",
       "hash": "sha256-SMZuNjsKhR9JEZoYVcKUHVE2GidcyMlwHkcMFlKG71I="
     },
+    "pyproject.nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pyproject-nix",
+        "repo": "pyproject.nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "a228447c3e179d477c1b6246ef3efa8cfe3c469a",
+      "url": "https://github.com/pyproject-nix/pyproject.nix/archive/a228447c3e179d477c1b6246ef3efa8cfe3c469a.tar.gz",
+      "hash": "sha256-GSKXTAnFqRAMlZkJrIPcQMYf+lpMr66K3i60mB9STvc="
+    },
     "starship": {
       "type": "Git",
       "repository": {
@@ -305,6 +344,19 @@
       "revision": "a4643be9543ff813621da8d37dfae6673dfe0562",
       "url": "https://api.github.com/repos/NotAShelf/tuigreet/tarball/refs/tags/0.10.2",
       "hash": "sha256-jeelrp9r/V8540qKoCofD8wz/w/qBcubs72HkremhME="
+    },
+    "uv2nix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pyproject-nix",
+        "repo": "uv2nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "b48abe99ef639cd100c224898529370e5d935294",
+      "url": "https://github.com/pyproject-nix/uv2nix/archive/b48abe99ef639cd100c224898529370e5d935294.tar.gz",
+      "hash": "sha256-ogNyNANNLo0SMFevIeUpbTMOL9uUDu/hXvp7JlOYbwQ="
     },
     "zen-browser": {
       "type": "Git",
