@@ -5,6 +5,7 @@ let
   applyPath = localPath: (/. + "/${bupkes.host.configDirectory}/${localPath}");
 
   modules = [
+    "packages"
     "system"
     "hosts/${hostVars.hostname}"
   ]
