@@ -51,6 +51,7 @@ in
         ${ip} link set vpn-veth0 up
         ${ip} -n ${ns} addr add 192.168.99.2/24 dev vpn-veth1
         ${ip} -n ${ns} link set vpn-veth1 up
+        ${ip} -n ${ns} link set lo up
 
         ${ip} -n ${ns} link set wg0 up
         ${ip} -n ${ns} route add default dev wg0
@@ -98,7 +99,6 @@ in
           # bash
           ''
             ${ip} netns add ${ns}
-            ${ip} -n ${ns} link set lo up
           '';
         ExecStop =
           # bash
