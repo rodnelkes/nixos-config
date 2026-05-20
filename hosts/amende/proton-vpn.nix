@@ -120,6 +120,7 @@ in
         "netns-${ns}.service"
         "wireguard-wg0.service"
       ];
+      wantedBy = [ "graphical.target" ];
 
       path = [
         libnatpmp
