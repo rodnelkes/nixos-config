@@ -1,17 +1,15 @@
 {
-  sources,
+  pkgs,
   lib,
   bupkes,
   ...
 }:
 let
+  inherit (pkgs) tuigreet;
   inherit (lib) mkIf;
-
-  flake-compat = import sources.flake-compat.outPath;
-  tuigreet = flake-compat { src = sources.tuigreet.outPath; };
 in
 {
-  environment.systemPackages = [ tuigreet.defaultNix.default ];
+  environment.systemPackages = [ tuigreet ];
 
   services.greetd = {
     enable = true;
