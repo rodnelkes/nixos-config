@@ -4,7 +4,7 @@
   ...
 }:
 let
-  inherit (pkgs) writeShellApplication zen-twilight;
+  inherit (pkgs) writeShellApplication zen-twilight qbittorrent;
 
   ns = "protonvpn";
 in
@@ -28,6 +28,7 @@ in
 
         runtimeInputs = [
           zen-twilight
+          qbittorrent
         ];
 
         checkPhase = "";
@@ -41,6 +42,12 @@ in
 
               profile="--profile="${final.firejail}/etc/firejail/zen-browser.profile""
               run="zen-twilight -P ${ns} "''${@}""
+          elif [[ "''${1}" == "qbittorrent" ]]; then
+              shift
+              source /var/run/wireguard-wg0-natpmp/port
+
+              profile="--profile="${final.firejail}/etc/firejail/qbittorrent.profile""
+              run="qbittorrent --torrenting-port=''${NAT_PORT} "''${@}""
           fi
           exec firejail "''${profile}" \
                 --netns=${ns} \

@@ -5,61 +5,69 @@
   ...
 }:
 let
-  inherit (pkgs) qbittorrent-nox vuetorrent;
-  inherit (lib) getExe mkForce;
-
-  oldExecStart = "\"${getExe qbittorrent-nox}\" \"--profile=/var/lib/qBittorrent/\" \"--webui-port=8080\"";
-  ns = "protonvpn";
+  inherit (pkgs) qbittorrent vuetorrent;
+  inherit (lib) mkOrder;
 in
 {
-  services = {
-    qbittorrent = {
-      enable = true;
+  environment.systemPackages = [ qbittorrent ];
 
-      serverConfig = {
-        BitTorrent.Session = {
-          DefaultSavePath = "/mnt/sda1/qBittorrent";
-          Interface = "wg0";
-          InterfaceName = "wg0";
-          InterfaceAddress = "10.2.0.2";
-          DisableAutoTMMByDefault = false;
-        };
+  programs.niri.settings = {
+    top-level =
+      mkOrder 400
+        # kdl
+        ''
+          spawn-sh-at-startup "vpn qbittorrent"
+        '';
 
-        LegalNotice.Accepted = true;
-
-        Preferences = {
-          WebUI = {
-            Username = bupkes.user.username;
-            Password_PBKDF2 = "\"@ByteArray(gtAY42yCLgWcy08T26d4ew==:QaOfneMfe1OYW5WGz6QQBAdN/ulVYnLtDcFX+BzzFUUXKs6YKdZ6NADxJ4uQUAXuAXbBqyxHkQCSqKiMC1+Zrg==)\"";
-            AlternativeUIEnabled = true;
-            RootFolder = "${vuetorrent}/share/vuetorrent";
-          };
-          Advanced.RecheckOnCompletion = true;
-        };
-
-        Network.PortForwardingEnabled = false;
-      };
-    };
-
-    nginx.virtualHosts."rod.nelk.es".locations."/qbittorrent/".proxyPass = "http://192.168.99.2:8080/";
+    window-rule =
+      # kdl
+      ''
+        window-rule {
+            match app-id="org.qbittorrent.qBittorrent"
+            open-maximized false
+        }
+      '';
   };
 
-  systemd.services.qbittorrent = {
-    bindsTo = [
-      "netns-${ns}.service"
-      "wireguard-wg0-natpmp.service"
-    ];
-    after = [
-      "netns-${ns}.service"
-      "wireguard-wg0-natpmp.service"
-    ];
+  hj.files = {
+    ".config/qBittorrent/qBittorrent.conf".text = ''
+      [BitTorrent]
+      Session/DefaultSavePath=/mnt/sda1/qBittorrent
+      Session/DisableAutoTMMByDefault=false
+      Session/Interface=wg0
+      Session/InterfaceAddress=10.2.0.2
+      Session/InterfaceName=wg0
 
-    serviceConfig = {
-      ExecStart = mkForce "${oldExecStart} \"--torrenting-port=\${NAT_PORT}\"";
-      EnvironmentFile = "/var/run/wireguard-wg0-natpmp/port";
+      [GUI]
+      StartUpWindowState=Hidden
 
-      NetworkNamespacePath = "/var/run/netns/${ns}";
-      InaccessiblePaths = [ "/run/nscd" ];
-    };
+      [LegalNotice]
+      Accepted=true
+
+      [Network]
+      PortForwardingEnabled=false
+
+      [Preferences]
+      Advanced/RecheckOnCompletion=true
+      WebUI/AlternativeUIEnabled=true
+      WebUI/Enabled=true
+      WebUI/Password_PBKDF2="@ByteArray(gtAY42yCLgWcy08T26d4ew==:QaOfneMfe1OYW5WGz6QQBAdN/ulVYnLtDcFX+BzzFUUXKs6YKdZ6NADxJ4uQUAXuAXbBqyxHkQCSqKiMC1+Zrg==)"
+      WebUI/RootFolder=${vuetorrent}/share/vuetorrent
+      WebUI/Username=${bupkes.user.username}
+    '';
+
+    ".config/firejail/qbittorrent.local".text = ''
+      ignore dbus-user none
+      ignore dbus-system none
+    '';
   };
+
+  services.nginx.virtualHosts."rod.nelk.es".locations."/qbittorrent/".proxyPass =
+    "http://192.168.99.2:8080/";
+
+  persist.user.directories = [
+    ".config/qBittorrent"
+    ".cache/qBittorrent"
+    ".local/share/qBittorrent"
+  ];
 }
