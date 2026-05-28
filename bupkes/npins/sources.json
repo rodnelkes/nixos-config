@@ -264,6 +264,19 @@
       "url": "https://github.com/beckend/niri/archive/cacd5e56e567b0be05c8318543681a842ba01f23.tar.gz",
       "hash": "sha256-WA65wfKl+JRFinxW1pD9aSneLfLjcn1U3fcZftdmPE0="
     },
+    "nix-minecraft": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Infinidoge",
+        "repo": "nix-minecraft"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "8996e4e811210fc7b51ead34a8c0ae5ba8df8eef",
+      "url": "https://github.com/Infinidoge/nix-minecraft/archive/8996e4e811210fc7b51ead34a8c0ae5ba8df8eef.tar.gz",
+      "hash": "sha256-lzDWYWg0s4Vvb7lJMdM7ySEHDuSOY8fXMUAXl2ReiAo="
+    },
     "nixos-hardware": {
       "type": "Git",
       "repository": {
