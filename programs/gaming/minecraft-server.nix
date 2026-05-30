@@ -1,4 +1,5 @@
 {
+  sources,
   pkgs,
   ...
 }:
@@ -11,9 +12,14 @@ let
     fetchurl
     ;
 
+  nix-minecraft = import sources.nix-minecraft;
   java = javaPackages.compiler.temurin-bin.jre-25;
 in
 {
+  imports = [ nix-minecraft.nixosModules.minecraft-servers ];
+
+  nixpkgs.overlays = [ nix-minecraft.overlay ];
+
   networking.firewall.allowedUDPPorts = [ 19132 ];
 
   services.minecraft-servers = {
