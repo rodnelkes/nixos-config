@@ -246,7 +246,8 @@
       "submodules": false,
       "revision": "8f30b89b88bb194fbae65c2a2190b8edccc126f7",
       "url": "https://github.com/beckend/niri/archive/8f30b89b88bb194fbae65c2a2190b8edccc126f7.tar.gz",
-      "hash": "sha256-xDyPIPxtrmSLEbF4SpOijk+UTfTLisls9j1UqCU/T+U="
+      "hash": "sha256-xDyPIPxtrmSLEbF4SpOijk+UTfTLisls9j1UqCU/T+U=",
+      "frozen": true
     },
     "nix-minecraft": {
       "type": "Git",
