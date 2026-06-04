@@ -11,9 +11,8 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       firejail = prev.firejail.overrideAttrs (
-        _finalAttrs: _prevAttrs: {
-          patches = [
-            ./fbuilder-call-firejail-on-path.patch
+        _finalAttrs: prevAttrs: {
+          patches = prevAttrs.patches ++ [
             ./use-config-folder-zen-browser.patch
           ];
         }
