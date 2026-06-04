@@ -235,6 +235,19 @@
       "url": "https://github.com/Gerg-L/mnw/archive/8e71691ad38b1efa7d7488c75ab115db33e046fd.tar.gz",
       "hash": "sha256-3c/aliHq9oXfmMSN5MZo8sk0znw9Zp+mDT3arj3xuiU="
     },
+    "niri": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "beckend",
+        "repo": "niri"
+      },
+      "branch": "border_colors",
+      "submodules": false,
+      "revision": "8f30b89b88bb194fbae65c2a2190b8edccc126f7",
+      "url": "https://github.com/beckend/niri/archive/8f30b89b88bb194fbae65c2a2190b8edccc126f7.tar.gz",
+      "hash": "sha256-xDyPIPxtrmSLEbF4SpOijk+UTfTLisls9j1UqCU/T+U="
+    },
     "nix-minecraft": {
       "type": "Git",
       "repository": {
