@@ -73,8 +73,8 @@ in
         };
 
         Geyser = fetchurl {
-          url = "https://cdn.modrinth.com/data/wKkoqHrH/versions/wdjhdtrF/Geyser-Fabric-2.10.0-b1156.jar";
-          sha512 = "3ec1f10229b78e7411ce3979e47cd8b653f01518b21cc24e01f4b38c3e9648b4a7cfa8c1d58cba1cefe2a0230faf5d08277686f98cc93543262f17bdac975fe6";
+          url = "https://cdn.modrinth.com/data/wKkoqHrH/versions/YxMEEm35/Geyser-Fabric-2.10.0-b1162.jar";
+          sha512 = "0ea805b2c55aea0236a1ea9520e295eed7d996d2765023566736a3d9e851d77bdb98c68e7e431db569a0ba2c6d96e75d98b9f39a8d5ca354dd470357abce6d9f";
         };
 
         Floodgate = fetchurl {
