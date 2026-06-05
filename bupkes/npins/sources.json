@@ -301,6 +301,19 @@
       "url": "https://github.com/andir/npins/archive/b7799bca849009ea150a91d9045aa7183f02bdec.tar.gz",
       "hash": "sha256-2DZ7zcCZlnwTsj8cDKg+i/Pb7plU/GPtO1pFPsnNBGE="
     },
+    "padctl": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "BANANASJIM",
+        "repo": "padctl"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "99156808143f48737ae4a2e54e9e8deeab67e637",
+      "url": "https://github.com/BANANASJIM/padctl/archive/99156808143f48737ae4a2e54e9e8deeab67e637.tar.gz",
+      "hash": "sha256-7A4GCcp8eXPQt4NT/quKR8QqmE0Udngnz/DD7R/XtEk="
+    },
     "pyproject.nix": {
       "type": "Git",
       "repository": {
