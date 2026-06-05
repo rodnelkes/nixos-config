@@ -1,7 +1,7 @@
 { lib, ... }:
 
 let
-  inherit (lib) hasSuffix;
+  inherit (lib) hasSuffix hasPrefix;
   inherit (builtins)
     concatMap
     isPath
@@ -20,6 +20,9 @@ list:
 filter
   # Filter out any path that doesn't look like `*.nix`. Don't forget to use
   # toString to prevent copying paths to the store unnecessarily
-  (elem: !isPath elem || hasSuffix ".nix" (toString elem))
+  (
+    elem:
+    !isPath elem || (hasSuffix ".nix" (toString elem) && !hasPrefix "_" (baseNameOf (toString elem)))
+  )
   # Expand any folder to all the files within it.
   (concatMap expandIfFolder list)
