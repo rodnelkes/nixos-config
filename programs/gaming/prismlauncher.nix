@@ -1,5 +1,7 @@
 {
   pkgs,
+  lib,
+  bupkes,
   ...
 }:
 let
@@ -7,6 +9,7 @@ let
     prismlauncher
     javaPackages
     ;
+  inherit (lib) mkIf;
 
   java = javaPackages.compiler.temurin-bin.jre-25;
 in
@@ -23,5 +26,5 @@ in
     })
   ];
 
-  persist.user.directories = [ ".local/share/PrismLauncher" ];
+  persist.user.directories = mkIf bupkes.host.features.impermanence [ ".local/share/PrismLauncher" ];
 }

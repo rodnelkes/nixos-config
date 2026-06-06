@@ -1,6 +1,8 @@
 {
   sources,
   pkgs,
+  lib,
+  bupkes,
   ...
 }:
 let
@@ -11,6 +13,7 @@ let
     linkFarmFromDrvs
     fetchurl
     ;
+  inherit (lib) mkIf;
 
   nix-minecraft = import sources.nix-minecraft;
   java = javaPackages.compiler.temurin-bin.jre-25;
@@ -104,7 +107,7 @@ in
     };
   };
 
-  persist.system.directories = [
+  persist.system.directories = mkIf bupkes.host.features.impermanence [
     {
       directory = "/srv/minecraft";
       user = "minecraft";

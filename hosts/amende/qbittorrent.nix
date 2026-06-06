@@ -6,7 +6,7 @@
 }:
 let
   inherit (pkgs) qbittorrent vuetorrent;
-  inherit (lib) mkOrder;
+  inherit (lib) mkOrder mkIf;
 in
 {
   environment.systemPackages = [ qbittorrent ];
@@ -65,7 +65,7 @@ in
   services.nginx.virtualHosts."rod.nelk.es".locations."/qbittorrent/".proxyPass =
     "http://192.168.99.2:8080/";
 
-  persist.user.directories = [
+  persist.user.directories = mkIf bupkes.host.features.impermanence [
     ".config/qBittorrent"
     ".cache/qBittorrent"
     ".local/share/qBittorrent"

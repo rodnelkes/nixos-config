@@ -1,4 +1,12 @@
 {
+  lib,
+  bupkes,
+  ...
+}:
+let
+  inherit (lib) mkIf;
+in
+{
   services = {
     radarr = {
       enable = true;
@@ -11,5 +19,5 @@
       "http://192.168.99.1:7878/radarr/";
   };
 
-  persist.system.directories = [ "/var/lib/radarr" ];
+  persist.system.directories = mkIf bupkes.host.features.impermanence [ "/var/lib/radarr" ];
 }

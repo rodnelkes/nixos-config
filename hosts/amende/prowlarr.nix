@@ -1,6 +1,10 @@
-{ lib, ... }:
+{
+  lib,
+  bupkes,
+  ...
+}:
 let
-  inherit (lib) mkForce;
+  inherit (lib) mkForce mkIf;
 
   ns = "protonvpn";
 in
@@ -31,7 +35,7 @@ in
     };
   };
 
-  persist.system.directories = [
+  persist.system.directories = mkIf bupkes.host.features.impermanence [
     # The default permissions for the folder without persistence
     {
       directory = "/var/lib/prowlarr";
