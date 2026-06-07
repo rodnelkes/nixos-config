@@ -6,7 +6,12 @@
   ...
 }:
 let
-  inherit (pkgs) iproute2 libnatpmp systemd;
+  inherit (pkgs)
+    iproute2
+    libnatpmp
+    systemd
+    writeShellScript
+    ;
   inherit (lib) getExe';
   inherit (bupkes.lib) mkSecret;
 
@@ -94,17 +99,13 @@ in
       serviceConfig = {
         Type = "oneshot";
         RemainAfterExit = true;
-        ExecStart =
-          # bash
-          ''
-            ${ip} netns add ${ns}
-            ${ip} -n ${ns} link set lo up
-          '';
-        ExecStop =
-          # bash
-          ''
-            ${ip} netns del ${ns}
-          '';
+        ExecStart = writeShellScript "netns-${ns}-start" ''
+          ${ip} netns add ${ns}
+          ${ip} -n ${ns} link set lo up
+        '';
+        ExecStop = writeShellScript "netns-${ns}-stop" ''
+          ${ip} netns del ${ns}
+        '';
       };
     };
 
