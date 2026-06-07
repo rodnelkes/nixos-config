@@ -10,7 +10,6 @@ let
   zig = pkgs.zig_0_15;
 in
 {
-  # make into nixos module that starts a systemd service and runs padctl install at start and uninstall when it stops
   nixpkgs.overlays = [
     (_final: _prev: {
       padctl = mkDerivation (finalAttrs: {
