@@ -19,5 +19,6 @@ in
   persist.user.directories = mkIf bupkes.host.features.impermanence [
     "Games"
     "Modding"
+    "Roms"
   ];
 }
