@@ -27,7 +27,6 @@ in
         }
 
         window-rule {
-            match app-id=r#"firefox$"# title="^Picture-in-Picture$"
             match app-id=r#"zen-twilight$"# title="^Picture-in-Picture$"
             open-floating true
         }
