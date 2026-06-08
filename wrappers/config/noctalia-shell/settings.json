@@ -171,6 +171,10 @@
           "icon": "noctalia",
           "id": "ControlCenter",
           "useDistroLogo": false
+        },
+        {
+          "iconColor": "error",
+          "id": "SessionMenu"
         }
       ]
     },
@@ -550,25 +554,32 @@
         "keybind": "4"
       },
       {
-        "action": "logout",
+        "action": "rebootToUefi",
         "command": "",
         "countdownEnabled": true,
         "enabled": true,
         "keybind": "5"
       },
       {
-        "action": "shutdown",
+        "action": "userspaceReboot",
         "command": "",
         "countdownEnabled": true,
         "enabled": true,
         "keybind": "6"
       },
       {
-        "action": "rebootToUefi",
+        "action": "logout",
         "command": "",
         "countdownEnabled": true,
         "enabled": true,
         "keybind": "7"
+      },
+      {
+        "action": "shutdown",
+        "command": "",
+        "countdownEnabled": true,
+        "enabled": true,
+        "keybind": "8"
       }
     ]
   },
