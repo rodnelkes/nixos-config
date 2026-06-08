@@ -265,7 +265,7 @@
   },
   "location": {
     "name": "Tokyo",
-    "weatherEnabled": true,
+    "weatherEnabled": false,
     "weatherShowEffects": true,
     "weatherTaliaMascotAlways": false,
     "useFahrenheit": true,
@@ -290,7 +290,7 @@
         "id": "calendar-month-card"
       },
       {
-        "enabled": true,
+        "enabled": false,
         "id": "weather-card"
       }
     ]
