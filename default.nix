@@ -11,10 +11,15 @@ mkHosts {
     system = "x86_64-linux";
     features = {
       impermanence = true;
+      splitTunneling = true;
+      wgProfile = "wg-US-NY-637";
+      netns = "protonvpn";
       modules = [
         "tty"
         "desktop"
         "gaming"
+        "privacy"
+        "servarr"
       ];
     };
   };
@@ -24,9 +29,13 @@ mkHosts {
     system = "x86_64-linux";
     features = {
       impermanence = true;
+      splitTunneling = false;
+      wgProfile = "wg-US-NY-489";
+      netns = null;
       modules = [
         "tty"
         "desktop"
+        "privacy"
       ];
     };
   };

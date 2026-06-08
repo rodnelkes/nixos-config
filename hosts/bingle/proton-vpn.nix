@@ -1,34 +1,21 @@
-{ bupkes, config, ... }:
-let
-  inherit (bupkes.lib) mkSecret;
-
-  wgProfile = "wg-US-NY-489";
-in
 {
-  age.secrets = mkSecret wgProfile "0400" bupkes.user.username;
   networking = {
     firewall.allowedUDPPorts = [ 51821 ];
 
-    wg-quick.interfaces.wg0 = {
-      privateKeyFile = config.age.secrets.${wgProfile}.path;
-      address = [
+    wireguard.interfaces.wg0 = {
+      ips = [
         "10.2.0.2/32"
         "2a07:b944::2:2/128"
-      ];
-      dns = [
-        "10.2.0.1"
-        "2a07:b944::2:1"
       ];
 
       peers = [
         {
-          publicKey = "LMkFEUVVqWl1di39x+CloLdXXH/X9P/vKXeVXohvqlc=";
-
+          publicKey = "iJIw5umGxtrrSIRxVrSF1Ofu5IDphpBpAJOvsrG4FiI=";
           allowedIPs = [
             "0.0.0.0/0"
             "::/0"
           ];
-          endpoint = "146.70.72.162:51820";
+          endpoint = "31.13.189.242:51820";
           persistentKeepalive = 25;
         }
       ];
