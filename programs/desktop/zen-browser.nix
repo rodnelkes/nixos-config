@@ -13,6 +13,15 @@ in
 
   environment.systemPackages = [ zen-twilight ];
 
+  programs.niri.settings.window-rule =
+    # kdl
+    ''
+      window-rule {
+          match app-id=r#"zen-twilight$"# title="^Picture-in-Picture$"
+          open-floating true
+      }
+    '';
+
   persist.user.directories = mkIf bupkes.host.features.impermanence [
     ".cache/zen"
     ".config/zen"
