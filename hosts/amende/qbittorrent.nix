@@ -11,23 +11,12 @@ in
 {
   environment.systemPackages = [ qbittorrent ];
 
-  programs.niri.settings = {
-    top-level =
-      mkOrder 400
-        # kdl
-        ''
-          spawn-sh-at-startup "vpn qbittorrent"
-        '';
-
-    window-rule =
+  programs.niri.settings.top-level =
+    mkOrder 400
       # kdl
       ''
-        window-rule {
-            match app-id="org.qbittorrent.qBittorrent"
-            open-maximized false
-        }
+        spawn-sh-at-startup "vpn qbittorrent"
       '';
-  };
 
   hj.files = {
     ".config/qBittorrent/qBittorrent.conf".text = ''
