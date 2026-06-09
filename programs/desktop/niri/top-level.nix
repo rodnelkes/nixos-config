@@ -10,8 +10,6 @@ in
     mkBefore
       # kdl
       ''
-        spawn-sh-at-startup "noctalia-shell --no-duplicate"
-
         hotkey-overlay {
             skip-at-startup
         }
