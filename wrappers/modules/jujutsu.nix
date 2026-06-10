@@ -2,8 +2,8 @@
 
 {
   inputs = {
-    nixpkgs.path = "/nixpkgs";
-    git.path = "/git";
+    nixpkgs.from = { root }: root.nixpkgs;
+    git.from = { root }: root.git;
   };
 
   options = {

@@ -2,8 +2,8 @@ _:
 
 {
   inputs = {
-    sources.path = "/sources";
-    nixpkgs.path = "/nixpkgs";
+    sources.from = { root }: root.sources;
+    nixpkgs.from = { root }: root.nixpkgs;
   };
 
   mutations = {

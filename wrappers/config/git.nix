@@ -1,9 +1,7 @@
 _:
 
 {
-  inputs = {
-    bupkes.path = "/bupkes";
-  };
+  inputs.bupkes.from = { root }: root.bupkes;
 
   options = {
     config.mutators = [ "/git" ];

@@ -9,15 +9,15 @@ let
   inherit (pkgs) lib;
   inherit (lib) recursiveUpdate;
 
-  adios = import "${sources.adios}/adios";
-  inherit (adios.lib) importModules;
+  lladios = import "${sources.lladios}/adios";
+  inherit (lladios.lib) importModules;
 
   root = {
     name = "root";
     modules = recursiveUpdate (importModules ./modules) (importModules ./config);
   };
 
-  tree = adios root {
+  tree = lladios root {
     options = {
       "/sources" = {
         inherit (sources) catppuccin-nushell catppuccin-fzf;

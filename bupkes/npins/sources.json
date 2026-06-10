@@ -26,19 +26,6 @@
       "url": "https://github.com/nix-community/NixOS-WSL/archive/3e6d8af994e2a2d31af7a91863d7c0d6e278d951.tar.gz",
       "hash": "sha256-md6QHmlIx40bQkun43M2eT8aav5GURGkXEMFwof6uZs="
     },
-    "adios": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "llakala",
-        "repo": "adios"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "8bc87443612c3843c508a5a02b46d4b31968c27f",
-      "url": "https://github.com/llakala/adios/archive/8bc87443612c3843c508a5a02b46d4b31968c27f.tar.gz",
-      "hash": "sha256-JtxqrzWeP6D+C4l90H9vtDkGLyi9WNS/To/1pUt04Cc="
-    },
     "agenix": {
       "type": "Git",
       "repository": {
@@ -221,6 +208,19 @@
       "revision": "ce82d2ce3e827eddc6bbb4ec4c315aaf6f9adc08",
       "url": "https://github.com/kdl-org/kdl-rs/archive/ce82d2ce3e827eddc6bbb4ec4c315aaf6f9adc08.tar.gz",
       "hash": "sha256-fxHBQnBlkoOE1thYajxbkVYCN2kfaz62V3Wn2qvv8Fo="
+    },
+    "lladios": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "llakala",
+        "repo": "lladios"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b4e6b9474083bb00fdd9b287471aebf869e51c32",
+      "url": "https://github.com/llakala/lladios/archive/b4e6b9474083bb00fdd9b287471aebf869e51c32.tar.gz",
+      "hash": "sha256-lzwi0SgSkkkMQsiSl3NlPyglSOLZgy54KrYJSZRx9NI="
     },
     "mnw": {
       "type": "Git",

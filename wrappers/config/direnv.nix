@@ -1,9 +1,7 @@
 _:
 
 {
-  inputs = {
-    nixpkgs.path = "/nixpkgs";
-  };
+  inputs.nixpkgs.from = { root }: root.nixpkgs;
 
   mutations = {
     "/nushell".configPaths =

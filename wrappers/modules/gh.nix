@@ -1,7 +1,7 @@
 { types, ... }:
 
 {
-  inputs.nixpkgs.path = "/nixpkgs";
+  inputs.nixpkgs.from = { root }: root.nixpkgs;
 
   options = {
     config.type = types.string;
