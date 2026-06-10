@@ -19,17 +19,6 @@ mkHosts {
     };
   };
 
-  boobookeys = {
-    stateVersion = "25.05";
-    system = "x86_64-linux";
-    features = {
-      impermanence = false;
-      modules = [
-        "tty"
-      ];
-    };
-  };
-
   bingle = {
     stateVersion = "26.05";
     system = "x86_64-linux";
