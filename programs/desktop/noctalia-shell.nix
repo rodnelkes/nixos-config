@@ -30,6 +30,21 @@ in
             place-within-backdrop true
         }
       '';
+    window-rule =
+      # kdl
+      ''
+        window-rule {
+            geometry-corner-radius 20
+            clip-to-geometry true
+        }
+      '';
+    debug =
+      # kdl
+      ''
+        debug {
+            honor-xdg-activation-with-invalid-serial
+        }
+      '';
   };
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
