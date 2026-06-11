@@ -190,7 +190,7 @@
     "screenOverrides": []
   },
   "general": {
-    "avatarImage": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/face.png",
+    "avatarImage": "/home/rodnelkes/nixos-config/wrappers/config/noctalia/face.png",
     "dimmerOpacity": 0.2,
     "showScreenCorners": false,
     "forceBlackScreenCorners": false,
@@ -302,7 +302,7 @@
   "wallpaper": {
     "enabled": true,
     "overviewEnabled": true,
-    "directory": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell",
+    "directory": "/home/rodnelkes/nixos-config/wrappers/config/noctalia",
     "monitorDirectories": [],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,
@@ -356,7 +356,7 @@
           "#94e2d5",
           "#f38ba8"
         ],
-        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia-shell/BladeOfMiquella-mocha-nearest-neighbor.png",
+        "path": "/home/rodnelkes/nixos-config/wrappers/config/noctalia/BladeOfMiquella-mocha-nearest-neighbor.png",
         "useWallpaperColors": false
       }
     ]
