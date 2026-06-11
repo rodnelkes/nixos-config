@@ -24,12 +24,7 @@ in
           profile="--noprofile"
           run="''${@}"
 
-          if [[ "''${1}" == "zen-twilight" ]]; then
-              shift
-
-              profile="--profile="${final.firejail}/etc/firejail/zen-browser.profile""
-              run="zen-twilight -P ${ns} "''${@}""
-          elif [[ "''${1}" == "qbittorrent" ]]; then
+          if [[ "''${1}" == "qbittorrent" ]]; then
               shift
               source /var/run/wireguard-wg0-natpmp/port
 
