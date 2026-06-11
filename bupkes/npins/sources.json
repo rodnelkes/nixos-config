@@ -13,19 +13,6 @@
       "url": "https://github.com/ThePhaseless/Byparr/archive/557152ccdcf32025b77438ab51c93f58eb284980.tar.gz",
       "hash": "sha256-d75pqM1yO5EgyiVLNae9yNlclGJDNy7FgnOhHexVcxs="
     },
-    "NixOS-WSL": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nix-community",
-        "repo": "NixOS-WSL"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "3e6d8af994e2a2d31af7a91863d7c0d6e278d951",
-      "url": "https://github.com/nix-community/NixOS-WSL/archive/3e6d8af994e2a2d31af7a91863d7c0d6e278d951.tar.gz",
-      "hash": "sha256-md6QHmlIx40bQkun43M2eT8aav5GURGkXEMFwof6uZs="
-    },
     "agenix": {
       "type": "Git",
       "repository": {
