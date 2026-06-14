@@ -1,11 +1,11 @@
 {
   pkgs,
+  bupkes,
   ...
 }:
 let
   inherit (pkgs) writeShellApplication zen-twilight qbittorrent;
-
-  ns = "protonvpn";
+  inherit (bupkes.host.features) netns;
 in
 {
   nixpkgs.overlays = [
@@ -32,7 +32,7 @@ in
               run="qbittorrent --torrenting-port=''${NAT_PORT} "''${@}""
           fi
           exec firejail "''${profile}" \
-                --netns=${ns} \
+                --netns=${netns} \
                 --dns=10.2.0.1 \
                 --dns=2a07:b944::2:1 \
                 ''${run}

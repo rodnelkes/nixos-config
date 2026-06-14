@@ -1,11 +1,12 @@
 {
   pkgs,
+  bupkes,
   ...
 }:
 let
   inherit (pkgs) libnatpmp systemd;
+  inherit (bupkes.host.features) netns;
 
-  ns = "protonvpn";
   natProfile = "wireguard-wg0-natpmp";
 in
 {
@@ -14,11 +15,11 @@ in
     description = "natpmp";
 
     bindsTo = [
-      "netns-${ns}.service"
+      "netns-${netns}.service"
       "wireguard-wg0.service"
     ];
     after = [
-      "netns-${ns}.service"
+      "netns-${netns}.service"
       "wireguard-wg0.service"
     ];
     wantedBy = [ "graphical.target" ];
@@ -74,7 +75,7 @@ in
       RestartSec = 45;
       RuntimeDirectory = natProfile;
 
-      NetworkNamespacePath = "/var/run/netns/${ns}";
+      NetworkNamespacePath = "/var/run/netns/${netns}";
       InaccessiblePaths = [ "/run/nscd" ];
     };
   };
