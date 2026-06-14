@@ -12,6 +12,7 @@ mkHosts {
     features = {
       impermanence = true;
       splitTunneling = true;
+      portForwarding = true;
       wgProfile = "wg-US-NY-637";
       netns = "protonvpn";
       modules = [
@@ -30,6 +31,7 @@ mkHosts {
     features = {
       impermanence = true;
       splitTunneling = false;
+      portForwarding = false;
       wgProfile = "wg-US-NY-489";
       netns = null;
       modules = [
