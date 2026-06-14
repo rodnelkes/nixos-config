@@ -15,7 +15,7 @@ order = [ "default" ]
 
     [bar.default]
     auto_hide = false
-    background_opacity = 0.85
+    background_opacity = 0.85000002384185791
     border = "outline"
     border_width = 0.0
     capsule = false
@@ -23,7 +23,7 @@ order = [ "default" ]
     capsule_group = []
     capsule_opacity = 1.0
     capsule_padding = 6.0
-    center = [ "media" ]
+    center = [ "clock" ]
     contact_shadow = false
     enabled = true
     end = [
@@ -35,7 +35,6 @@ order = [ "default" ]
         "volume",
         "brightness",
         "battery",
-        "clock",
         "control-center",
         "session"
     ]
@@ -54,7 +53,7 @@ order = [ "default" ]
     reserve_space = true
     scale = 1.1000000238418579
     shadow = true
-    start = [ "launcher", "workspaces" ]
+    start = [ "launcher", "workspaces", "media" ]
     thickness = 34
     widget_spacing = 6
 
@@ -93,7 +92,7 @@ active_monitor_only = false
 active_opacity = 1.0
 active_scale = 1.0
 auto_hide = false
-background_opacity = 0.85
+background_opacity = 0.85000002384185791
 cross_axis_padding = 8
 enabled = false
 icon_size = 48
@@ -243,7 +242,7 @@ temperature_night = 4000
 
 [notification]
 allowed_urgencies = []
-background_opacity = 0.85
+background_opacity = 0.85000002384185791
 blacklist = []
 blacklist_allow_critical = true
 collapse_on_dismiss = true
@@ -258,7 +257,7 @@ show_actions = true
 show_app_name = true
 
 [osd]
-background_opacity = 0.85
+background_opacity = 0.85000002384185791
 monitors = []
 offset_x = 20
 offset_y = 8
