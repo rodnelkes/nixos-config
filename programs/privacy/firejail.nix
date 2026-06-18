@@ -11,10 +11,10 @@ let
     qbittorrent
     ;
   inherit (lib) mkIf;
-  inherit (bupkes.host.features.vpn) ports;
+  inherit (bupkes.host.features.vpn) ports splitTunneling;
 in
 {
-  config = mkIf (ports != null) {
+  config = mkIf (splitTunneling && ports != null) {
     programs.firejail.enable = true;
 
     environment.systemPackages = [
