@@ -12,6 +12,7 @@ let
     genAttrs'
     nameValuePair
     getExe
+    mkIf
     ;
   inherit (lib.filesystem) listFilesRecursive;
   inherit (bupkes.host.features) netns;
@@ -24,12 +25,14 @@ let
   );
 in
 {
-  programs.firejail.wrappedBinaries.librewolf = {
-    executable = getExe librewolf;
-    desktop = "${librewolf}/share/applications/librewolf.desktop";
-    profile = "${firejail}/etc/firejail/librewolf.profile";
-    extraArgs = [ "--netns=${netns}" ];
-  };
+  config = mkIf (netns != null) {
+    programs.firejail.wrappedBinaries.librewolf = {
+      executable = getExe librewolf;
+      desktop = "${librewolf}/share/applications/librewolf.desktop";
+      profile = "${firejail}/etc/firejail/librewolf.profile";
+      extraArgs = [ "--netns=${netns}" ];
+    };
 
-  hj.files = iconSources;
+    hj.files = iconSources;
+  };
 }
