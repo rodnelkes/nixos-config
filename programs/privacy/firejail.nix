@@ -11,7 +11,7 @@ let
     qbittorrent
     ;
   inherit (lib) mkIf;
-  inherit (bupkes.host.features.vpn) port netns;
+  inherit (bupkes.host.features.vpn) port;
 in
 {
   config = mkIf (port != null) {
@@ -33,7 +33,7 @@ in
           run="''${@}"
 
           exec firejail "''${profile}" \
-                --netns=${netns} \
+                --netns=vpn \
                 --dns=10.128.0.1 \
                 --dns=fd7d:76ee:e68f:a993::1 \
                 ''${run}

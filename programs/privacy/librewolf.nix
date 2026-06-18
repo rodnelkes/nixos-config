@@ -15,7 +15,7 @@ let
     mkIf
     ;
   inherit (lib.filesystem) listFilesRecursive;
-  inherit (bupkes.host.features.vpn) netns;
+  inherit (bupkes.host.features.vpn) splitTunneling;
 
   iconFiles = map (file: unsafeDiscardStringContext (removePrefix "${librewolf}/" file)) (
     listFilesRecursive "${librewolf}/share/icons"
@@ -25,12 +25,12 @@ let
   );
 in
 {
-  config = mkIf (netns != null) {
+  config = mkIf splitTunneling {
     programs.firejail.wrappedBinaries.librewolf = {
       executable = getExe librewolf;
       desktop = "${librewolf}/share/applications/librewolf.desktop";
       profile = "${firejail}/etc/firejail/librewolf.profile";
-      extraArgs = [ "--netns=${netns}" ];
+      extraArgs = [ "--netns=vpn" ];
     };
 
     hj.files = iconSources;

@@ -13,7 +13,7 @@ mkHosts {
       impermanence = true;
 
       vpn = {
-        netns = "vpn";
+        splitTunneling = true;
         port = 60747;
       };
 

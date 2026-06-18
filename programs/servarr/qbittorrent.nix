@@ -7,7 +7,7 @@
 let
   inherit (pkgs) qbittorrent firejail vuetorrent;
   inherit (lib) getExe mkOrder mkIf;
-  inherit (bupkes.host.features.vpn) netns port;
+  inherit (bupkes.host.features.vpn) port;
 in
 {
   environment.systemPackages = [ qbittorrent ];
@@ -16,7 +16,7 @@ in
     firejail.wrappedBinaries.qbittorrent = {
       executable = getExe qbittorrent;
       profile = "${firejail}/etc/firejail/qbittorrent.profile";
-      extraArgs = [ "--netns=${netns}" ];
+      extraArgs = [ "--netns=vpn" ];
     };
 
     niri.settings.top-level =

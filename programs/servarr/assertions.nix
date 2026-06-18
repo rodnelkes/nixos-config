@@ -4,7 +4,7 @@
 }:
 let
   inherit (builtins) elem;
-  inherit (bupkes.host.features.vpn) netns port;
+  inherit (bupkes.host.features.vpn) port splitTunneling; 
 
   hasModule = module: elem module bupkes.host.features.modules;
 in
@@ -15,7 +15,7 @@ in
       message = "servarr modules require privacy modules";
     }
     {
-      assertion = netns != null;
+      assertion = splitTunneling;
       message = "qBittorrent and Prowlarr require network namespaces";
     }
     {

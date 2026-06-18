@@ -15,7 +15,7 @@ let
     recursiveUpdate
     ;
   inherit (bupkes.lib) mkSecret;
-  inherit (bupkes.host.features.vpn) port netns;
+  inherit (bupkes.host.features.vpn) port splitTunneling;
 
   ip = getExe' iproute2 "ip";
 
@@ -42,20 +42,20 @@ in
       };
     })
 
-    (mkIf (netns != null) {
+    (mkIf splitTunneling {
       networking.wireguard.interfaces.wg0 = {
-        interfaceNamespace = netns;
+        interfaceNamespace = "vpn";
 
         postSetup = ''
           ${ip} link add vpn-veth0 type veth peer name vpn-veth1
-          ${ip} link set vpn-veth1 netns ${netns}
+          ${ip} link set vpn-veth1 netns vpn
           ${ip} addr add 192.168.99.1/24 dev vpn-veth0
           ${ip} link set vpn-veth0 up
-          ${ip} -n ${netns} addr add 192.168.99.2/24 dev vpn-veth1
-          ${ip} -n ${netns} link set vpn-veth1 up
+          ${ip} -n vpn addr add 192.168.99.2/24 dev vpn-veth1
+          ${ip} -n vpn link set vpn-veth1 up
 
-          ${ip} -n ${netns} link set wg0 up
-          ${ip} -n ${netns} route add default dev wg0
+          ${ip} -n vpn link set wg0 up
+          ${ip} -n vpn route add default dev wg0
         '';
         preShutdown = ''
           ${ip} link del dev vpn-veth0
@@ -63,12 +63,12 @@ in
       };
 
       environment.etc = {
-        "netns/${netns}/resolv.conf".text = ''
+        "netns/vpn/resolv.conf".text = ''
           nameserver 10.128.0.1
           nameserver fd7d:76ee:e68f:a993::1
         '';
 
-        "netns/${netns}/nsswitch.conf".text = ''
+        "netns/vpn/nsswitch.conf".text = ''
           passwd:    files systemd
           group:     files [success=merge] systemd
           shadow:    files systemd
@@ -87,19 +87,19 @@ in
         '';
       };
 
-      systemd.services."netns-${netns}" = {
-        description = "${netns} network namespace";
+      systemd.services."netns-vpn" = {
+        description = "vpn network namespace";
         before = [ "wireguard-wg0.service" ];
         wantedBy = [ "wireguard-wg0.service" ];
         serviceConfig = {
           Type = "oneshot";
           RemainAfterExit = true;
-          ExecStart = writeShellScript "netns-${netns}-start" ''
-            ${ip} netns add ${netns}
-            ${ip} -n ${netns} link set lo up
+          ExecStart = writeShellScript "netns-vpn-start" ''
+            ${ip} netns add vpn
+            ${ip} -n vpn link set lo up
           '';
-          ExecStop = writeShellScript "netns-${netns}-stop" ''
-            ${ip} netns del ${netns}
+          ExecStop = writeShellScript "netns-vpn-stop" ''
+            ${ip} netns del vpn
           '';
         };
       };
