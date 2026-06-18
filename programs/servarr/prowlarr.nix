@@ -5,8 +5,7 @@
 }:
 let
   inherit (lib) mkForce mkIf;
-
-  ns = "protonvpn";
+  inherit (bupkes.host.features) netns;
 in
 {
   services = {
@@ -22,8 +21,8 @@ in
   };
 
   systemd.services.prowlarr = {
-    bindsTo = [ "netns-${ns}.service" ];
-    after = [ "netns-${ns}.service" ];
+    bindsTo = [ "netns-${netns}.service" ];
+    after = [ "netns-${netns}.service" ];
 
     serviceConfig = {
       # Causes issues with persisted directory
@@ -31,7 +30,7 @@ in
       User = "root";
       Group = "root";
 
-      NetworkNamespacePath = "/var/run/netns/${ns}";
+      NetworkNamespacePath = "/var/run/netns/${netns}";
     };
   };
 

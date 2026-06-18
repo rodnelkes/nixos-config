@@ -1,13 +1,13 @@
 {
   pkgs,
   lib,
+  bupkes,
   ...
 }:
 let
   inherit (pkgs) byparr;
   inherit (lib) getExe;
-
-  ns = "protonvpn";
+  inherit (bupkes.host.features) netns;
 in
 {
   networking.firewall.allowedTCPPorts = [ 8191 ];
@@ -15,11 +15,11 @@ in
   systemd.services.byparr = {
     description = "byparr";
 
-    bindsTo = [ "netns-${ns}.service" ];
+    bindsTo = [ "netns-${netns}.service" ];
     before = [ "prowlarr.service" ];
     after = [
       "network.target"
-      "netns-${ns}.service"
+      "netns-${netns}.service"
     ];
     wantedBy = [ "multi-user.target" ];
 
@@ -27,7 +27,7 @@ in
       Type = "simple";
       Restart = "on-failure";
       ExecStart = "${getExe byparr}";
-      NetworkNamespacePath = "/var/run/netns/${ns}";
+      NetworkNamespacePath = "/var/run/netns/${netns}";
     };
   };
 }
