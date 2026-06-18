@@ -12,7 +12,7 @@ let
     firejail
     ;
   inherit (lib) mkIf;
-  inherit (bupkes.host.features) portForwarding netns;
+  inherit (bupkes.host.features.vpn) portForwarding netns;
 in
 {
   config = mkIf portForwarding {

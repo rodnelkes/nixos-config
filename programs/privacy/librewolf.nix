@@ -15,7 +15,7 @@ let
     mkIf
     ;
   inherit (lib.filesystem) listFilesRecursive;
-  inherit (bupkes.host.features) netns;
+  inherit (bupkes.host.features.vpn) netns;
 
   iconFiles = map (file: unsafeDiscardStringContext (removePrefix "${librewolf}/" file)) (
     listFilesRecursive "${librewolf}/share/icons"

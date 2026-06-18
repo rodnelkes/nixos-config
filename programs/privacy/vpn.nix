@@ -9,7 +9,7 @@ let
   inherit (pkgs) iproute2 writeShellScript;
   inherit (lib) getExe' mkMerge mkIf;
   inherit (bupkes.lib) mkSecret;
-  inherit (bupkes.host.features) wgProfile netns;
+  inherit (bupkes.host.features.vpn) wgProfile netns;
 
   ip = getExe' iproute2 "ip";
 in
@@ -21,7 +21,7 @@ in
       networking.wireguard.interfaces.wg0.privateKeyFile = config.age.secrets.${wgProfile}.path;
     }
 
-    (mkIf bupkes.host.features.splitTunneling {
+    (mkIf (netns != null) {
       networking.wireguard.interfaces.wg0 = {
         interfaceNamespace = netns;
 

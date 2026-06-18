@@ -5,7 +5,7 @@
 }:
 let
   inherit (lib) mkForce mkIf;
-  inherit (bupkes.host.features) netns;
+  inherit (bupkes.host.features.vpn) netns;
 in
 {
   services = {

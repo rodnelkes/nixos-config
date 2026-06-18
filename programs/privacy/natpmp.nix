@@ -7,12 +7,12 @@
 let
   inherit (pkgs) libnatpmp systemd;
   inherit (lib) mkIf;
-  inherit (bupkes.host.features) portForwarding netns;
+  inherit (bupkes.host.features.vpn) portForwarding netns;
 
   natProfile = "wireguard-wg0-natpmp";
 in
 {
-  config = mkIf portForwarding {
+  config = mkIf (portForwarding && netns != null) {
     systemd.services.${natProfile} = {
       enable = true;
       description = "natpmp";

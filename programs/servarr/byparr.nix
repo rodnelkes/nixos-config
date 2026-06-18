@@ -7,7 +7,7 @@
 let
   inherit (pkgs) byparr;
   inherit (lib) getExe;
-  inherit (bupkes.host.features) netns;
+  inherit (bupkes.host.features.vpn) netns;
 in
 {
   networking.firewall.allowedTCPPorts = [ 8191 ];

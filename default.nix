@@ -11,10 +11,13 @@ mkHosts {
     system = "x86_64-linux";
     features = {
       impermanence = true;
-      splitTunneling = true;
-      portForwarding = true;
-      wgProfile = "wg-US-NY-637";
-      netns = "protonvpn";
+
+      vpn = {
+        netns = "protonvpn";
+        portForwarding = true;
+        wgProfile = "wg-US-NY-637";
+      };
+
       modules = [
         "tty"
         "desktop"
@@ -30,10 +33,12 @@ mkHosts {
     system = "x86_64-linux";
     features = {
       impermanence = true;
-      splitTunneling = false;
-      portForwarding = false;
-      wgProfile = "wg-US-NY-489";
-      netns = null;
+
+      vpn = {
+        portForwarding = false;
+        wgProfile = "wg-US-NY-489";
+      };
+
       modules = [
         "tty"
         "desktop"
