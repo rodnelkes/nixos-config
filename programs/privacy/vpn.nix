@@ -15,7 +15,7 @@ let
     recursiveUpdate
     ;
   inherit (bupkes.lib) mkSecret;
-  inherit (bupkes.host.features.vpn) port splitTunneling;
+  inherit (bupkes.host.features.vpn) ports splitTunneling;
 
   ip = getExe' iproute2 "ip";
 
@@ -35,10 +35,10 @@ in
       networking.wireguard.interfaces.wg0.privateKeyFile = config.age.secrets.${wgProfile}.path;
     }
 
-    (mkIf (port != null) {
+    (mkIf (ports != null) {
       networking.firewall = {
-        allowedTCPPorts = [ port ];
-        allowedUDPPorts = [ port ];
+        allowedTCPPorts = ports;
+        allowedUDPPorts = ports;
       };
     })
 

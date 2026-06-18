@@ -3,8 +3,8 @@
   ...
 }:
 let
-  inherit (builtins) elem;
-  inherit (bupkes.host.features.vpn) port splitTunneling; 
+  inherit (builtins) elem length;
+  inherit (bupkes.host.features.vpn) ports splitTunneling;
 
   hasModule = module: elem module bupkes.host.features.modules;
 in
@@ -19,7 +19,7 @@ in
       message = "qBittorrent and Prowlarr require network namespaces";
     }
     {
-      assertion = port != null;
+      assertion = ports != null || length ports == 0;
       message = "qBittorrent requires port forwarding";
     }
   ];

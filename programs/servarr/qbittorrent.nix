@@ -5,9 +5,12 @@
   ...
 }:
 let
+  inherit (builtins) elemAt;
   inherit (pkgs) qbittorrent firejail vuetorrent;
   inherit (lib) getExe mkOrder mkIf;
-  inherit (bupkes.host.features.vpn) port;
+  inherit (bupkes.host.features.vpn) ports;
+
+  qbtPort = elemAt ports 0;
 in
 {
   environment.systemPackages = [ qbittorrent ];
@@ -35,7 +38,7 @@ in
       Session/Interface=wg0
       Session/InterfaceAddress=
       Session/InterfaceName=wg0
-      Session/Port=${toString port}
+      Session/Port=${toString qbtPort}
 
       [GUI]
       StartUpWindowState=Hidden

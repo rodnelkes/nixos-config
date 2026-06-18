@@ -14,7 +14,7 @@ mkHosts {
 
       vpn = {
         splitTunneling = true;
-        port = 60747;
+        ports = [ 60747 ];
       };
 
       modules = [
