@@ -13,9 +13,8 @@ mkHosts {
       impermanence = true;
 
       vpn = {
-        netns = "protonvpn";
-        portForwarding = true;
-        wgProfile = "wg-US-NY-637";
+        netns = "vpn";
+        port = 60747;
       };
 
       modules = [
@@ -33,11 +32,6 @@ mkHosts {
     system = "x86_64-linux";
     features = {
       impermanence = true;
-
-      vpn = {
-        portForwarding = false;
-        wgProfile = "wg-US-NY-489";
-      };
 
       modules = [
         "tty"

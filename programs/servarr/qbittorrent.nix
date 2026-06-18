@@ -5,18 +5,27 @@
   ...
 }:
 let
-  inherit (pkgs) qbittorrent vuetorrent;
-  inherit (lib) mkOrder mkIf;
+  inherit (pkgs) qbittorrent firejail vuetorrent;
+  inherit (lib) getExe mkOrder mkIf;
+  inherit (bupkes.host.features.vpn) netns port;
 in
 {
   environment.systemPackages = [ qbittorrent ];
 
-  programs.niri.settings.top-level =
-    mkOrder 400
-      # kdl
-      ''
-        spawn-sh-at-startup "vpn qbittorrent"
-      '';
+  programs = {
+    firejail.wrappedBinaries.qbittorrent = {
+      executable = getExe qbittorrent;
+      profile = "${firejail}/etc/firejail/qbittorrent.profile";
+      extraArgs = [ "--netns=${netns}" ];
+    };
+
+    niri.settings.top-level =
+      mkOrder 400
+        # kdl
+        ''
+          spawn-sh-at-startup "qbittorrent"
+        '';
+  };
 
   hj.files = {
     ".config/qBittorrent/qBittorrent.conf".text = ''
@@ -24,8 +33,9 @@ in
       Session/DefaultSavePath=/mnt/sda1/qBittorrent
       Session/DisableAutoTMMByDefault=false
       Session/Interface=wg0
-      Session/InterfaceAddress=10.2.0.2
+      Session/InterfaceAddress=
       Session/InterfaceName=wg0
+      Session/Port=${toString port}
 
       [GUI]
       StartUpWindowState=Hidden

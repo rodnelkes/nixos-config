@@ -4,7 +4,7 @@
 }:
 let
   inherit (builtins) elem;
-  inherit (bupkes.host.features.vpn) netns portForwarding;
+  inherit (bupkes.host.features.vpn) netns port;
 
   hasModule = module: elem module bupkes.host.features.modules;
 in
@@ -19,7 +19,7 @@ in
       message = "qBittorrent and Prowlarr require network namespaces";
     }
     {
-      assertion = portForwarding;
+      assertion = port != null;
       message = "qBittorrent requires port forwarding";
     }
   ];

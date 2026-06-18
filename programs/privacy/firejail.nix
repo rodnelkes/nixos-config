@@ -9,13 +9,12 @@ let
     writeShellApplication
     zen-twilight
     qbittorrent
-    firejail
     ;
   inherit (lib) mkIf;
-  inherit (bupkes.host.features.vpn) portForwarding netns;
+  inherit (bupkes.host.features.vpn) port netns;
 in
 {
-  config = mkIf portForwarding {
+  config = mkIf (port != null) {
     programs.firejail.enable = true;
 
     environment.systemPackages = [
@@ -33,17 +32,10 @@ in
           profile="--noprofile"
           run="''${@}"
 
-          if [[ "''${1}" == "qbittorrent" ]]; then
-              shift
-              source /var/run/wireguard-wg0-natpmp/port
-
-              profile="--profile="${firejail}/etc/firejail/qbittorrent.profile""
-              run="qbittorrent --torrenting-port=''${NAT_PORT} "''${@}""
-          fi
           exec firejail "''${profile}" \
                 --netns=${netns} \
-                --dns=10.2.0.1 \
-                --dns=2a07:b944::2:1 \
+                --dns=10.128.0.1 \
+                --dns=fd7d:76ee:e68f:a993::1 \
                 ''${run}
 
         '';

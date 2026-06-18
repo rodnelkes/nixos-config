@@ -7,19 +7,40 @@
 }:
 let
   inherit (pkgs) iproute2 writeShellScript;
-  inherit (lib) getExe' mkMerge mkIf;
+  inherit (lib)
+    getExe'
+    mkMerge
+    mkIf
+    foldl
+    recursiveUpdate
+    ;
   inherit (bupkes.lib) mkSecret;
-  inherit (bupkes.host.features.vpn) wgProfile netns;
+  inherit (bupkes.host.features.vpn) port netns;
 
   ip = getExe' iproute2 "ip";
+
+  wgProfile = "wg-${bupkes.host.hostname}-private";
+  secrets = foldl recursiveUpdate { } (
+    map (key: mkSecret "wg-${bupkes.host.hostname}-${key}" "0400" bupkes.user.username) [
+      "private"
+      "preshared"
+    ]
+  );
 in
 {
   config = mkMerge [
     {
-      age.secrets = mkSecret wgProfile "0400" bupkes.user.username;
+      age = { inherit secrets; };
 
       networking.wireguard.interfaces.wg0.privateKeyFile = config.age.secrets.${wgProfile}.path;
     }
+
+    (mkIf (port != null) {
+      networking.firewall = {
+        allowedTCPPorts = [ port ];
+        allowedUDPPorts = [ port ];
+      };
+    })
 
     (mkIf (netns != null) {
       networking.wireguard.interfaces.wg0 = {
@@ -43,8 +64,8 @@ in
 
       environment.etc = {
         "netns/${netns}/resolv.conf".text = ''
-          nameserver 10.2.0.1
-          nameserver 2a07:b944::2:1
+          nameserver 10.128.0.1
+          nameserver fd7d:76ee:e68f:a993::1
         '';
 
         "netns/${netns}/nsswitch.conf".text = ''
