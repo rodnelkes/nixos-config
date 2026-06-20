@@ -41,7 +41,7 @@ mkHosts {
       modules = [
         "tty"
         "desktop"
-        "privacy"
+        # "privacy"
       ];
     };
   };
