@@ -5,11 +5,7 @@
   ...
 }:
 let
-  inherit (pkgs)
-    writeShellApplication
-    zen-twilight
-    qbittorrent
-    ;
+  inherit (pkgs) writeShellApplication;
   inherit (lib) mkIf;
   inherit (bupkes.host.features.vpn) ports splitTunneling;
 in
@@ -20,11 +16,6 @@ in
     environment.systemPackages = [
       (writeShellApplication {
         name = "vpn";
-
-        runtimeInputs = [
-          zen-twilight
-          qbittorrent
-        ];
 
         checkPhase = "";
 
