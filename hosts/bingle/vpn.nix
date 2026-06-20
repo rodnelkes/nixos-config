@@ -15,7 +15,7 @@
             "0.0.0.0/0"
             "::/0"
           ];
-          endpoint = "31.13.189.242:51820";
+          endpoint = "us3.vpn.airdns.org:51820";
           persistentKeepalive = 25;
         }
       ];
