@@ -33,7 +33,12 @@ in
     {
       age = { inherit secrets; };
 
-      networking.wireguard.interfaces.wg0.privateKeyFile = config.age.secrets.${wgProfile}.path;
+      networking = {
+        networkmanager.unmanaged = [ "wg0" ];
+        firewall.checkReversePath = "loose";
+
+        wireguard.interfaces.wg0.privateKeyFile = config.age.secrets.${wgProfile}.path;
+      };
     }
 
     (mkIf (length ports != 0) {
