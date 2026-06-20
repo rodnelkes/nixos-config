@@ -16,11 +16,11 @@ in
     }
     {
       assertion = splitTunneling;
-      message = "qBittorrent and Prowlarr require network namespaces";
+      message = "qBittorrent and Prowlarr require split tunneling currently";
     }
     {
-      assertion = ports != null || length ports == 0;
-      message = "qBittorrent requires port forwarding";
+      assertion = ports != null && length ports != 0;
+      message = "qBittorrent requires free ports";
     }
   ];
 }
