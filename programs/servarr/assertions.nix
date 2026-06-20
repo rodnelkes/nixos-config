@@ -19,8 +19,8 @@ in
       message = "qBittorrent and Prowlarr require split tunneling currently";
     }
     {
-      assertion = ports != null && length ports != 0;
-      message = "qBittorrent requires free ports";
+      assertion = length ports != 0;
+      message = "qBittorrent requires at least a single port";
     }
   ];
 }

@@ -6,6 +6,7 @@
   ...
 }:
 let
+  inherit (builtins) length;
   inherit (pkgs) iproute2 writeShellScript;
   inherit (lib)
     getExe'
@@ -35,7 +36,7 @@ in
       networking.wireguard.interfaces.wg0.privateKeyFile = config.age.secrets.${wgProfile}.path;
     }
 
-    (mkIf (ports != null) {
+    (mkIf (length ports != 0) {
       networking.firewall = {
         allowedTCPPorts = ports;
         allowedUDPPorts = ports;
