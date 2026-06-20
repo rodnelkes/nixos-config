@@ -33,6 +33,11 @@ mkHosts {
     features = {
       impermanence = true;
 
+      vpn = {
+        splitTunneling = false;
+        ports = [ ];
+      };
+
       modules = [
         "tty"
         "desktop"
