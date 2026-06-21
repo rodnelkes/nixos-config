@@ -25,7 +25,7 @@ let
     "include"
   ];
 
-  mkNiriOptions = listToAttrs (
+  niriOptions = listToAttrs (
     map (section: {
       name = section;
       value = mkOption {
@@ -41,7 +41,7 @@ in
   options = {
     programs.niri.settings = mkOption {
       type = submodule {
-        options = mkNiriOptions;
+        options = niriOptions;
       };
     };
   };
