@@ -56,14 +56,6 @@ in
           match namespace="^noctalia-backdrop"
           place-within-backdrop true
         }
-
-        layer-rule {
-          match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
-          background-effect {
-            blur true
-            xray false
-          }
-        }
       '';
     debug =
       # kdl

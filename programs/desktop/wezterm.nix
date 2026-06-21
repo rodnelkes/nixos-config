@@ -9,11 +9,6 @@
       window-rule {
           match app-id=r#"^org\.wezfurlong\.wezterm$"#
           default-column-width {}
-
-          background-effect {
-              xray true
-              blur true
-          }
       }
     '';
 }
