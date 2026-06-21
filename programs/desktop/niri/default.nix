@@ -23,7 +23,6 @@ let
     "recent-windows"
     "debug"
     "include"
-    "others"
   ];
 
   mkNiriOptions = listToAttrs (
