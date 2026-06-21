@@ -1,13 +1,20 @@
 {
+  pkgs,
   lib,
   config,
   ...
 }:
 let
   inherit (builtins) listToAttrs;
-  inherit (lib) mkForce concatStrings;
+  inherit (pkgs) writeText;
+  inherit (lib)
+    mkForce
+    concatStrings
+    recursiveUpdate
+    attrsToList
+    ;
   inherit (lib.options) mkOption;
-  inherit (lib.types) submodule lines;
+  inherit (lib.types) attrsOf submodule lines;
 
   sections = [
     "input"
@@ -22,10 +29,9 @@ let
     "gestures"
     "recent-windows"
     "debug"
-    "include"
   ];
 
-  niriOptions = listToAttrs (
+  sectionOptions = listToAttrs (
     map (section: {
       name = section;
       value = mkOption {
@@ -34,6 +40,13 @@ let
       };
     }) sections
   );
+
+  include = mkOption {
+    type = attrsOf lines;
+    default = { };
+  };
+
+  niriOptions = recursiveUpdate sectionOptions { inherit include; };
 
   cfg = config.programs.niri.settings;
 in
@@ -46,12 +59,21 @@ in
     };
   };
 
-  config = {
-    programs = {
-      niri.enable = true;
-      ssh.startAgent = mkForce false;
-    };
+  config =
+    let
+      parsedSections = concatStrings (map (section: cfg.${section}) sections);
+      parsedIncludes = concatStrings (
+        map (include: ''
+          include "${writeText "${include.name}.kdl" include.value}"
+        '') (attrsToList cfg.include)
+      );
+    in
+    {
+      programs = {
+        niri.enable = true;
+        ssh.startAgent = mkForce false;
+      };
 
-    hj.files.".config/niri/config.kdl".text = concatStrings (map (section: cfg.${section}) sections);
-  };
+      hj.files.".config/niri/config.kdl".text = parsedSections + parsedIncludes;
+    };
 }
