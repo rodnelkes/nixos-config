@@ -15,7 +15,8 @@ _:
       { inputs }:
       let
         inherit (inputs.bupkes) host user;
-        inherit (inputs.nixpkgs) lib pkgs;
+        inherit (inputs.nixpkgs.pkgs) openssh;
+        inherit (inputs.nixpkgs.pkgs.lib) getExe' getExe;
 
         persistPath = string: if host.features.impermanence then "/persistent${string}" else string;
         signingKey = persistPath "/run/agenix/github";
@@ -34,7 +35,7 @@ _:
 
           backends.ssh = {
             allowed-signers = allowedSigners;
-            program = lib.getExe' pkgs.openssh "ssh-keygen";
+            program = getExe' openssh "ssh-keygen";
           };
         };
         git.sign-on-push = true;
@@ -46,7 +47,7 @@ _:
 
         git.private-commits = "description('private:*')";
 
-        git.executable-path = lib.getExe (inputs.git { });
+        git.executable-path = getExe (inputs.git { });
       };
   };
 }

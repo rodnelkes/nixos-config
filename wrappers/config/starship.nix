@@ -8,7 +8,7 @@ _:
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText runCommand starship;
-        inherit (inputs.nixpkgs.lib) getExe;
+        inherit (inputs.nixpkgs.pkgs.lib) getExe;
 
         config = writeText "starship-nushell-config" ''
           use ${

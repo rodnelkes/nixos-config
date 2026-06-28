@@ -13,7 +13,8 @@ _:
       { inputs }:
       let
         inherit (inputs.bupkes) host user;
-        inherit (inputs.nixpkgs) lib pkgs;
+        inherit (inputs.nixpkgs.pkgs) openssh;
+        inherit (inputs.nixpkgs.pkgs.lib) getExe';
 
         persistPath = string: if host.features.impermanence then "/persistent${string}" else string;
         signingKey = persistPath "/run/agenix/github";
@@ -33,7 +34,7 @@ _:
           format = "ssh";
           "ssh" = {
             allowedSignersFile = allowedSigners;
-            program = lib.getExe' pkgs.openssh "ssh-keygen";
+            program = getExe' openssh "ssh-keygen";
           };
         };
       };

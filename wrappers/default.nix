@@ -6,7 +6,6 @@
 
 let
   inherit (builtins) mapAttrs;
-  inherit (pkgs) lib;
 
   lladios = import sources.lladios;
   inherit (lladios.lib) inject importModules;
@@ -24,7 +23,7 @@ let
         inherit (sources) catppuccin-nushell catppuccin-fzf noctalia;
       };
       "/nixpkgs" = {
-        inherit pkgs lib;
+        inherit pkgs;
       };
       "/bupkes" = {
         inherit (bupkes) host user;

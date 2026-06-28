@@ -8,7 +8,7 @@ _:
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText direnv;
-        inherit (inputs.nixpkgs.lib) getExe';
+        inherit (inputs.nixpkgs.pkgs.lib) getExe';
 
         config =
           writeText "direnv-nushell-config"

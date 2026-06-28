@@ -26,7 +26,7 @@
         git
         writeText
         ;
-      inherit (inputs.nixpkgs.lib.generators) toGitINI;
+      inherit (inputs.nixpkgs.pkgs.lib.generators) toGitINI;
 
       excludesFile = writeText "exclude" options.excludes;
       config = options.config // {
