@@ -7,14 +7,15 @@
 let
   inherit (builtins) mapAttrs;
   inherit (pkgs) lib;
-  inherit (lib) recursiveUpdate;
 
-  lladios = import "${sources.lladios}/adios";
-  inherit (lladios.lib) importModules;
+  lladios = import sources.lladios;
+  inherit (lladios.lib) inject importModules;
 
   root = {
-    name = "root";
-    modules = recursiveUpdate (importModules ./modules) (importModules ./config);
+    modules = inject [
+      (importModules { directory = ./modules; })
+      (importModules { directory = ./config; })
+    ];
   };
 
   tree = lladios root {
@@ -33,7 +34,7 @@ let
 in
 mapAttrs (
   _: wrapper:
-  if wrapper.args.options ? __functor then
+  if wrapper ? impl then
     (removeAttrs wrapper.args.options [ "__functor" ]) // { drv = wrapper { }; }
   else
     wrapper.args.options

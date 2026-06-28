@@ -205,9 +205,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "b4e6b9474083bb00fdd9b287471aebf869e51c32",
-      "url": "https://github.com/llakala/lladios/archive/b4e6b9474083bb00fdd9b287471aebf869e51c32.tar.gz",
-      "hash": "sha256-lzwi0SgSkkkMQsiSl3NlPyglSOLZgy54KrYJSZRx9NI="
+      "revision": "a637a0757aa98e5b63f2fe4e3a37f329717f3268",
+      "url": "https://github.com/llakala/lladios/archive/a637a0757aa98e5b63f2fe4e3a37f329717f3268.tar.gz",
+      "hash": "sha256-2Zho+A/maJLznJtL9F9Zm/eObBPSf3sUBZ6gaXEhaIc="
     },
     "mnw": {
       "type": "Git",
