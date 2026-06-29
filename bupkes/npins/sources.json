@@ -11,7 +11,8 @@
       "submodules": false,
       "revision": "557152ccdcf32025b77438ab51c93f58eb284980",
       "url": "https://github.com/ThePhaseless/Byparr/archive/557152ccdcf32025b77438ab51c93f58eb284980.tar.gz",
-      "hash": "sha256-d75pqM1yO5EgyiVLNae9yNlclGJDNy7FgnOhHexVcxs="
+      "hash": "sha256-d75pqM1yO5EgyiVLNae9yNlclGJDNy7FgnOhHexVcxs=",
+      "frozen": true
     },
     "agenix": {
       "type": "Git",
@@ -312,7 +313,8 @@
       "submodules": false,
       "revision": "9d48a7dc5b9dbb6d4bbbdc91b4b5e9bfd64afec6",
       "url": "https://github.com/BANANASJIM/padctl/archive/9d48a7dc5b9dbb6d4bbbdc91b4b5e9bfd64afec6.tar.gz",
-      "hash": "sha256-+2SSEbviGBB5DTPgLft8Ql4w9QEyPDTfu9RFttlpcmQ="
+      "hash": "sha256-+2SSEbviGBB5DTPgLft8Ql4w9QEyPDTfu9RFttlpcmQ=",
+      "frozen": true
     },
     "pyproject.nix": {
       "type": "Git",
