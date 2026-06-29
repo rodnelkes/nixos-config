@@ -36,4 +36,12 @@ linkFarm name [
       hash = "sha256-I0RskGSY+Kwzb/uKGd+b+tMitdNzwpynFvDh/GI8LZ0=";
     };
   }
+  {
+    name = "libusb-0.0.1-P02YQmeOFwBE3lScFnBmBaOrz-EKAMHX3r9YIDh7ZSul";
+    path = fetchZig {
+      name = "libusb";
+      url = "git+https://github.com/allyourcodebase/libusb?ref=v1.0.26-zig#363c73885e5b04384bd4702605c613e67da45797";
+      hash = "sha256-qA5EVjO5j8cZRJKIHnToZUCwoxLpmz3WWOz5ULbDrCM=";
+    };
+  }
 ]

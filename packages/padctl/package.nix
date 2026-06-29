@@ -14,7 +14,7 @@ in
     (_final: _prev: {
       padctl = mkDerivation (finalAttrs: {
         pname = "padctl";
-        version = "0.1.13";
+        version = "0.1.18";
 
         src = sources.padctl.outPath;
 
@@ -22,9 +22,8 @@ in
           inherit zig;
         };
 
-        nativeBuildInputs = with pkgs; [
+        nativeBuildInputs = [
           zig
-          libusb1
         ];
 
         zigBuildFlags = [
