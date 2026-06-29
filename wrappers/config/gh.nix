@@ -1,8 +1,6 @@
 _:
 
 {
-  inputs.bupkes.from = { root }: root.bupkes;
-
   options = {
     config.default =
       # yaml
@@ -37,9 +35,9 @@ _:
       '';
 
     hosts.defaultFunc =
-      { inputs }:
+      _:
       let
-        inherit (inputs.bupkes.user) username;
+        username = "rodnelkes";
       in
       # yaml
       ''

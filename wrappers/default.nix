@@ -1,7 +1,6 @@
 {
   sources ? import ../bupkes/npins,
   pkgs ? import sources.nixpkgs { },
-  bupkes ? import ../bupkes { inherit sources pkgs bupkes; },
 }:
 
 let
@@ -24,9 +23,6 @@ let
       };
       "/nixpkgs" = {
         inherit pkgs;
-      };
-      "/bupkes" = {
-        inherit (bupkes) host user;
       };
     };
   };

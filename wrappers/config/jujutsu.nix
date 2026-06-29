@@ -1,8 +1,6 @@
 _:
 
 {
-  inputs.bupkes.from = { root }: root.bupkes;
-
   options = {
     config.mutators = [
       "/jujutsu"
@@ -14,27 +12,22 @@ _:
     "/jujutsu".config =
       { inputs }:
       let
-        inherit (inputs.bupkes) host user;
         inherit (inputs.nixpkgs.pkgs) openssh;
         inherit (inputs.nixpkgs.pkgs.lib) getExe' getExe;
-
-        persistPath = string: if host.features.impermanence then "/persistent${string}" else string;
-        signingKey = persistPath "/run/agenix/github";
-        allowedSigners = persistPath "/run/agenix/allowed-signers";
       in
       {
         user = {
-          name = user.fullName;
-          email = user.email;
+          name = "Zayen Yusuf";
+          email = "rodnelkes";
         };
 
         signing = {
           behavior = "own";
           backend = "ssh";
-          key = signingKey;
+          key = "/persistent/run/agenix/github";
 
           backends.ssh = {
-            allowed-signers = allowedSigners;
+            allowed-signers = "/persistent/run/agenix/allowed-signers";
             program = getExe' openssh "ssh-keygen";
           };
         };

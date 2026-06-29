@@ -1,8 +1,6 @@
 _:
 
 {
-  inputs.bupkes.from = { root }: root.bupkes;
-
   options = {
     config.mutators = [ "/git" ];
     excludes.mutators = [ "/direnv" ];
@@ -12,20 +10,15 @@ _:
     "/git".config =
       { inputs }:
       let
-        inherit (inputs.bupkes) host user;
         inherit (inputs.nixpkgs.pkgs) openssh;
         inherit (inputs.nixpkgs.pkgs.lib) getExe';
-
-        persistPath = string: if host.features.impermanence then "/persistent${string}" else string;
-        signingKey = persistPath "/run/agenix/github";
-        allowedSigners = persistPath "/run/agenix/allowed-signers";
       in
       {
         user = {
-          inherit signingKey;
+          signingKey = "/persistent/run/agenix/github";
 
-          name = user.fullName;
-          email = user.email;
+          name = "Zayen Yusuf";
+          email = "rodnelkes";
         };
 
         commit.gpgSign = true;
@@ -33,7 +26,7 @@ _:
         gpg = {
           format = "ssh";
           "ssh" = {
-            allowedSignersFile = allowedSigners;
+            allowedSignersFile = "/persistent/run/agenix/allowed-signers";
             program = getExe' openssh "ssh-keygen";
           };
         };
