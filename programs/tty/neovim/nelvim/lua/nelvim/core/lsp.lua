@@ -3,6 +3,7 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable({
+	"basedpyright",
 	"bashls",
 	"clangd",
 	"kdl-lsp",

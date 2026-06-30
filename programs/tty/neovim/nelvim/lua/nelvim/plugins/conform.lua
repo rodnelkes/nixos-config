@@ -11,6 +11,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		nix = { "nixfmt" },
 		nu = { "nufmt" },
+		python = { "ruff" },
 		qml = { "qmlformat" },
 		qmljs = { "qmlformat" },
 		yaml = { "yamlfmt" },

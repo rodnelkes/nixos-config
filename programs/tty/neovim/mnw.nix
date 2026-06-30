@@ -61,6 +61,10 @@ let
       bupkes.wrappers.nushell.drv
       nufmt
 
+      # python
+      basedpyright
+      ruff
+
       # qml
       kdePackages.qtdeclarative
 
@@ -97,6 +101,7 @@ let
             kdl
             lua
             nix
+            python
             qmljs
             yaml
           ]
