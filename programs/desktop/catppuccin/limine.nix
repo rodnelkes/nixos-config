@@ -2,7 +2,7 @@
 let
   inherit (builtins) readFile;
 
-  theme = readFile "${sources.catppuccin-limine.outPath}/themes/catppuccin-mocha.conf";
+  theme = readFile "${sources.catppuccin-limine.outPath}/themes/mocha/catppuccin-mocha-rosewater.conf";
 in
 {
   boot.loader.limine = {

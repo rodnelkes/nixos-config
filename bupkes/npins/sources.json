@@ -75,9 +75,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "01c564b7903280d12950acd19237774d07ad163c",
-      "url": "https://github.com/catppuccin/limine/archive/01c564b7903280d12950acd19237774d07ad163c.tar.gz",
-      "hash": "sha256-ccD/6soFIJT4hUCFbbEhfOda10McAW+KtEDkVy5MXrk="
+      "revision": "43d7027853c6f733bcea7e22968510915ba0da23",
+      "url": "https://github.com/catppuccin/limine/archive/43d7027853c6f733bcea7e22968510915ba0da23.tar.gz",
+      "hash": "sha256-4quZdgijooBlIevUpdwJXu/7eg32BQdHA21HqWIzFis="
     },
     "catppuccin-nushell": {
       "type": "Git",
