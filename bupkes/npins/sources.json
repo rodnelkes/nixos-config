@@ -285,9 +285,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4f5e310427739e1b5dae2f17a75355516d6bc831",
-      "url": "https://github.com/noctalia-dev/noctalia/archive/4f5e310427739e1b5dae2f17a75355516d6bc831.tar.gz",
-      "hash": "sha256-zejAQAz4XB9fhsQzrrwwNg0kjveFtRRd0vv59BIvtpM="
+      "revision": "20f1e3ebdfecbab66b01eef25abca3939e0d7830",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/20f1e3ebdfecbab66b01eef25abca3939e0d7830.tar.gz",
+      "hash": "sha256-ELAAyMYPs17Y11nrHhB+ewcKg/08GPVKdmMmO7AvMM8="
     },
     "npins": {
       "type": "Git",
