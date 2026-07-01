@@ -9,12 +9,10 @@ let
   lladios = import sources.lladios;
   inherit (lladios.lib) inject importModules;
 
-  root = {
-    modules = inject [
-      (importModules { directory = ./modules; })
-      (importModules { directory = ./config; })
-    ];
-  };
+  root.modules = inject [
+    (importModules { directory = ./modules; })
+    (importModules { directory = ./config; })
+  ];
 
   tree = lladios root {
     options = {
