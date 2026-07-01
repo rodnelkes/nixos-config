@@ -53,7 +53,6 @@ in
           "/var/log"
           "/var/lib/nixos"
           "/var/lib/systemd"
-          # "/var/lib/secureboot"
         ];
         files = [ "/etc/machine-id" ];
       };
