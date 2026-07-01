@@ -538,7 +538,7 @@ display_mode = "graphic"
 type = "battery"
 
 [widget.clock]
-format = "{:%-I:%M:%S %p} {:%a} {:%m/%e/%Y}"
+format = "{:%-I:%M:%S %p} {:%a} {:%m/%-e/%Y}"
 type = "clock"
 
 [widget.cpu]
