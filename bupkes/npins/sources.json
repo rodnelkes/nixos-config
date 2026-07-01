@@ -36,9 +36,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "7bff980f37fc24e09dbc986643719900c139bf12",
-      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/7bff980f37fc24e09dbc986643719900c139bf12.tar.gz",
-      "hash": "sha256-MbXylBTkWqVm8/VYjoULtMoVRgWBN1gSHbeRKsOsPlU="
+      "revision": "430680a19bc85a3bda55f12e4cc1a1aadcf2e478",
+      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/430680a19bc85a3bda55f12e4cc1a1aadcf2e478.tar.gz",
+      "hash": "sha256-6gmEVe69+KlRkZD4PEEV5xAlB9CB0Y9TiuEgQjDrKTQ="
     },
     "catppuccin-fzf": {
       "type": "Git",
@@ -49,9 +49,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7c2e05606f2e75840b1ba367b1f997cd919809b3",
-      "url": "https://github.com/catppuccin/fzf/archive/7c2e05606f2e75840b1ba367b1f997cd919809b3.tar.gz",
-      "hash": "sha256-fs3bOs1vfrtuono0yg1xjTSpzoS5m8ZRMD+CjAp+sDU="
+      "revision": "7508f8141286fb95249100a2b5325960320dcf32",
+      "url": "https://github.com/catppuccin/fzf/archive/7508f8141286fb95249100a2b5325960320dcf32.tar.gz",
+      "hash": "sha256-A6X0TyzET1HbcCv4tlUvhMr6IguRYA9GYqWDKY7XeMg="
     },
     "catppuccin-kvantum": {
       "type": "Git",
@@ -127,9 +127,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "24fed06cac83bcc44ac8efbb57cab1a82fa0bedc",
-      "url": "https://github.com/nix-community/disko/archive/24fed06cac83bcc44ac8efbb57cab1a82fa0bedc.tar.gz",
-      "hash": "sha256-c3430xwxwhHipl3jigUGMMBfpaMylDqytW/kdmB3ZGs="
+      "revision": "ff8702b4de27f72b4c78573dfb89ec74e36abdf1",
+      "url": "https://github.com/nix-community/disko/archive/ff8702b4de27f72b4c78573dfb89ec74e36abdf1.tar.gz",
+      "hash": "sha256-RxWs5ND31KzTG7wvMM+PMfUjyNpmIEr999lqNARaM5o="
     },
     "flake-compat": {
       "type": "Git",
@@ -154,9 +154,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "3aaf5f238fb3b2f9efdc926e6024730636f0de23",
-      "url": "https://github.com/feel-co/hjem/archive/3aaf5f238fb3b2f9efdc926e6024730636f0de23.tar.gz",
-      "hash": "sha256-q4+HMlbi80dbN4KfFxhO84MEBMQE0E87ShbNKXOKLao="
+      "revision": "dd0ba9e22fb46581f843e6121de33ca7a4a80224",
+      "url": "https://github.com/feel-co/hjem/archive/dd0ba9e22fb46581f843e6121de33ca7a4a80224.tar.gz",
+      "hash": "sha256-so1hIImuLtTKTVUokJ/6C2D2b2D4znCx+/PAjMSAnpw="
     },
     "impermanence": {
       "type": "Git",
@@ -206,9 +206,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a637a0757aa98e5b63f2fe4e3a37f329717f3268",
-      "url": "https://github.com/llakala/lladios/archive/a637a0757aa98e5b63f2fe4e3a37f329717f3268.tar.gz",
-      "hash": "sha256-2Zho+A/maJLznJtL9F9Zm/eObBPSf3sUBZ6gaXEhaIc="
+      "revision": "f6d1ffcbdbd1b84820f8c5948b2af49b4c73a3d0",
+      "url": "https://github.com/llakala/lladios/archive/f6d1ffcbdbd1b84820f8c5948b2af49b4c73a3d0.tar.gz",
+      "hash": "sha256-b8qThpsPcMwsxHMTENjLUVJzaViZPG0K5Fngx1p9dJE="
     },
     "mnw": {
       "type": "Git",
@@ -246,9 +246,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e6f8bec35104ca5955efe73742da58d2823684f7",
-      "url": "https://github.com/Infinidoge/nix-minecraft/archive/e6f8bec35104ca5955efe73742da58d2823684f7.tar.gz",
-      "hash": "sha256-TznzgYVONg28KiSFB2rVdf/eLVIMtEQOxKt13Kzyrp8="
+      "revision": "3a06edf611cd9efa82538edecc9b35458a003b17",
+      "url": "https://github.com/Infinidoge/nix-minecraft/archive/3a06edf611cd9efa82538edecc9b35458a003b17.tar.gz",
+      "hash": "sha256-Cs1pujQ8gDd/hHSHSRZn6UbDEDGM69AN/N9fBwzmUXE="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -259,9 +259,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "32c2cd9e46286c4eced3dc6b613c659126bf3cca",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/32c2cd9e46286c4eced3dc6b613c659126bf3cca.tar.gz",
-      "hash": "sha256-fS7xTi2j2iso5Hj7RNZLv/acDlCT+fgMVkVk40A7Uco="
+      "revision": "a9cf7546a938c737b079e738de73934a13de9784",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/a9cf7546a938c737b079e738de73934a13de9784.tar.gz",
+      "hash": "sha256-a7+T6QSeowynwZ1ZJJbP8T8ntAytvrui8kFGJmIZt2c="
     },
     "nixpkgs": {
       "type": "Git",
@@ -272,9 +272,9 @@
       },
       "branch": "nixos-26.05",
       "submodules": false,
-      "revision": "bd0ff2d3eac24699c3664d5966b9ef36f388e2ca",
-      "url": "https://github.com/NixOS/nixpkgs/archive/bd0ff2d3eac24699c3664d5966b9ef36f388e2ca.tar.gz",
-      "hash": "sha256-q8yYEC5f1mFlQO9RGna4LTc9QrcvWunX6FYp83munkQ="
+      "revision": "95ca1e203c0750115fd4a6f17d5a245dfe6b1edd",
+      "url": "https://github.com/NixOS/nixpkgs/archive/95ca1e203c0750115fd4a6f17d5a245dfe6b1edd.tar.gz",
+      "hash": "sha256-JC9PjqKYG9ve5U8aDOLQipp3+KLANBHUvGdLZlxzdKI="
     },
     "noctalia": {
       "type": "Git",
@@ -325,9 +325,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "ad83f1ead0e78e57b188f35cb57298affb06fc5f",
-      "url": "https://github.com/pyproject-nix/pyproject.nix/archive/ad83f1ead0e78e57b188f35cb57298affb06fc5f.tar.gz",
-      "hash": "sha256-rRK3IFixgsrK6S3e14Xz9HAZm7+kMAIl3oi5zZlcwYI="
+      "revision": "7af23cfe91064865ecf2e835da28b45b3c6f49fd",
+      "url": "https://github.com/pyproject-nix/pyproject.nix/archive/7af23cfe91064865ecf2e835da28b45b3c6f49fd.tar.gz",
+      "hash": "sha256-SvXJcAemihifkTn4BGvyE5K1FJX9bl4U8DQ5pqKvD0s="
     },
     "starship": {
       "type": "Git",
@@ -338,9 +338,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2ae09e226a8ade7b3c38bb723d004fd09fb451bd",
-      "url": "https://github.com/starship/starship/archive/2ae09e226a8ade7b3c38bb723d004fd09fb451bd.tar.gz",
-      "hash": "sha256-0dfmvNtHyD73/HdrHXgv3ZHaxZ2DaCntDvUpKkJtpWk="
+      "revision": "51716fa62af6ef81dc03dfe6ca4697ff8220abfb",
+      "url": "https://github.com/starship/starship/archive/51716fa62af6ef81dc03dfe6ca4697ff8220abfb.tar.gz",
+      "hash": "sha256-qyZS86cmM4cbZR0LJrMLfWsZg2VCIWNgXbC1KeYMjOI="
     },
     "tuigreet": {
       "type": "GitRelease",
@@ -353,10 +353,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "0.10.2",
-      "revision": "a4643be9543ff813621da8d37dfae6673dfe0562",
-      "url": "https://api.github.com/repos/NotAShelf/tuigreet/tarball/refs/tags/0.10.2",
-      "hash": "sha256-jeelrp9r/V8540qKoCofD8wz/w/qBcubs72HkremhME="
+      "version": "0.11.0",
+      "revision": "495a0f282f92eb2fcb193282e1c5af3c3b0bcad4",
+      "url": "https://api.github.com/repos/NotAShelf/tuigreet/tarball/refs/tags/0.11.0",
+      "hash": "sha256-4DB4Pl2UwIeab/MJaX3VfVNMsPWE6Q513z1NDdxvG3o="
     },
     "uv2nix": {
       "type": "Git",
@@ -367,9 +367,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "0497ccef038da091002be7c05263a7f27820974f",
-      "url": "https://github.com/pyproject-nix/uv2nix/archive/0497ccef038da091002be7c05263a7f27820974f.tar.gz",
-      "hash": "sha256-yZVQNvmDx1SFjvlwevywsXWJnieSRqmQr7/fCTMyyd0="
+      "revision": "2f698e4b5a3c6004edaf051543542f18a36afe77",
+      "url": "https://github.com/pyproject-nix/uv2nix/archive/2f698e4b5a3c6004edaf051543542f18a36afe77.tar.gz",
+      "hash": "sha256-loy132LKn8QfiPbFJhdTjm+yZG3zklyOQhVabLyx2l4="
     },
     "zen-browser": {
       "type": "Git",
@@ -380,9 +380,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fc9b27eb5585548282004fac3f0d34fcf2f06467",
-      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/fc9b27eb5585548282004fac3f0d34fcf2f06467.tar.gz",
-      "hash": "sha256-NQ0WpkNDRR79BWGNmh1dpgchGJnALW7De71kaXD87nc="
+      "revision": "a7c2a9a5e492e0e62072547f7e4c2abf138425c5",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/a7c2a9a5e492e0e62072547f7e4c2abf138425c5.tar.gz",
+      "hash": "sha256-OPVK9WW9QsO2aj1R+Ln3p7fniFj5h441vb3LyrzpeE4="
     }
   },
   "version": 8
