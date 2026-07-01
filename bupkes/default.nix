@@ -12,7 +12,7 @@
     let
       dir = toString ./..;
     in
-    # Assume that the config directory is placed in /home/[USER]/nixos-config, otherwise it won't be persisted.
-    assert ("${bupkes.user.homeDirectory}/nixos-config" == dir);
+    # Assume that the config directory is placed in /home/[USER]/Projects/nixos-config, otherwise it won't be persisted.
+    assert ("${bupkes.user.homeDirectory}/Projects/nixos-config" == dir);
     dir;
 }

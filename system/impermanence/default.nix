@@ -57,7 +57,7 @@ in
         files = [ "/etc/machine-id" ];
       };
 
-      user.directories = [ "nixos-config" ];
+      user.directories = [ "Projects" ];
     };
   };
 }

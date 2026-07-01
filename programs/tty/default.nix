@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (lib) foldl recursiveUpdate mkIf;
+  inherit (lib) foldl recursiveUpdate;
   inherit (bupkes.lib) mkSecret;
 
   wrappers =
@@ -38,6 +38,4 @@ in
       expect # Includes unbuffer to add extra color to dix
     ]
     ++ wrappers;
-
-  persist.user.directories = mkIf bupkes.host.features.impermanence [ "Projects" ];
 }
