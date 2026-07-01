@@ -18,7 +18,7 @@ _:
       {
         user = {
           name = "Zayen Yusuf";
-          email = "rodnelkes";
+          email = "rodnelkes@gmail.com";
         };
 
         signing = {

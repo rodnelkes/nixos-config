@@ -18,7 +18,7 @@ _:
           signingKey = "/persistent/run/agenix/github";
 
           name = "Zayen Yusuf";
-          email = "rodnelkes";
+          email = "rodnelkes@gmail.com";
         };
 
         commit.gpgSign = true;
