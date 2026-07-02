@@ -171,32 +171,6 @@
       "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
       "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
     },
-    "jj-diffconflicts": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "rafikdraoui",
-        "repo": "jj-diffconflicts"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "a2aa9a247b56d2c1a6f6be81bcf41c5450cc82ff",
-      "url": "https://github.com/rafikdraoui/jj-diffconflicts/archive/a2aa9a247b56d2c1a6f6be81bcf41c5450cc82ff.tar.gz",
-      "hash": "sha256-MjacjGlBRwActBBGeBZDHz8jz5J3Mt6KoDsf8WKgUDA="
-    },
-    "kdl-rs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kdl-org",
-        "repo": "kdl-rs"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "ce82d2ce3e827eddc6bbb4ec4c315aaf6f9adc08",
-      "url": "https://github.com/kdl-org/kdl-rs/archive/ce82d2ce3e827eddc6bbb4ec4c315aaf6f9adc08.tar.gz",
-      "hash": "sha256-fxHBQnBlkoOE1thYajxbkVYCN2kfaz62V3Wn2qvv8Fo="
-    },
     "lladios": {
       "type": "Git",
       "repository": {
@@ -210,18 +184,17 @@
       "url": "https://github.com/llakala/lladios/archive/f6d1ffcbdbd1b84820f8c5948b2af49b4c73a3d0.tar.gz",
       "hash": "sha256-b8qThpsPcMwsxHMTENjLUVJzaViZPG0K5Fngx1p9dJE="
     },
-    "mnw": {
+    "nelvim": {
       "type": "Git",
       "repository": {
-        "type": "GitHub",
-        "owner": "Gerg-L",
-        "repo": "mnw"
+        "type": "Git",
+        "url": "ssh://git@codeberg.org/rodnelkes/nelvim.git"
       },
-      "branch": "master",
+      "branch": "main",
       "submodules": false,
-      "revision": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
-      "url": "https://github.com/Gerg-L/mnw/archive/0871dbf63a53610c95db04439ed8ea4d6ec9c160.tar.gz",
-      "hash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM="
+      "revision": "3a783c640a8a8cf6fe4c5a70bd8bec939222dae8",
+      "url": null,
+      "hash": "sha256-iTnhjHOLITblXhGFdiklkcmjgSWq1NDEkUZl2Qr7muA="
     },
     "niri": {
       "type": "Git",
