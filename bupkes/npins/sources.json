@@ -187,13 +187,15 @@
     "nelvim": {
       "type": "Git",
       "repository": {
-        "type": "Git",
-        "url": "ssh://git@codeberg.org/rodnelkes/nelvim.git"
+        "type": "Forgejo",
+        "server": "https://codeberg.org/",
+        "owner": "rodnelkes",
+        "repo": "nelvim"
       },
       "branch": "main",
       "submodules": false,
       "revision": "3a783c640a8a8cf6fe4c5a70bd8bec939222dae8",
-      "url": null,
+      "url": "https://codeberg.org/rodnelkes/nelvim/archive/3a783c640a8a8cf6fe4c5a70bd8bec939222dae8.tar.gz",
       "hash": "sha256-iTnhjHOLITblXhGFdiklkcmjgSWq1NDEkUZl2Qr7muA="
     },
     "niri": {
