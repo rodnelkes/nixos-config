@@ -6,6 +6,7 @@
 }:
 
 let
+  inherit (builtins) listToAttrs;
   inherit (pkgs) zen-twilight;
   inherit (lib) mkIf;
 in
@@ -31,6 +32,25 @@ in
         }
       '';
   };
+
+  xdg.mime.defaultApplications = listToAttrs (
+    map
+      (mime: {
+        name = mime;
+        value = "zen-twilight.desktop";
+      })
+      [
+        "text/html"
+        "text/xml"
+        "application/xhtml+xml"
+        "application/x-xpinstall"
+        "application/pdf"
+        "x-scheme-handler/http"
+        "x-scheme-handler/https"
+        "x-scheme-handler/about"
+        "x-scheme-handler/unknown"
+      ]
+  );
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
     ".cache/zen"
