@@ -34,8 +34,8 @@ in
       enable = true;
       autoStart = false;
 
-      package = fabricServers.fabric-26_1_2.override {
-        loaderVersion = "0.19.2";
+      package = fabricServers.fabric-26_2.override {
+        loaderVersion = "0.19.3";
         jre_headless = java;
       };
 
@@ -66,38 +66,38 @@ in
 
       symlinks.mods = linkFarmFromDrvs "mods" (attrValues {
         "Fabric API" = fetchurl {
-          url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/yALY9gHM/fabric-api-0.151.0%2B26.1.2.jar";
-          sha512 = "d087349842b962414ba89248f9ef7bc75f537848f4d783435de633ddae8924cd50fd9bffc606aae0f1c2c3ed9b4339623244e1fd34c6b9c17f977528d1303cdd";
+          url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/lVXlbH4w/fabric-api-0.155.2%2B26.2.jar";
+          sha512 = "cc56984378a27c5bcd56374d6ffbb27a45c6bf3355add2ac6be9817ccac5854362249bf9d0147eb271a70fda2716129204e240d53c9aa876a2a7861f4c7f880f";
         };
 
         "Cloth Config API" = fetchurl {
-          url = "https://cdn.modrinth.com/data/9s6osm5g/versions/GFM8zh9J/cloth-config-26.1.154.jar";
-          sha512 = "8bfb75f2cac0a9910316c6a368a228c0f8f1261ac6f03dec5fba594e1619ac04334a3df4fb29778d61d0b8290d55949371a523d722b35501bf9a2902956d3b17";
+          url = "https://cdn.modrinth.com/data/9s6osm5g/versions/Nv3xnWXd/cloth-config-26.2.155.jar";
+          sha512 = "37b1e402f0df5a383656e21a38ee18cdd15cb4ba3fb62fbeba82ef4b959a4479fc32718ac0d9d154a7d9104c5f7315bfa67dbeced0b8ff240b8039d4848d5df1";
         };
 
         Geyser = fetchurl {
-          url = "https://cdn.modrinth.com/data/wKkoqHrH/versions/YxMEEm35/Geyser-Fabric-2.10.0-b1162.jar";
-          sha512 = "0ea805b2c55aea0236a1ea9520e295eed7d996d2765023566736a3d9e851d77bdb98c68e7e431db569a0ba2c6d96e75d98b9f39a8d5ca354dd470357abce6d9f";
+          url = "https://cdn.modrinth.com/data/wKkoqHrH/versions/drSIg1Is/Geyser-Fabric-2.11.0-b1203.jar";
+          sha512 = "d1557187220051303c957c0d813fd307bd5b3da32d68ac3572609b6db30c4a607fec06c6e6fbbb1fd295934c91080190fbe78f88b7c50cb02f38f26878f2d422";
         };
 
         Floodgate = fetchurl {
-          url = "https://cdn.modrinth.com/data/bWrNNfkb/versions/fD4J9lnX/Floodgate-Fabric-2.2.6-b63.jar";
-          sha512 = "54874033236df688da15fd4dd7d2d99d002e8955cb2d788d5ba409d753eb17629f53a6e976992de8cca8c8dd3663c70b283da88b5a12d72cef9647d09e04ae62";
+          url = "https://cdn.modrinth.com/data/bWrNNfkb/versions/urOFTrVX/Floodgate-Fabric-2.2.6-b67.jar";
+          sha512 = "d6ecacfbf1c31171317792783754c4f58414508a8fd1aa23b9e3da5da9fe450a6e6e882e39e862cb5f1df38d2d97be8465a39857fe4b78c1cf89934230a71205";
         };
 
         "No Chat Reports" = fetchurl {
-          url = "https://cdn.modrinth.com/data/qQyHxfxd/versions/2yrLNE3S/NoChatReports-FABRIC-26.1-v2.19.0.jar";
-          sha512 = "94d58a1a4cde4e3b1750bdf724e65c5f4ff3436c2532f36a465d497d26bf59f5ac996cddbff8ecdfed770c319aa2f2dcc9c7b2d19a35651c2a7735c5b2124dad";
+          url = "https://cdn.modrinth.com/data/qQyHxfxd/versions/uiY9tUaj/NoChatReports-FABRIC-26.2-v2.20.1.jar";
+          sha512 = "139dd09e04cc66fe4745264ddfbe3249be6e956326c931eb9707f9a640bbc011a4f1fd5684d04ca90e1b473be55772b0279e5c2f935c2f2e85d054e2ab0a6923";
         };
 
         "Voxy WorldGen" = fetchurl {
-          url = "https://cdn.modrinth.com/data/xT0lnNE9/versions/tRiQxKkc/Voxy%20World%20Gen%20V2-26.1.2-2.2.4.jar";
-          sha512 = "f8d3e96c5bda4f04faa79c1731379b8217dc7a392cc208dc3d25a8dbeab790430e869705bdb4d154a359b0e1e415b12442b4e6757b002193ebb4cfbed1f2639a";
+          url = "https://cdn.modrinth.com/data/xT0lnNE9/versions/II0QK5sq/Voxy%20World%20Gen%20V2-fabric-26.2-2.4.2.jar";
+          sha512 = "c825eb3ccc127753fba4e34ec14dc52541b6a8fe78b29e4af796c4177614caf5a4d85bad12cd354ccaeae315420d67912155cf345b0cdb5aedfc3a8286ac5b1d";
         };
 
         SeeU = fetchurl {
-          url = "https://cdn.modrinth.com/data/coyNPDey/versions/4oChd41k/seeu-fabric-0.6.jar";
-          sha512 = "8a0e3d8078ea7e682781e52bb52a0f39a8e3faa3c4bffdf7dccc550212eb11160db18df49cc57c6d15a07040572f885b0a52ea590703befe454609027050b3a5";
+          url = "https://cdn.modrinth.com/data/coyNPDey/versions/gyNWLCPb/seeu-fabric-0.7.2.jar";
+          sha512 = "73a9532975b1d1f7a05a4773f5e68e06b902c93f2ae45814e11117d825206b0e22f9d2ff1b67068256d1efe327506cc106c5994278c0504befeaf2401f2fc9cc";
         };
       });
 
