@@ -245,11 +245,11 @@
         "owner": "NixOS",
         "repo": "nixpkgs"
       },
-      "branch": "nixos-26.05",
+      "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "b3fe9581c9061c749abef42b6d4ee7b7c05c33fa",
-      "url": "https://github.com/NixOS/nixpkgs/archive/b3fe9581c9061c749abef42b6d4ee7b7c05c33fa.tar.gz",
-      "hash": "sha256-2V/6imsUgB7mPZlHY54oeVBRDoZbPKnvzwkAHUSSufk="
+      "revision": "e2587caef70cea85dd97d7daab492899902dbf5d",
+      "url": "https://github.com/NixOS/nixpkgs/archive/e2587caef70cea85dd97d7daab492899902dbf5d.tar.gz",
+      "hash": "sha256-wWFrV5/Qbm+lyt5x20E/bSbfJiGKMo4RCxZV8cl/WZI="
     },
     "noctalia": {
       "type": "Git",
