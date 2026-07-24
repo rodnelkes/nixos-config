@@ -26,6 +26,14 @@
             xray false
           }
         }
+
+        layer-rule {
+          match namespace="noctalia-window-switcher"
+          background-effect {
+              blur true
+              xray false
+          }
+        }
       '';
 
     wezterm-transparency =
