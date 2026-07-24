@@ -6,7 +6,6 @@
   options = {
     configPaths = {
       type = types.listOf types.pathLike;
-      mutatorType = types.listOf types.pathLike;
       mergeFunc = adios.lib.merge.lists.concat;
     };
   };

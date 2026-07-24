@@ -6,13 +6,11 @@
   options = {
     config = {
       type = types.attrs;
-      mutatorType = types.attrs;
       mergeFunc = adios.lib.merge.attrs.recursively;
     };
 
     excludes = {
       type = types.string;
-      mutatorType = types.string;
       mergeFunc = adios.lib.merge.strings.concatLines;
     };
   };

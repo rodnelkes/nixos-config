@@ -9,7 +9,6 @@
   options = {
     config = {
       type = types.attrs;
-      mutatorType = types.attrs;
       mergeFunc = adios.lib.merge.attrs.recursively;
     };
   };
