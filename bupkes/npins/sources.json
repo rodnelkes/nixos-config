@@ -286,9 +286,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8184ec3894b54e49b80e6a75d60b762376c8cfbe",
-      "url": "https://github.com/BANANASJIM/padctl/archive/8184ec3894b54e49b80e6a75d60b762376c8cfbe.tar.gz",
-      "hash": "sha256-ynMbWjHhOHFfY6ElgTyyKJ6shnSSRqj4MxHe0tq9VDc=",
+      "revision": "19205988b395a1c109a6b0ad8a9057b97dced603",
+      "url": "https://github.com/BANANASJIM/padctl/archive/19205988b395a1c109a6b0ad8a9057b97dced603.tar.gz",
+      "hash": "sha256-GNtTtgg4dOQ59eAL6287G6QwWmd121DsgjZDYhj9CwI=",
       "frozen": true
     },
     "pyproject.nix": {

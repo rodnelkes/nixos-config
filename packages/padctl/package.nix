@@ -14,7 +14,7 @@ in
     (_final: _prev: {
       padctl = mkDerivation (finalAttrs: {
         pname = "padctl";
-        version = "0.1.18";
+        version = "0.1.24";
 
         src = sources.padctl.outPath;
 
