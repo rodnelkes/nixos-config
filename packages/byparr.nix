@@ -5,6 +5,7 @@
   ...
 }:
 let
+  inherit (builtins) mapAttrs;
   inherit (pkgs) python314 makeWrapper;
   inherit (pkgs.stdenv) mkDerivation;
   inherit (lib) composeManyExtensions getExe';
@@ -25,35 +26,36 @@ let
     sourcePreference = "wheel";
   };
 
-  pathFixOverride = _final: prev: {
-    camoufox = (
-      prev.camoufox.overrideAttrs (
-        oldAttrs: {
-          postInstall = (oldAttrs.postInstall or "") + ''
-            substituteInPlace $out/${python.sitePackages}/camoufox/locale.py --replace-fail \
-                "MMDB_FILE = LOCAL_DATA / 'GeoLite2-City.mmdb'" \
-                "import os; from pathlib import Path; MMDB_FILE = Path(os.path.expanduser('~/.cache/Byparr/GeoLite2-City.mmdb')); os.makedirs(MMDB_FILE.parent, exist_ok=True)"
-          '';
-        }
+  buildSystemOverrides =
+    final: prev:
+    mapAttrs
+      (
+        name: spec:
+        prev.${name}.overrideAttrs (oldAttrs: {
+          nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ final.resolveBuildSystem spec;
+        })
       )
-    );
+      {
+        invisible-core.hatchling = [ ];
+        invisible-playwright.hatchling = [ ];
+      };
 
+  pathFixOverride = _final: prev: {
     playwright-captcha = (
-      prev.playwright-captcha.overrideAttrs (
-        oldAttrs: {
-          postInstall = (oldAttrs.postInstall or "") + ''
-            substituteInPlace $out/${python.sitePackages}/playwright_captcha/utils/camoufox_add_init_script/add_init_script.py --replace-fail \
-                "scripts_dir = os.path.join(addon_path, 'scripts')" \
-                "scripts_dir = Path(os.path.expanduser('~/.cache/Byparr/scripts/')); os.makedirs(scripts_dir.parent, exist_ok=True)"
-          '';
-        }
-      )
+      prev.playwright-captcha.overrideAttrs (oldAttrs: {
+        postInstall = (oldAttrs.postInstall or "") + ''
+          substituteInPlace $out/${python.sitePackages}/playwright_captcha/utils/camoufox_add_init_script/add_init_script.py --replace-fail \
+              "scripts_dir = os.path.join(addon_path, 'scripts')" \
+              "scripts_dir = Path(os.path.expanduser('~/.cache/Byparr/scripts/')); os.makedirs(scripts_dir.parent, exist_ok=True)"
+        '';
+      })
     );
   };
 
   pythonSet = pythonBase.overrideScope (composeManyExtensions [
     pyproject-build-systems.overlays.wheel
     overlay
+    buildSystemOverrides
     pathFixOverride
   ]);
 

@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "557152ccdcf32025b77438ab51c93f58eb284980",
-      "url": "https://github.com/ThePhaseless/Byparr/archive/557152ccdcf32025b77438ab51c93f58eb284980.tar.gz",
-      "hash": "sha256-d75pqM1yO5EgyiVLNae9yNlclGJDNy7FgnOhHexVcxs=",
+      "revision": "c42a353b8ac1962321e43620cda1fa44d8c49fac",
+      "url": "https://github.com/ThePhaseless/Byparr/archive/c42a353b8ac1962321e43620cda1fa44d8c49fac.tar.gz",
+      "hash": "sha256-4PhugoO8ufwv84cxv5mMCHYsqkRwtXyHnqzb2v7ARMk=",
       "frozen": true
     },
     "agenix": {
