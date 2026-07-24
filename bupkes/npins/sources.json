@@ -318,19 +318,16 @@
       "hash": "sha256-qyZS86cmM4cbZR0LJrMLfWsZg2VCIWNgXbC1KeYMjOI="
     },
     "tuigreet": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "NotAShelf",
         "repo": "tuigreet"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
+      "branch": "master",
       "submodules": false,
-      "version": "0.11.0",
       "revision": "495a0f282f92eb2fcb193282e1c5af3c3b0bcad4",
-      "url": "https://api.github.com/repos/NotAShelf/tuigreet/tarball/refs/tags/0.11.0",
+      "url": "https://github.com/NotAShelf/tuigreet/archive/495a0f282f92eb2fcb193282e1c5af3c3b0bcad4.tar.gz",
       "hash": "sha256-4DB4Pl2UwIeab/MJaX3VfVNMsPWE6Q513z1NDdxvG3o="
     },
     "uv2nix": {
