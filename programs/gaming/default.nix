@@ -14,6 +14,7 @@ in
     lutris
     heroic
     bottles
+    lsfg-vk-ui
   ];
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
