@@ -8,8 +8,8 @@
     "sha512": "37b1e402f0df5a383656e21a38ee18cdd15cb4ba3fb62fbeba82ef4b959a4479fc32718ac0d9d154a7d9104c5f7315bfa67dbeced0b8ff240b8039d4848d5df1"
   },
   "Geyser": {
-    "url": "https://cdn.modrinth.com/data/wKkoqHrH/versions/9kk2wPeH/Geyser-Fabric-2.11.0-b1205.jar",
-    "sha512": "a117eea838159cf07f7e146e50b773b5e3a4e27ebe15a3fc9ab381f022779c0f1d75e13622246b101962348c02c2a69ce5f97bcfb017687a6f2c60e05396d03e"
+    "url": "https://cdn.modrinth.com/data/wKkoqHrH/versions/qx0y8XK1/Geyser-Fabric-2.11.1-b1209.jar",
+    "sha512": "4f894794ae3d3e6ffc1dfc43a231bcc13767958ba2c922018065faab737d2d34a8c65b33355cdb8a8759a760909634bd611acb6cbb37a0651a52d27aa4d32511"
   },
   "Floodgate": {
     "url": "https://cdn.modrinth.com/data/bWrNNfkb/versions/urOFTrVX/Floodgate-Fabric-2.2.6-b67.jar",
@@ -20,11 +20,11 @@
     "sha512": "139dd09e04cc66fe4745264ddfbe3249be6e956326c931eb9707f9a640bbc011a4f1fd5684d04ca90e1b473be55772b0279e5c2f935c2f2e85d054e2ab0a6923"
   },
   "Voxy WorldGen": {
-    "url": "https://cdn.modrinth.com/data/xT0lnNE9/versions/II0QK5sq/Voxy%20World%20Gen%20V2-fabric-26.2-2.4.2.jar",
-    "sha512": "c825eb3ccc127753fba4e34ec14dc52541b6a8fe78b29e4af796c4177614caf5a4d85bad12cd354ccaeae315420d67912155cf345b0cdb5aedfc3a8286ac5b1d"
+    "url": "https://cdn.modrinth.com/data/xT0lnNE9/versions/fZooaCeC/Voxy%20World%20Gen%20V2-fabric-26.2-2.4.3.jar",
+    "sha512": "c2e641ab1c6310fc67ff94f7edc52db41a7cb382c736d2bf2e23156be31ed8c878da42130a5c6f7375ac0efd98f99840f079323f348b2bf6fcb37d8d329ef3f3"
   },
   "SeeU": {
-    "url": "https://cdn.modrinth.com/data/coyNPDey/versions/gyNWLCPb/seeu-fabric-0.7.2.jar",
-    "sha512": "73a9532975b1d1f7a05a4773f5e68e06b902c93f2ae45814e11117d825206b0e22f9d2ff1b67068256d1efe327506cc106c5994278c0504befeaf2401f2fc9cc"
+    "url": "https://cdn.modrinth.com/data/coyNPDey/versions/ZgSfikcE/seeu-fabric-0.7.3.jar",
+    "sha512": "dfb01b0112ec95e9d06d8a96eaf5557bfe9c7669926f1276a756fa89165e4265568b26ff2544ed8bee943c76bf87b1469701ede39f1f611b127d9d5428d3e1f3"
   }
 }
