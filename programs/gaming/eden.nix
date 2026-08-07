@@ -11,6 +11,7 @@ in
   environment.systemPackages = with pkgs; [ eden ];
 
   persist.user.directories = mkIf bupkes.host.features.impermanence [
+    ".cache/eden"
     ".config/eden"
     ".local/share/eden"
   ];
