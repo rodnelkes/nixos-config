@@ -68,11 +68,6 @@ order = [ "default" ]
     widget_spacing = 6
 
         [bar.default.dead_zone]
-        command = ""
-        middle_command = ""
-        right_command = ""
-        scroll_down_command = ""
-        scroll_up_command = ""
 
 [battery]
 warning_threshold = 20
@@ -85,18 +80,20 @@ sync_all_monitors = false
 
 [calendar]
 enabled = false
-event_date_format = "%A %e %B"
-event_time_format = "%H:%M"
 refresh_minutes = 15
 
 [control_center]
 hidden_tabs = []
+show_shortcut_labels = true
 sidebar = "compact"
 sidebar_section = "compact"
 width = 700
 
     [control_center.calendar]
+    event_date_format = "%A %e %B"
+    event_time_format = "%H:%M"
     show_events_card = true
+    show_week_numbers = false
 
     [[control_center.shortcuts]]
     type = "wifi"
@@ -132,6 +129,7 @@ launcher_custom_image = ""
 launcher_custom_image_colorize = false
 launcher_icon = "grid-dots"
 launcher_position = "none"
+layer = "top"
 magnification = true
 magnification_scale = 1.4500000476837158
 main_axis_padding = 16
@@ -219,9 +217,12 @@ pre_action_fade_seconds = 2.0
 
 [keybinds]
 cancel = [ "Escape" ]
+copy = [ "Ctrl+c" ]
+delete = [ "Delete" ]
 down = [ "Down" ]
 left = [ "Left" ]
 right = [ "Right" ]
+save = [ "Ctrl+s" ]
 tab_next = [ "Tab" ]
 tab_previous = [ "Shift+ISO_Left_Tab" ]
 up = [ "Up" ]
@@ -240,6 +241,7 @@ blur_intensity = 0.5
 blurred_desktop = false
 enabled = true
 fingerprint = true
+lock_before_suspend = true
 monitors = []
 tint_intensity = 0.30000001192092896
 wallpaper = ""
@@ -301,7 +303,9 @@ background_opacity = 0.85000002384185791
 border = true
 collapse_on_dismiss = true
 enable_daemon = true
+history_retention_hours = 0
 layer = "top"
+max_visible = 0
 monitors = []
 offset_x = 20
 offset_y = 8
@@ -361,11 +365,13 @@ enabled = []
 app_icon_colorize = false
 avatar_path = "/home/rodnelkes/.face"
 button_borders = true
+card_borders = true
 clipboard_auto_paste = "auto"
 clipboard_confirm_clear_history = true
 clipboard_enabled = true
 clipboard_history_max_entries = 100
 clipboard_image_action_command = ""
+clipboard_keep_from_closed_apps = true
 corner_radius_scale = 1.0
 date_format = "{:%A} - {:%B} {:%d}, {:%Y}"
 disable_mipmaps = false
@@ -374,7 +380,6 @@ font_family = "JetBrainsMonoNL NF"
 input_borders = true
 launch_apps_as_systemd_services = true
 launch_apps_custom_command = ""
-middle_click_opens_widget_settings = true
 niri_overview_type_to_launch_enabled = false
 offline_mode = true
 password_style = "default"
@@ -383,6 +388,7 @@ popup_borders = true
 popup_shadows = true
 screen_time_enabled = false
 settings_show_advanced = true
+settings_window_translucent = false
 setup_wizard_enabled = true
 shared_gl_context = true
 show_location = true
@@ -395,6 +401,8 @@ time_format = "{:%-I:%M %p}"
 
     [shell.greeter_sync]
     auto_sync = false
+
+    [shell.keyboard_layout]
 
     [shell.launcher]
     app_grid = false
@@ -417,6 +425,7 @@ time_format = "{:%-I:%M %p}"
     clipboard_position = "center"
     control_center_placement = "attached"
     control_center_position = "auto"
+    floating_layer = "overlay"
     floating_offset = 8
     launcher_placement = "floating"
     launcher_position = "center"
@@ -452,6 +461,7 @@ time_format = "{:%-I:%M %p}"
     freeze_screen = true
     pipe_command = ""
     pipe_to_command = false
+    remember_last_region = false
     save_to_file = true
     show_cursor = false
 
@@ -623,7 +633,6 @@ device = "input"
 type = "volume"
 
 [widget.keyboard_layout]
-cycle_command = ""
 hide_when_single_layout = false
 type = "keyboard_layout"
 
@@ -676,6 +685,7 @@ color = "error"
 type = "session"
 
 [widget.spacer]
+interactive = false
 type = "spacer"
 
 [widget.temp]
