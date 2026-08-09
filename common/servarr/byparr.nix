@@ -1,17 +1,16 @@
 {
-  pkgs,
-  lib,
-  ...
-}:
-let
-  inherit (pkgs) byparr;
-  inherit (lib) getExe;
-in
-{
   networking.firewall.allowedTCPPorts = [ 8191 ];
 
-  systemd.services.byparr = {
-    description = "byparr";
+  virtualisation.oci-containers.containers.byparr = {
+    image = "ghcr.io/thephaseless/byparr:cb2a862386e92f141e8aa3b58f8532ef2fc36ed0-amd64";
+    extraOptions = [
+      "--network=ns:/var/run/netns/vpn"
+      "--dns=10.128.0.1"
+    ];
+  };
+
+  systemd.services.podman-byparr = {
+    description = "byparr container";
 
     bindsTo = [ "netns-vpn.service" ];
     before = [ "prowlarr.service" ];
@@ -19,13 +18,5 @@ in
       "network.target"
       "netns-vpn.service"
     ];
-    wantedBy = [ "multi-user.target" ];
-
-    serviceConfig = {
-      Type = "simple";
-      Restart = "on-failure";
-      ExecStart = "${getExe byparr}";
-      NetworkNamespacePath = "/var/run/netns/vpn";
-    };
   };
 }

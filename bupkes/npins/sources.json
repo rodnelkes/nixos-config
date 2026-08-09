@@ -1,19 +1,5 @@
 {
   "pins": {
-    "Byparr": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ThePhaseless",
-        "repo": "Byparr"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "c42a353b8ac1962321e43620cda1fa44d8c49fac",
-      "url": "https://github.com/ThePhaseless/Byparr/archive/c42a353b8ac1962321e43620cda1fa44d8c49fac.tar.gz",
-      "hash": "sha256-4PhugoO8ufwv84cxv5mMCHYsqkRwtXyHnqzb2v7ARMk=",
-      "frozen": true
-    },
     "agenix": {
       "type": "Git",
       "repository": {
