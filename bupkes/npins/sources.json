@@ -36,9 +36,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "90fde00db3687922d39d95fc591475fd0bbbcd72",
-      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/90fde00db3687922d39d95fc591475fd0bbbcd72.tar.gz",
-      "hash": "sha256-NjSPsgjJ7MSpBtTkUcmNhRe6AFZ96+zsca2M8YuQi8Y="
+      "revision": "90ffdeee1a4929b231913df067448cd9803d3e07",
+      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/90ffdeee1a4929b231913df067448cd9803d3e07.tar.gz",
+      "hash": "sha256-8SFyOdmcG6Nsh/JzlH812lTI/v+ur06fpQhj/acNn8k="
     },
     "catppuccin-fzf": {
       "type": "Git",
@@ -180,9 +180,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f833c80947573515df7c3fa58bf9e18c2a3d83d3",
-      "url": "https://github.com/llakala/lladios/archive/f833c80947573515df7c3fa58bf9e18c2a3d83d3.tar.gz",
-      "hash": "sha256-o6j1bSRT3UL2VyMoJ/LRdlOrLLsj860QKzN0qSYyKxU="
+      "revision": "816487bcca946ae584970065ee3fc3f9849e5e6f",
+      "url": "https://github.com/llakala/lladios/archive/816487bcca946ae584970065ee3fc3f9849e5e6f.tar.gz",
+      "hash": "sha256-Kal9nY+uya5xsU1gGZkUQlQrX3BKWTbBGl9BcjoH29s="
     },
     "nelvim": {
       "type": "Git",
@@ -221,9 +221,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "fad712d66c18a08c582214c3f52c3d12e0cc16f9",
-      "url": "https://github.com/Infinidoge/nix-minecraft/archive/fad712d66c18a08c582214c3f52c3d12e0cc16f9.tar.gz",
-      "hash": "sha256-+KyMg7tMfMcfFjUg59BD3OMUzehv9xsNK7ZMY3ZepGc="
+      "revision": "4c1aa0eeac8368ff4d1a45a7259f2b50bc657f05",
+      "url": "https://github.com/Infinidoge/nix-minecraft/archive/4c1aa0eeac8368ff4d1a45a7259f2b50bc657f05.tar.gz",
+      "hash": "sha256-Htc1CLWuzuZCO7RynXnckl2nvX6CpeQZ+7zByfJJwbE="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -234,9 +234,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "2e790b0a6be8ec2b76174ac0931b8ff11919ec98",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/2e790b0a6be8ec2b76174ac0931b8ff11919ec98.tar.gz",
-      "hash": "sha256-65EQYIRRpTdpH8lUiB6Mvo5uBkG60aBIzAJuALfx+O0="
+      "revision": "ff17823245ab9ff7bcae6acf950bd89cba82c38c",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/ff17823245ab9ff7bcae6acf950bd89cba82c38c.tar.gz",
+      "hash": "sha256-ez+ubZlA1RtdjCB18a6zJ9M4u8qoPDy08EcnsW5M3Xw="
     },
     "nixpkgs": {
       "type": "Git",
@@ -247,9 +247,9 @@
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "b7c2ada94fe99c15b0dbcf4d11fd7850b957a436",
-      "url": "https://github.com/NixOS/nixpkgs/archive/b7c2ada94fe99c15b0dbcf4d11fd7850b957a436.tar.gz",
-      "hash": "sha256-IItrdb7Puk05RqOBWZYFC5X6Wl1sJmCfh5MWVHw5iMM="
+      "revision": "e5bdc4a41d4c072fe1e3787eaa0320a384741d44",
+      "url": "https://github.com/NixOS/nixpkgs/archive/e5bdc4a41d4c072fe1e3787eaa0320a384741d44.tar.gz",
+      "hash": "sha256-FBJRXmbGXiSUDvYEbfLYRkckayyZ6SK1UEqhCrIZ2Cs="
     },
     "noctalia": {
       "type": "Git",
@@ -260,9 +260,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e9230c81beb2513e4a4b09884f37e4f22fc246de",
-      "url": "https://github.com/noctalia-dev/noctalia/archive/e9230c81beb2513e4a4b09884f37e4f22fc246de.tar.gz",
-      "hash": "sha256-+UpdMASvCJgEejw4SZbhefk/9oboIDR2s8gezsYjulg="
+      "revision": "74db8e7a62c04e85c876da4827405700455c160c",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/74db8e7a62c04e85c876da4827405700455c160c.tar.gz",
+      "hash": "sha256-sFyoCSeC+vwQUjQ54e2EBYh9EdYc7yGp31whjaYOOfk="
     },
     "npins": {
       "type": "Git",
@@ -313,9 +313,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "564a471b5af63da3fec5f914b6d0e325f8787fad",
-      "url": "https://github.com/starship/starship/archive/564a471b5af63da3fec5f914b6d0e325f8787fad.tar.gz",
-      "hash": "sha256-Y5UvnBzQWwnhn5ZMdoJye0hmXLowCqXNJKjfyDwlQ+A="
+      "revision": "6d38f35391a8e68952a3dd4b9acd40d3d93596f6",
+      "url": "https://github.com/starship/starship/archive/6d38f35391a8e68952a3dd4b9acd40d3d93596f6.tar.gz",
+      "hash": "sha256-WIQegueRD8dVAnVoNvK8x5GEwCa6pDR1dqE95hSoNtw="
     },
     "tuigreet": {
       "type": "Git",
@@ -326,9 +326,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "68e8e3146b0112f8112a2e7e65ae34938fbbe667",
-      "url": "https://github.com/NotAShelf/tuigreet/archive/68e8e3146b0112f8112a2e7e65ae34938fbbe667.tar.gz",
-      "hash": "sha256-7WNPBwWfptUZWmEwyLUXPSDs3bA/Q+LW12zLY9SD/gE="
+      "revision": "60c1f98e4b006881a01f4910a10c519b3d8df2de",
+      "url": "https://github.com/NotAShelf/tuigreet/archive/60c1f98e4b006881a01f4910a10c519b3d8df2de.tar.gz",
+      "hash": "sha256-ZDQGBQHjy1BySdYj7J2u8/pZZCXQ2P5CqSidtfFwZns="
     },
     "uv2nix": {
       "type": "Git",
@@ -339,9 +339,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "0dfa8388dc855b1774f509725d8ea6806291571d",
-      "url": "https://github.com/pyproject-nix/uv2nix/archive/0dfa8388dc855b1774f509725d8ea6806291571d.tar.gz",
-      "hash": "sha256-payw8w/aqR/Vr7LvDp14jxa5egFrZN7g8INsPzn7rN0="
+      "revision": "4b59abb2ae1896d2a0e1abfc47fbc9bf985ea730",
+      "url": "https://github.com/pyproject-nix/uv2nix/archive/4b59abb2ae1896d2a0e1abfc47fbc9bf985ea730.tar.gz",
+      "hash": "sha256-U++y7nM/6xiEcWI7q4fQoPZjPvRaTwkSqzBOVoEBjUE="
     },
     "zen-browser": {
       "type": "Git",
@@ -352,9 +352,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "43272965c62be2c512630bc80deeb6792b2f285b",
-      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/43272965c62be2c512630bc80deeb6792b2f285b.tar.gz",
-      "hash": "sha256-RhkiElXANPrHOXTncgUmKHVw8FHuRZjAXmtUPQfB91c="
+      "revision": "37dc6abfa4a2c306b131f74770b1f36288d9bf2e",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/37dc6abfa4a2c306b131f74770b1f36288d9bf2e.tar.gz",
+      "hash": "sha256-GE0VmDa7cLMReaNTrzYQ3sFSPUd6ARynENviHdnnUDM="
     }
   },
   "version": 8
