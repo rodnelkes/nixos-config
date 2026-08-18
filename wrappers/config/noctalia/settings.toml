@@ -84,6 +84,7 @@ refresh_minutes = 15
 
 [control_center]
 hidden_tabs = []
+show_session_button = true
 show_shortcut_labels = true
 sidebar = "compact"
 sidebar_section = "compact"
@@ -198,6 +199,7 @@ pre_action_fade_seconds = 2.0
     action = "lock"
     command = ""
     enabled = false
+    locked_timeout = 0.0
     resume_command = ""
     timeout = 600.0
 
@@ -205,6 +207,7 @@ pre_action_fade_seconds = 2.0
     action = "lock_and_suspend"
     command = ""
     enabled = false
+    locked_timeout = 0.0
     resume_command = ""
     timeout = 900.0
 
@@ -212,6 +215,7 @@ pre_action_fade_seconds = 2.0
     action = "screen_off"
     command = ""
     enabled = false
+    locked_timeout = 0.0
     resume_command = ""
     timeout = 660.0
 
@@ -257,12 +261,14 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 196.0
+    box_width = 810.0
     cx = 960.0
     cy = 957.0
     enabled = true
     output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -270,17 +276,27 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1" ]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
+        center_password_text = false
         input_opacity = 1.0
         input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
         show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@winit"]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 196.0
+    box_width = 810.0
     cx = 464.0
     cy = 873.0
     enabled = true
     output = "winit"
+    placement_height = 0.0
+    placement_width = 0.0
     rotation = 0.0
     type = "login_box"
 
@@ -288,9 +304,17 @@ widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1" ]
         background_color = "surface_variant"
         background_opacity = 0.88
         background_radius = 12.0
+        center_password_text = false
         input_opacity = 1.0
         input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
         show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [nightlight]
 enabled = false
@@ -410,7 +434,10 @@ time_format = "{:%-I:%M %p}"
     categories = true
     compact = false
     fetch_exchange_rates = true
+    pinned = []
     provider_prefix = "/"
+    show_app_actions = false
+    show_app_origin_indicator = true
     show_icons = true
     sort_by_usage = true
 
@@ -531,6 +558,8 @@ key_file = ""
 key_source = "secret-service"
 
 [system.monitor]
+cpu_freq_activity_threshold = 2.5
+cpu_freq_critical_threshold = 4.5
 cpu_poll_seconds = 2.0
 cpu_temp_activity_threshold = 60.0
 cpu_temp_critical_threshold = 85.0
