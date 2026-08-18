@@ -321,14 +321,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "NotAShelf",
+        "owner": "tuigreet",
         "repo": "tuigreet"
       },
       "branch": "master",
       "submodules": false,
-      "revision": "60c1f98e4b006881a01f4910a10c519b3d8df2de",
-      "url": "https://github.com/NotAShelf/tuigreet/archive/60c1f98e4b006881a01f4910a10c519b3d8df2de.tar.gz",
-      "hash": "sha256-ZDQGBQHjy1BySdYj7J2u8/pZZCXQ2P5CqSidtfFwZns="
+      "revision": "201e564b1f27c3a8d0427dd5d41de850cf529573",
+      "url": "https://github.com/tuigreet/tuigreet/archive/201e564b1f27c3a8d0427dd5d41de850cf529573.tar.gz",
+      "hash": "sha256-Tkxphrz49uKIxo5Ted2Y/1x8BJotHrpA643IBuTyqzs="
     },
     "uv2nix": {
       "type": "Git",
