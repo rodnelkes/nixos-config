@@ -18,6 +18,7 @@ mkHosts {
       };
 
       modules = [
+        "system"
         "tty"
         "desktop"
         "gaming"
@@ -39,6 +40,7 @@ mkHosts {
       };
 
       modules = [
+        "system"
         "tty"
         "desktop"
         # "privacy"
