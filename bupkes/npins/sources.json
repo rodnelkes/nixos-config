@@ -194,9 +194,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "bc81862aaeeb1f6c902ef55d7ac9cb58aa325d4a",
-      "url": "https://codeberg.org/rodnelkes/nelvim/archive/bc81862aaeeb1f6c902ef55d7ac9cb58aa325d4a.tar.gz",
-      "hash": "sha256-tddh6GkDTQEBczhCuApyZQAxPFN1wbmyvf7cnd0TdRw="
+      "revision": "23b02f3bf9c513509a95d7230862e4d6c1dcf103",
+      "url": "https://codeberg.org/rodnelkes/nelvim/archive/23b02f3bf9c513509a95d7230862e4d6c1dcf103.tar.gz",
+      "hash": "sha256-hotHfNAChqjCVqSrsk70wpZE4NOkuP3dPVnyu/VEpZA="
     },
     "niri": {
       "type": "Git",

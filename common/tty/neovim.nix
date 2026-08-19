@@ -4,7 +4,11 @@ let
 in
 {
   environment = {
-    systemPackages = [ nelvim.devMode ];
+    systemPackages = [
+      pkgs.wl-clipboard-rs
+      nelvim.devMode
+    ];
+
     variables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
