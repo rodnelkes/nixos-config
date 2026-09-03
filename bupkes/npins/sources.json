@@ -13,19 +13,6 @@
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
-    "build-system-pkgs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "pyproject-nix",
-        "repo": "build-system-pkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "90ffdeee1a4929b231913df067448cd9803d3e07",
-      "url": "https://github.com/pyproject-nix/build-system-pkgs/archive/90ffdeee1a4929b231913df067448cd9803d3e07.tar.gz",
-      "hash": "sha256-8SFyOdmcG6Nsh/JzlH812lTI/v+ur06fpQhj/acNn8k="
-    },
     "catppuccin-fzf": {
       "type": "Git",
       "repository": {
@@ -276,19 +263,6 @@
       "hash": "sha256-GNtTtgg4dOQ59eAL6287G6QwWmd121DsgjZDYhj9CwI=",
       "frozen": true
     },
-    "pyproject.nix": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "pyproject-nix",
-        "repo": "pyproject.nix"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "1b1485546d85f6f6c7aadb10c4923dbc09633263",
-      "url": "https://github.com/pyproject-nix/pyproject.nix/archive/1b1485546d85f6f6c7aadb10c4923dbc09633263.tar.gz",
-      "hash": "sha256-cROiHKO3UbIKqF5FG5NikvydzlfIj4EcR1Cty9qOVt4="
-    },
     "starship": {
       "type": "Git",
       "repository": {
@@ -314,19 +288,6 @@
       "revision": "4acbd8a13286a55bdb177ff602deacbd24f17204",
       "url": "https://github.com/tuigreet/tuigreet/archive/4acbd8a13286a55bdb177ff602deacbd24f17204.tar.gz",
       "hash": "sha256-GN18/7tgl+iD+aH4j0ksIgVzbtojPTT13q9slLSnLJM="
-    },
-    "uv2nix": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "pyproject-nix",
-        "repo": "uv2nix"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "7f9c6b613d2e749e54854b1d60ab6a2192db889e",
-      "url": "https://github.com/pyproject-nix/uv2nix/archive/7f9c6b613d2e749e54854b1d60ab6a2192db889e.tar.gz",
-      "hash": "sha256-AELmsXPI546MhbC/ZXC7WRUkCz7d4rqKTHUmliIgPpI="
     },
     "zen-browser": {
       "type": "Git",
