@@ -2,22 +2,31 @@
   pkgs,
   lib,
   bupkes,
+  config,
   ...
 }:
 let
   inherit (lib) foldl recursiveUpdate;
   inherit (bupkes.lib) mkSecret;
 
-  wrappers =
-    with bupkes.wrappers;
-    map (wrapper: wrapper.drv) [
-      # VCS
-      git
-      jujutsu
+  wrappers = with bupkes.wrappers; [
+    # VCS
+    (git {
+      config = {
+        user = {
+          name = bupkes.user.fullName;
+          email = bupkes.user.email;
+          signingKey = config.age.secrets.github.path;
+        };
 
-      # CLI
-      gh
-    ];
+        gpg."ssh".allowedSignersFile = config.age.secrets.allowed-signers.path;
+      };
+    })
+    jujutsu.drv
+
+    # CLI
+    gh.drv
+  ];
 in
 {
   age.secrets = foldl recursiveUpdate { } [

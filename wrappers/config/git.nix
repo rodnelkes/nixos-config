@@ -14,21 +14,11 @@ _:
         inherit (inputs.nixpkgs.pkgs.lib) getExe';
       in
       {
-        user = {
-          signingKey = "/persistent/run/agenix/github";
-
-          name = "Zayen Yusuf";
-          email = "rodnelkes@gmail.com";
-        };
-
         commit.gpgSign = true;
         tag.gpgSign = true;
         gpg = {
           format = "ssh";
-          "ssh" = {
-            allowedSignersFile = "/persistent/run/agenix/allowed-signers";
-            program = getExe' openssh "ssh-keygen";
-          };
+          "ssh".program = getExe' openssh "ssh-keygen";
         };
       };
   };
