@@ -44,6 +44,7 @@ order = [ "default" ]
         "control-center",
         "session"
     ]
+    font_scale = 1.0
     font_weight = 500
     hover_highlight = true
     layer = "top"
@@ -80,6 +81,8 @@ sync_all_monitors = false
 
 [calendar]
 enabled = false
+event_date_format = "%A %e %B"
+event_time_format = "%H:%M"
 refresh_minutes = 15
 
 [control_center]
@@ -91,8 +94,6 @@ sidebar_section = "compact"
 width = 700
 
     [control_center.calendar]
-    event_date_format = "%A %e %B"
-    event_time_format = "%H:%M"
     show_events_card = true
     show_week_numbers = false
 
@@ -552,6 +553,9 @@ time_format = "{:%-I:%M %p}"
     [shell.shadow]
     alpha = 0.55000001192092896
     direction = "down"
+
+    [shell.window_switcher]
+    mru = false
 
 [storage]
 key_file = ""
