@@ -13,7 +13,7 @@ let
     nameValuePair
     mkIf
     ;
-  inherit (bupkes.wrappers.noctalia) wallpapers facePath;
+  inherit (bupkes.wrappers.noctalia.args.options) wallpapers facePath;
 
   noctalia = import sources.noctalia { inherit pkgs; };
 

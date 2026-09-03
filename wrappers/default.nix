@@ -25,10 +25,4 @@ let
     };
   };
 in
-mapAttrs (
-  _: wrapper:
-  if wrapper ? impl then
-    (removeAttrs wrapper.args.options [ "__functor" ]) // { drv = wrapper { }; }
-  else
-    wrapper.args.options
-) tree.modules
+mapAttrs (_: wrapper: wrapper // { drv = wrapper { }; }) tree.modules
