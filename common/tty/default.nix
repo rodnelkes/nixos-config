@@ -39,13 +39,20 @@ let
     };
   };
 
+  gh = bupkes.wrappers.gh {
+    hosts."github.com" = {
+      users.${bupkes.user.username} = null;
+      user = bupkes.user.username;
+    };
+  };
+
   wrappers = [
     # VCS
     git
     jujutsu
 
     # CLI
-    bupkes.wrappers.gh.drv
+    gh
   ];
 in
 {

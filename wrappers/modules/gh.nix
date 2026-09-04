@@ -1,23 +1,24 @@
-{ types, ... }:
+{ types, ... }@adios:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
 
   options = {
-    config.type = types.string;
-
-    hosts.type = types.string;
+    config = {
+      type = types.attrs;
+      mergeFunc = adios.lib.merge.attrs.recursively;
+    };
+    hosts = {
+      type = types.attrs;
+      mergeFunc = adios.lib.merge.attrs.recursively;
+    };
   };
 
   impl =
     { inputs, options }:
     let
-      inherit (inputs.nixpkgs.pkgs)
-        symlinkJoin
-        makeWrapper
-        gh
-        writeText
-        ;
+      inherit (inputs.nixpkgs.pkgs) symlinkJoin makeWrapper gh;
+      inherit (inputs.nixpkgs.pkgs.writers) writeYAML;
 
       inherit (options) config hosts;
     in
@@ -28,8 +29,8 @@
       postBuild = ''
         mkdir -p $out/gh
 
-        ln -sf ${writeText "config.yml" config} $out/gh/config.yml
-        ln -sf ${writeText "hosts.yml" hosts} $out/gh/hosts.yml
+        ln -sf ${writeYAML "config.yml" config} $out/gh/config.yml
+        ln -sf ${writeYAML "hosts.yml" hosts} $out/gh/hosts.yml
 
         wrapProgram $out/bin/gh \
         --set GH_CONFIG_DIR $out/gh
