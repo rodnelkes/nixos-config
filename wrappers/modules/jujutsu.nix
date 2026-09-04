@@ -3,7 +3,6 @@
 {
   inputs = {
     nixpkgs.from = { root }: root.nixpkgs;
-    git.from = { root }: root.git;
   };
 
   options = {
@@ -11,6 +10,7 @@
       type = types.attrs;
       mergeFunc = adios.lib.merge.attrs.recursively;
     };
+    git.type = types.derivation;
   };
 
   impl =
@@ -18,14 +18,12 @@
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin makeWrapper jujutsu;
       inherit (inputs.nixpkgs.pkgs.writers) writeTOML;
-
-      git = inputs.git { };
     in
     symlinkJoin {
       name = "jujutsu-wrapped";
       paths = [
         jujutsu
-        git
+        options.git
       ];
       buildInputs = [ makeWrapper ];
       postBuild = ''

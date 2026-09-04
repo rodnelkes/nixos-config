@@ -6,26 +6,46 @@
   ...
 }:
 let
-  inherit (lib) foldl recursiveUpdate;
+  inherit (lib) foldl getExe recursiveUpdate;
   inherit (bupkes.lib) mkSecret;
 
-  wrappers = with bupkes.wrappers; [
-    # VCS
-    (git {
-      config = {
-        user = {
-          name = bupkes.user.fullName;
-          email = bupkes.user.email;
-          signingKey = config.age.secrets.github.path;
-        };
-
-        gpg."ssh".allowedSignersFile = config.age.secrets.allowed-signers.path;
+  git = bupkes.wrappers.git {
+    config = {
+      user = {
+        name = bupkes.user.fullName;
+        email = bupkes.user.email;
+        signingKey = config.age.secrets.github.path;
       };
-    })
-    jujutsu.drv
+
+      gpg."ssh".allowedSignersFile = config.age.secrets.allowed-signers.path;
+    };
+  };
+
+  jujutsu = bupkes.wrappers.jujutsu {
+    inherit git;
+
+    config = {
+      user = {
+        name = bupkes.user.fullName;
+        email = bupkes.user.email;
+      };
+
+      signing = {
+        key = config.age.secrets.github.path;
+        backends.ssh.allowed-signers = config.age.secrets.allowed-signers.path;
+      };
+
+      git.executable-path = getExe git;
+    };
+  };
+
+  wrappers = [
+    # VCS
+    git
+    jujutsu
 
     # CLI
-    gh.drv
+    bupkes.wrappers.gh.drv
   ];
 in
 {
