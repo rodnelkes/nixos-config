@@ -59,6 +59,7 @@ in
         Rodnelkes = "dd134f98-275a-40cb-be40-ae9e157b37da";
         ".UnicornYoshi155" = "00000000-0000-0000-0009-01f83e2de3fa";
         ".RivalVeil955502" = "00000000-0000-0000-0009-01f24bbedebb";
+        ".Rodnelkes" = "00000000-0000-0000-0009-01f4fd4c76dd";
       };
 
       operators = {
