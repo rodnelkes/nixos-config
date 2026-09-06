@@ -40,7 +40,7 @@ in
       autoStart = false;
 
       package = fabricServers.fabric-26_2.override {
-        loaderVersion = "0.19.3";
+        loaderVersion = "0.19.5";
         jre_headless = java;
       };
 
