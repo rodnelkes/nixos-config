@@ -10,8 +10,6 @@ let
     javaPackages
     ;
   inherit (lib) mkIf;
-
-  java = javaPackages.compiler.temurin-bin.jre-25;
 in
 {
   environment.systemPackages = [
@@ -21,7 +19,8 @@ in
         khronos-ocl-icd-loader
       ];
       jdks = [
-        java
+        javaPackages.compiler.temurin-bin.jre-21
+        javaPackages.compiler.temurin-bin.jre-25
       ];
     })
   ];
