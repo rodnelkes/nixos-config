@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   bupkes,
   ...
@@ -7,11 +8,15 @@ let
   inherit (lib) mkIf;
 in
 {
+  environment.systemPackages = with pkgs; [
+    protontricks
+    winetricks
+  ];
+
   programs = {
     steam = {
       enable = true;
       gamescopeSession.enable = true;
-      protontricks.enable = true;
     };
 
     gamemode.enable = true;
