@@ -100,9 +100,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "ff8702b4de27f72b4c78573dfb89ec74e36abdf1",
-      "url": "https://github.com/nix-community/disko/archive/ff8702b4de27f72b4c78573dfb89ec74e36abdf1.tar.gz",
-      "hash": "sha256-RxWs5ND31KzTG7wvMM+PMfUjyNpmIEr999lqNARaM5o="
+      "revision": "725ea35e410ad83be4931d1bff7e090eacaf3563",
+      "url": "https://github.com/nix-community/disko/archive/725ea35e410ad83be4931d1bff7e090eacaf3563.tar.gz",
+      "hash": "sha256-uZkBR7yHdIKUFB5SZdfgh1qkGfI3XmYmI/lTiquxbck="
     },
     "flake-compat": {
       "type": "Git",
@@ -193,9 +193,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "ec99d7ee14ad01f15347c228184a6805c143a4db",
-      "url": "https://github.com/Infinidoge/nix-minecraft/archive/ec99d7ee14ad01f15347c228184a6805c143a4db.tar.gz",
-      "hash": "sha256-Bf9+6h25eiMNa6IYHbFUXsBCT6qgWFeHdtNWD10cZt8="
+      "revision": "66b5884f21f8f1c6461b58464ebde0540d8c3492",
+      "url": "https://github.com/Infinidoge/nix-minecraft/archive/66b5884f21f8f1c6461b58464ebde0540d8c3492.tar.gz",
+      "hash": "sha256-jCo4qYaCxGvNSnIfCIPzEt2r06GWsTRqYOmzLPUvKko="
     },
     "nixos-hardware": {
       "type": "Git",
@@ -206,9 +206,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c9b56a2497c22c90884388ba476900cbe45de808",
-      "url": "https://github.com/NixOS/nixos-hardware/archive/c9b56a2497c22c90884388ba476900cbe45de808.tar.gz",
-      "hash": "sha256-Jd7AoNhd9EkvS1YqjwdwncTMFT/YMxmYYI2GsyEBVCo="
+      "revision": "b2d7d02644f0002535a3bb51a73780945cdc7ba4",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/b2d7d02644f0002535a3bb51a73780945cdc7ba4.tar.gz",
+      "hash": "sha256-q0J27mJDfd4BM9a7KcMVbcRmqyU+goQwudbMIu66qsg="
     },
     "nixpkgs": {
       "type": "Git",
@@ -219,9 +219,9 @@
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "b1b875982b17dabde9b4a37f3e229e74913e6db3",
-      "url": "https://github.com/NixOS/nixpkgs/archive/b1b875982b17dabde9b4a37f3e229e74913e6db3.tar.gz",
-      "hash": "sha256-zVxLZiSnmaaPLwnhj7pwmqe3axBg/C6nG5JZsJMh2g4="
+      "revision": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
+      "url": "https://github.com/NixOS/nixpkgs/archive/20b1ddd1aa5ace70c9468305030aa4f9ef79671b.tar.gz",
+      "hash": "sha256-B44WL6h0XoLjJ41bUPJk0X5SDinLCII//6EcBLXKiJ0="
     },
     "noctalia": {
       "type": "Git",
@@ -232,9 +232,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8c52cb71b5bcafbf67bfb8e659f1fc45f882a008",
-      "url": "https://github.com/noctalia-dev/noctalia/archive/8c52cb71b5bcafbf67bfb8e659f1fc45f882a008.tar.gz",
-      "hash": "sha256-obiNV+juEjUYDDusgYQukjLyoVsJJPmYppmjvIEfkSg="
+      "revision": "53626fc910e88c8791b17ee6b1fe6851ef117e39",
+      "url": "https://github.com/noctalia-dev/noctalia/archive/53626fc910e88c8791b17ee6b1fe6851ef117e39.tar.gz",
+      "hash": "sha256-scBtsF3B0cnTQ12UOcJb+rgIdAb8+VngA0W/2Mh7GWw="
     },
     "npins": {
       "type": "Git",
@@ -272,9 +272,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4ff40d066af2dd316dcb4742544254436e7e8190",
-      "url": "https://github.com/starship/starship/archive/4ff40d066af2dd316dcb4742544254436e7e8190.tar.gz",
-      "hash": "sha256-vWTlZfsfE5VkWdtxXYllra6AgkO8JxFwD1+a+HEfAd0="
+      "revision": "05a80cbea93d8bd5a5546b3976d9298c6383fb21",
+      "url": "https://github.com/starship/starship/archive/05a80cbea93d8bd5a5546b3976d9298c6383fb21.tar.gz",
+      "hash": "sha256-TXwtK3bz4AyMeGhFHv/ZN0aN8bnjNLMPXg/Trw2ZUQA="
     },
     "tuigreet": {
       "type": "Git",
@@ -298,9 +298,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a12d482485d877cc066516ea256b435b209a1a8c",
-      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/a12d482485d877cc066516ea256b435b209a1a8c.tar.gz",
-      "hash": "sha256-C9BpLH4dNggam12nz/Fx/M0Vlbw8WcT/cpOc37DPQAA="
+      "revision": "0b67fd734266af5119a2aa2d1380730acbeff077",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/0b67fd734266af5119a2aa2d1380730acbeff077.tar.gz",
+      "hash": "sha256-Qskg6ZLpxABtlQmsr9VgcB9jijY7UKvJ5Lupf65Qvto="
     }
   },
   "version": 8
