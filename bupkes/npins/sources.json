@@ -258,9 +258,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "19205988b395a1c109a6b0ad8a9057b97dced603",
-      "url": "https://github.com/BANANASJIM/padctl/archive/19205988b395a1c109a6b0ad8a9057b97dced603.tar.gz",
-      "hash": "sha256-GNtTtgg4dOQ59eAL6287G6QwWmd121DsgjZDYhj9CwI=",
+      "revision": "fe324c119991918144c01bc92f7aef2187a86a45",
+      "url": "https://github.com/BANANASJIM/padctl/archive/fe324c119991918144c01bc92f7aef2187a86a45.tar.gz",
+      "hash": "sha256-S66UxHubSLFLn7nxR48KJnLtRqJjyW0MPVaMpXgkmsU=",
       "frozen": true
     },
     "starship": {
