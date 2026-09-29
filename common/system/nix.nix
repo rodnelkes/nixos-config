@@ -2,13 +2,15 @@
 
 {
   nix = {
-    nixPath = [ "nixpkgs=${sources.nixpkgs.outPath}" ];
-
     channel.enable = false;
 
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    settings = {
+      nix-path = [ "nixpkgs=${sources.nixpkgs.outPath}" ];
+
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
   };
 }
