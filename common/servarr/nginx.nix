@@ -8,8 +8,6 @@ in
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
-
-    virtualHosts."rod.nelk.es".enableACME = true;
   };
 
   networking.firewall.allowedTCPPorts = [
@@ -17,13 +15,5 @@ in
     443
   ];
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = bupkes.user.email;
-  };
-
-  persist.system.directories = mkIf bupkes.host.features.impermanence [
-    "/var/lib/nginx"
-    "/var/lib/acme"
-  ];
+  persist.system.directories = mkIf bupkes.host.features.impermanence [ "/var/lib/nginx" ];
 }
