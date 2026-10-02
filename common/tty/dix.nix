@@ -6,6 +6,6 @@ in
 {
   system.activationScripts.diff = # bash
     ''
-      ${getExe dix} /run/current-system "$systemConfig"
+      ${getExe dix} --color=always /run/current-system "$systemConfig"
     '';
 }
