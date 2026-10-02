@@ -1,8 +1,11 @@
 { pkgs, lib, ... }:
-
+let
+  inherit (pkgs) dix;
+  inherit (lib) getExe;
+in
 {
   system.activationScripts.diff = # bash
     ''
-      ${lib.getExe pkgs.dix} /run/current-system "$systemConfig"
+      ${getExe dix} /run/current-system "$systemConfig"
     '';
 }
