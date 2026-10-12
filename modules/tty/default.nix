@@ -10,7 +10,7 @@ let
   inherit (bupkes.lib) mkSecret;
 
   git = bupkes.wrappers.git.call {
-    config = {
+    settings = {
       user = {
         name = bupkes.user.fullName;
         email = bupkes.user.email;
@@ -24,7 +24,7 @@ let
   jujutsu = bupkes.wrappers.jujutsu.call {
     inherit git;
 
-    config = {
+    settings = {
       user = {
         name = bupkes.user.fullName;
         email = bupkes.user.email;

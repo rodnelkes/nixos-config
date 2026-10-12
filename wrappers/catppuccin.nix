@@ -2,12 +2,12 @@
 
 {
   inputs = {
-    sources.from = { root }: root.sources;
-    nixpkgs.from = { root }: root.nixpkgs;
+    sources.from = { parent }: parent.sources;
+    nixpkgs.from = { parent }: parent.nixpkgs;
   };
 
   mutations = {
-    "/nushell".configPaths = promise (
+    "/nushell".sourceFiles = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText;

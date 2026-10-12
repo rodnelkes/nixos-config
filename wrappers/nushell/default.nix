@@ -2,7 +2,7 @@ _:
 
 {
   options = {
-    configPaths.mutators = [
+    sourceFiles.mutators = [
       "/catppuccin"
       "/starship"
       "/nushell"
@@ -11,6 +11,6 @@ _:
   };
 
   mutations = {
-    "/nushell".configPaths = [ ./config.nu ];
+    "/nushell".sourceFiles = [ ./config.nu ];
   };
 }

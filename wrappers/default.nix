@@ -7,11 +7,12 @@ let
   inherit (builtins) mapAttrs;
 
   lladios = import sources.lladios;
+  adios-wrappers = import sources.adios-wrappers { adios = lladios; };
   inherit (lladios.lib) inject importModules;
 
   root.modules = inject [
-    (importModules { directory = ./modules; })
-    (importModules { directory = ./config; })
+    adios-wrappers
+    (importModules { directory = ./.; })
   ];
 
   tree = lladios root {

@@ -1,5 +1,18 @@
 {
   "pins": {
+    "adios-wrappers": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "llakala",
+        "repo": "adios-wrappers"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bf7124b12ac30042a9220cf920333b6f93447464",
+      "url": "https://github.com/llakala/adios-wrappers/archive/bf7124b12ac30042a9220cf920333b6f93447464.tar.gz",
+      "hash": "sha256-eWzFhGi/EIRqgx16YjIInvHWnx4rgOplHkmNQy6o77I="
+    },
     "agenix": {
       "type": "Git",
       "repository": {

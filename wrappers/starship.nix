@@ -1,14 +1,14 @@
 { promise, ... }:
 
 {
-  inputs.nixpkgs.from = { root }: root.nixpkgs;
+  inputs.nixpkgs.from = { parent }: parent.nixpkgs;
 
   mutations = {
-    "/nushell".configPaths = promise (
+    "/nushell".sourceFiles = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText runCommand starship;
-        inherit (inputs.nixpkgs.pkgs.lib) getExe;
+        inherit (inputs.nixpkgs.lib) getExe;
 
         config = writeText "starship-nushell-config" ''
           use ${

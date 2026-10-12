@@ -1,13 +1,19 @@
-_:
+adios:
 
 {
   options = {
-    config.mutators = [ "/gh" ];
-    hosts.mutators = [ "/gh" ];
+    settings = {
+      mergeFunc = adios.lib.merge.attrs.recursively;
+      mutators = [ "/gh" ];
+    };
+    hosts = {
+      mergeFunc = adios.lib.merge.attrs.recursively;
+      mutators = [ "/gh" ];
+    };
   };
 
   mutations."/gh" = {
-    config =
+    settings =
       # yaml
       {
         version = 1;
