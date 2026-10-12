@@ -8,6 +8,6 @@ let
     "packages"
     "hosts/${hostVars.hostname}"
   ]
-  ++ map (feature: "common/${feature}") hostVars.features.modules;
+  ++ map (feature: "modules/${feature}") hostVars.features.modules;
 in
 map applyPath modules
