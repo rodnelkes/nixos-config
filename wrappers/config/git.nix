@@ -1,4 +1,4 @@
-_:
+{ promise, ... }:
 
 {
   options = {
@@ -7,7 +7,7 @@ _:
   };
 
   mutations = {
-    "/git".config =
+    "/git".config = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) openssh;
@@ -20,6 +20,7 @@ _:
           format = "ssh";
           "ssh".program = getExe' openssh "ssh-keygen";
         };
-      };
+      }
+    );
   };
 }

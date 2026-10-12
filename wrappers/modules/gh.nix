@@ -1,4 +1,4 @@
-{ types, ... }@adios:
+{ types, promise, ... }@adios:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
@@ -14,7 +14,7 @@
     };
   };
 
-  impl =
+  result = promise (
     { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin makeWrapper gh;
@@ -36,5 +36,6 @@
         --set GH_CONFIG_DIR $out/gh
       '';
       meta.mainProgram = "gh";
-    };
+    }
+  );
 }

@@ -1,9 +1,9 @@
-_:
+{ promise, ... }:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
 
-  impl =
+  result = promise (
     { inputs }:
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin vesktop makeWrapper;
@@ -16,5 +16,6 @@ _:
         wrapProgram $out/bin/vesktop
       '';
       meta.mainProgram = "vesktop";
-    };
+    }
+  );
 }

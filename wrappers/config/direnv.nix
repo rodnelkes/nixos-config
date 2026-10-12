@@ -1,10 +1,10 @@
-_:
+{ promise, ... }:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
 
   mutations = {
-    "/nushell".configPaths =
+    "/nushell".configPaths = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText direnv;
@@ -32,8 +32,9 @@ _:
               }]
             '';
       in
-      [ config ];
+      [ config ]
+    );
 
-    "/git".excludes = _: ".envrc";
+    "/git".excludes = ".envrc";
   };
 }

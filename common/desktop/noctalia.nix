@@ -13,7 +13,7 @@ let
     nameValuePair
     mkIf
     ;
-  inherit (bupkes.wrappers.noctalia.args.options) wallpapers facePath;
+  inherit (bupkes.wrappers.noctalia.options) wallpapers facePath;
 
   noctalia = import sources.noctalia { inherit pkgs; };
 
@@ -33,7 +33,7 @@ in
   programs = {
     noctalia = {
       enable = true;
-      package = bupkes.wrappers.noctalia.drv;
+      package = bupkes.wrappers.noctalia.result;
 
       systemd.enable = true;
       recommendedServices.enable = false;

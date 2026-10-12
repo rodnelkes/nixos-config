@@ -1,4 +1,4 @@
-_:
+{ promise, ... }:
 
 {
   options = {
@@ -9,7 +9,7 @@ _:
   };
 
   mutations = {
-    "/jujutsu".config =
+    "/jujutsu".config = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) openssh;
@@ -30,6 +30,7 @@ _:
         remotes.origin.auto-track-bookmarks = "*";
 
         git.private-commits = "description('private:*')";
-      };
+      }
+    );
   };
 }

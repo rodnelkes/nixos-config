@@ -11,6 +11,6 @@ _:
   };
 
   mutations = {
-    "/nushell".configPaths = _: [ ./config.nu ];
+    "/nushell".configPaths = [ ./config.nu ];
   };
 }

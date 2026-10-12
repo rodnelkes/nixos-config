@@ -1,4 +1,4 @@
-{ types, ... }@adios:
+{ types, promise, ... }@adios:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
@@ -10,7 +10,7 @@
     };
   };
 
-  impl =
+  result = promise (
     { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs)
@@ -38,5 +38,6 @@
         --add-flags "--config $out/nushell/config.nu"
       '';
       meta.mainProgram = "nu";
-    };
+    }
+  );
 }

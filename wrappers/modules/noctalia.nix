@@ -1,4 +1,4 @@
-{ types, ... }:
+{ types, promise, ... }:
 
 {
   inputs = {
@@ -12,7 +12,7 @@
     facePath.type = types.pathLike;
   };
 
-  impl =
+  result = promise (
     { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin makeWrapper;
@@ -31,5 +31,6 @@
         --set NOCTALIA_CONFIG_HOME $out
       '';
       meta.mainProgram = "noctalia";
-    };
+    }
+  );
 }

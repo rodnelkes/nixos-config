@@ -9,7 +9,7 @@ let
   inherit (lib) foldl getExe recursiveUpdate;
   inherit (bupkes.lib) mkSecret;
 
-  git = bupkes.wrappers.git {
+  git = bupkes.wrappers.git.call {
     config = {
       user = {
         name = bupkes.user.fullName;
@@ -21,7 +21,7 @@ let
     };
   };
 
-  jujutsu = bupkes.wrappers.jujutsu {
+  jujutsu = bupkes.wrappers.jujutsu.call {
     inherit git;
 
     config = {
@@ -39,7 +39,7 @@ let
     };
   };
 
-  gh = bupkes.wrappers.gh {
+  gh = bupkes.wrappers.gh.call {
     hosts."github.com" = {
       users.${bupkes.user.username} = null;
       user = bupkes.user.username;

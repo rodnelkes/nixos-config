@@ -1,4 +1,4 @@
-{ types, ... }:
+{ types, promise, ... }:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
@@ -9,7 +9,7 @@
     };
   };
 
-  impl =
+  result = promise (
     { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin wezterm makeWrapper;
@@ -29,5 +29,6 @@
         --set WEZTERM_CONFIG_FILE $out/wezterm/wezterm.lua
       '';
       meta.mainProgram = "wezterm";
-    };
+    }
+  );
 }

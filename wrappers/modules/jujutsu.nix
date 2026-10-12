@@ -1,4 +1,4 @@
-{ types, ... }@adios:
+{ types, promise, ... }@adios:
 
 {
   inputs = {
@@ -13,7 +13,7 @@
     git.type = types.derivation;
   };
 
-  impl =
+  result = promise (
     { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs) symlinkJoin makeWrapper jujutsu;
@@ -36,5 +36,6 @@
         --set GIT_CONFIG_GLOBAL $out/git/config
       '';
       meta.mainProgram = "jj";
-    };
+    }
+  );
 }

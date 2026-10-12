@@ -25,4 +25,16 @@ let
     };
   };
 in
-mapAttrs (_: wrapper: wrapper // { drv = wrapper { }; }) tree.modules
+mapAttrs (
+  _: module:
+  if module ? __functor then
+    {
+      result = module { };
+      options = removeAttrs module.args.options [ "__functor" ];
+      call = { inherit (module) __functor; };
+    }
+  else
+    {
+      options = module.args.options;
+    }
+) tree.modules

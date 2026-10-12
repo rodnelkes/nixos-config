@@ -1,4 +1,4 @@
-_:
+{ promise, ... }:
 
 {
   inputs = {
@@ -7,7 +7,7 @@ _:
   };
 
   mutations = {
-    "/nushell".configPaths =
+    "/nushell".configPaths = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) writeText;
@@ -22,6 +22,7 @@ _:
               source ${catppuccinFzf}/themes/catppuccin-fzf-mocha.nu
             '';
       in
-      [ config ];
+      [ config ]
+    );
   };
 }

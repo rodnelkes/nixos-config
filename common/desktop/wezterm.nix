@@ -1,7 +1,7 @@
 { bupkes, ... }:
 
 {
-  environment.systemPackages = [ bupkes.wrappers.wezterm.drv ];
+  environment.systemPackages = [ bupkes.wrappers.wezterm.result ];
 
   programs.niri.settings = {
     window-rule =

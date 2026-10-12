@@ -8,7 +8,6 @@ _:
 
   mutations."/gh" = {
     config =
-      _:
       # yaml
       {
         version = 1;
@@ -27,7 +26,6 @@ _:
       };
 
     hosts =
-      _:
       # yaml
       {
         "github.com".git_protocol = "ssh";

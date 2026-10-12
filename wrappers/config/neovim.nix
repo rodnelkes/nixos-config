@@ -2,7 +2,7 @@ _:
 
 {
   mutations = {
-    "/jujutsu".config = _: {
+    "/jujutsu".config = {
       ui.merge-editor = "diffconflicts";
       merge-tools.diffconflicts = {
         program = "nvim";

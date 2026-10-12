@@ -1,4 +1,4 @@
-{ types, ... }@adios:
+{ types, promise, ... }@adios:
 
 {
   inputs.nixpkgs.from = { root }: root.nixpkgs;
@@ -15,7 +15,7 @@
     };
   };
 
-  impl =
+  result = promise (
     { inputs, options }:
     let
       inherit (inputs.nixpkgs.pkgs)
@@ -44,5 +44,6 @@
         --set XDG_CONFIG_HOME $out
       '';
       meta.mainProgram = "git";
-    };
+    }
+  );
 }
