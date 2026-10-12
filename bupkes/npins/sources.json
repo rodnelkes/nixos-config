@@ -152,9 +152,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "d2bdf633f7bd089b615bc1283509f7728c367a8a",
-      "url": "https://github.com/llakala/lladios/archive/d2bdf633f7bd089b615bc1283509f7728c367a8a.tar.gz",
-      "hash": "sha256-Q4rjJojZ4acWwbl5GaH7y94l1tZD/j/VPwpj8eVhMOc="
+      "revision": "3fd28fb61472d94eaef95e4a027b9b3d000add8c",
+      "url": "https://github.com/llakala/lladios/archive/3fd28fb61472d94eaef95e4a027b9b3d000add8c.tar.gz",
+      "hash": "sha256-Zivp1rit5QvP9yKsMuGGp2x7X1Vdtbe+UCoYNKF5OQo="
     },
     "nelvim": {
       "type": "Git",
