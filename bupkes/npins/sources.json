@@ -156,6 +156,32 @@
       "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
       "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
     },
+    "jj-diffconflicts": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rafikdraoui",
+        "repo": "jj-diffconflicts"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "a2aa9a247b56d2c1a6f6be81bcf41c5450cc82ff",
+      "url": "https://github.com/rafikdraoui/jj-diffconflicts/archive/a2aa9a247b56d2c1a6f6be81bcf41c5450cc82ff.tar.gz",
+      "hash": "sha256-MjacjGlBRwActBBGeBZDHz8jz5J3Mt6KoDsf8WKgUDA="
+    },
+    "kdl-rs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kdl-org",
+        "repo": "kdl-rs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "7de9eb2f4879f3f86157bf2345c93ed52db88e7a",
+      "url": "https://github.com/kdl-org/kdl-rs/archive/7de9eb2f4879f3f86157bf2345c93ed52db88e7a.tar.gz",
+      "hash": "sha256-Fx6yjh/JmCxrQWWkqJRQwCoeWRQ6OZPm3zHpPLaUYMQ="
+    },
     "lladios": {
       "type": "Git",
       "repository": {

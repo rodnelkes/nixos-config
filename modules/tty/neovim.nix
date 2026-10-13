@@ -1,12 +1,14 @@
-{ sources, pkgs, ... }:
-let
-  nelvim = import sources.nelvim { inherit pkgs; };
-in
+{
+  pkgs,
+  bupkes,
+  ...
+}:
+
 {
   environment = {
     systemPackages = [
       pkgs.wl-clipboard-rs
-      nelvim.devMode
+      bupkes.wrappers.neovim.result
     ];
 
     variables = {

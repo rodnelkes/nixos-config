@@ -18,7 +18,13 @@ let
   tree = lladios root {
     options = {
       "/sources" = {
-        inherit (sources) catppuccin-nushell catppuccin-fzf noctalia;
+        inherit (sources)
+          catppuccin-nushell
+          catppuccin-fzf
+          jj-diffconflicts
+          kdl-rs
+          noctalia
+          ;
       };
       "/nixpkgs" = {
         inherit pkgs;
