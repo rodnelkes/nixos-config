@@ -195,20 +195,6 @@
       "url": "https://github.com/llakala/lladios/archive/3fd28fb61472d94eaef95e4a027b9b3d000add8c.tar.gz",
       "hash": "sha256-Zivp1rit5QvP9yKsMuGGp2x7X1Vdtbe+UCoYNKF5OQo="
     },
-    "nelvim": {
-      "type": "Git",
-      "repository": {
-        "type": "Forgejo",
-        "server": "https://codeberg.org/",
-        "owner": "rodnelkes",
-        "repo": "nelvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "23b02f3bf9c513509a95d7230862e4d6c1dcf103",
-      "url": "https://codeberg.org/rodnelkes/nelvim/archive/23b02f3bf9c513509a95d7230862e4d6c1dcf103.tar.gz",
-      "hash": "sha256-hotHfNAChqjCVqSrsk70wpZE4NOkuP3dPVnyu/VEpZA="
-    },
     "niri": {
       "type": "Git",
       "repository": {
