@@ -315,19 +315,6 @@
       "url": "https://github.com/starship/starship/archive/faaadc05ec7baad4eefdd4f4b2e3ac3a08217068.tar.gz",
       "hash": "sha256-kjNiSJY+/qJmVUfFXjfiDv4xsxa/47rKgI2I5Z48ueM="
     },
-    "tuigreet": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "tuigreet",
-        "repo": "tuigreet"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "2109f4e381d1e6541a52b6093670c0d517185ecb",
-      "url": "https://github.com/tuigreet/tuigreet/archive/2109f4e381d1e6541a52b6093670c0d517185ecb.tar.gz",
-      "hash": "sha256-4xdZ7ig2qx37nzuxlRw69/A+FQMrRUxuGweZrluNL/Y="
-    },
     "zen-browser": {
       "type": "Git",
       "repository": {
