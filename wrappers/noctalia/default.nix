@@ -1,10 +1,6 @@
-{ types, promise, ... }:
+{ types, ... }:
 
 {
-  inputs = {
-    sources.from = { parent }: parent.sources;
-  };
-
   options = {
     configFile.default = ./settings.toml;
     wallpapers = {
@@ -15,8 +11,5 @@
       type = types.pathLike;
       default = ./face.png;
     };
-    package.default = promise (
-      { inputs }: (import inputs.sources.noctalia { inherit (inputs.nixpkgs) pkgs; }).package
-    );
   };
 }
